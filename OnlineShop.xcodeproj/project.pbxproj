@@ -25,6 +25,9 @@
 		48857FFD29BF46AB00E3B70E /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FFC29BF46AB00E3B70E /* StorageViewController.swift */; };
 		48857FFF29BF46BC00E3B70E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FFE29BF46BC00E3B70E /* ProfileViewController.swift */; };
 		4885800129BF46C600E3B70E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885800029BF46C600E3B70E /* HomeViewController.swift */; };
+		4885800329BF7E2E00E3B70E /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885800229BF7E2D00E3B70E /* UIView + ext.swift */; };
+		4885800529BF812500E3B70E /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885800429BF812500E3B70E /* UIButton + ext.swift */; };
+		4885800729BF8E3F00E3B70E /* UILabel + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885800629BF8E3F00E3B70E /* UILabel + ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		48857FFC29BF46AB00E3B70E /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		48857FFE29BF46BC00E3B70E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4885800029BF46C600E3B70E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4885800229BF7E2D00E3B70E /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
+		4885800429BF812500E3B70E /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
+		4885800629BF8E3F00E3B70E /* UILabel + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				48857FE829BF370000E3B70E /* UIColor + ext.swift */,
+				4885800229BF7E2D00E3B70E /* UIView + ext.swift */,
+				4885800429BF812500E3B70E /* UIButton + ext.swift */,
+				4885800629BF8E3F00E3B70E /* UILabel + ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,11 +167,11 @@
 		48857FEF29BF442A00E3B70E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				48857FF729BF45AF00E3B70E /* ChosenByLikeController */,
-				48857FF629BF459900E3B70E /* MessageViewController */,
-				48857FF529BF458B00E3B70E /* StorageViewController */,
-				48857FF429BF456A00E3B70E /* ProfileViewController */,
 				48857FF029BF443800E3B70E /* HomeViewController */,
+				48857FF729BF45AF00E3B70E /* ChosenByLikeController */,
+				48857FF529BF458B00E3B70E /* StorageViewController */,
+				48857FF629BF459900E3B70E /* MessageViewController */,
+				48857FF429BF456A00E3B70E /* ProfileViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +298,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4885800329BF7E2E00E3B70E /* UIView + ext.swift in Sources */,
+				4885800529BF812500E3B70E /* UIButton + ext.swift in Sources */,
 				48857FEE29BF435F00E3B70E /* NavBarController.swift in Sources */,
 				48857FAD29BF30BB00E3B70E /* TabBarController.swift in Sources */,
 				48857FFD29BF46AB00E3B70E /* StorageViewController.swift in Sources */,
@@ -301,6 +312,7 @@
 				48857FAB29BF30BB00E3B70E /* SceneDelegate.swift in Sources */,
 				4885800129BF46C600E3B70E /* HomeViewController.swift in Sources */,
 				48857FF929BF45D300E3B70E /* ChosenByLikeController.swift in Sources */,
+				4885800729BF8E3F00E3B70E /* UILabel + ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

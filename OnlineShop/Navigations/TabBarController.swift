@@ -47,8 +47,6 @@ final class TabBarController: UITabBarController {
         tabBar.layer.masksToBounds = true
         tabBar.itemPositioning = .centered
        
-        
-        
         let controllers : [NavBarController] = Tabs.allCases.map { tab in
             let controller = NavBarController(rootViewController: getController(for: tab))
             controller.tabBarItem = UITabBarItem(title: nil ,

@@ -80,10 +80,10 @@
 		48857FA729BF30BB00E3B70E /* OnlineShop */ = {
 			isa = PBXGroup;
 			children = (
-				48857FF129BF445800E3B70E /* BaseViewController */,
-				48857FEF29BF442A00E3B70E /* Controllers */,
-				48857FEA29BF394300E3B70E /* Navigations */,
 				48857FBE29BF339400E3B70E /* Helpers */,
+				48857FEF29BF442A00E3B70E /* Controllers */,
+				48857FF129BF445800E3B70E /* BaseViewController */,
+				48857FEA29BF394300E3B70E /* Navigations */,
 				48857FBD29BF333F00E3B70E /* Applications */,
 				48857FBC29BF332200E3B70E /* SupportingFiles */,
 			);

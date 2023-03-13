@@ -34,6 +34,26 @@ enum Resources {
         static let backgoundTabBar = UIColor(hexString: "#FFFFFF")
     }
     
+    enum String {
+        
+        enum Profile {
+            static let title = "Profile"
+            static let changePhotoLabel = "Change photo"
+            static let nameProfile = "Satria Adhi Pradana"
+            static let buttonText = "Upload Item"
+            
+            enum Table {
+                static let tradeStore = "Trade store"
+                static let paymentMethod = "Payment method"
+                static let balance = "Balance"
+                static let tradeHistory = "Trade history"
+                static let restorePurchase = "Restore purchase"
+            }
+            static let help = "Help"
+            static let logOut = "Log out"
+        }
+        
+    }
     
     
     
@@ -48,6 +68,16 @@ enum Resources {
                 case .profile : return UIImage(named: "profileTabBar")
                 }
             }
+        }
+        
+        enum ProfileController {
+            static let tableIcon = UIImage(named: "tableIcon")
+            static let help = UIImage(named: "help")
+            static let logOut = UIImage(named: "logOut")
+            static let restorePurchase = UIImage(named: "restorePurchase")
+            static let uploadItem = UIImage(named: "uploadItem")
+            static let vector = UIImage(named: "vector")
+            static let profilePhoto = UIImage(named: "profilePhoto")
         }
         
     }

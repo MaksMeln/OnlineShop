@@ -9,32 +9,20 @@ import UIKit
 
 class OnlineShopBaseViewController: UIViewController {
     
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            setupViews()
-            constraintViews()
-            configureAppearence()
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupViews()
+        constraintViews()
+        configureAppearence()
     }
+}
 
-    @objc extension OnlineShopBaseViewController {
-        
-        func setupViews() {}
-        func constraintViews() {}
-        func configureAppearence() {
-            view.backgroundColor = Resources.Colors.backgroundColor
-        }
-        
-        func leftBarButtonTapped() {
-            print("left button tapped")
-        }
-        
-        func rightBarButtonTapped() {
-            print("")
-        }
-        
+@objc extension OnlineShopBaseViewController {
+    
+    func setupViews() {}
+    func constraintViews() {}
+    func configureAppearence() {
+        view.backgroundColor = Resources.Colors.backgroundColor
     }
-
-
-
+}

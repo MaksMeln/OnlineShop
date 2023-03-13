@@ -40,17 +40,19 @@ enum Resources {
             static let title = "Profile"
             static let changePhotoLabel = "Change photo"
             static let nameProfile = "Satria Adhi Pradana"
-            static let buttonText = "Upload Item"
+            static let uploadItemButton = "Upload Item"
             
-            enum Table {
+            enum ProfileButton {
                 static let tradeStore = "Trade store"
                 static let paymentMethod = "Payment method"
                 static let balance = "Balance"
                 static let tradeHistory = "Trade history"
                 static let restorePurchase = "Restore purchase"
+                static let help = "Help"
+                static let logOut = "Log out"
+                static let balanceData = "$1593"
+                static let cell = "cell"
             }
-            static let help = "Help"
-            static let logOut = "Log out"
         }
         
     }

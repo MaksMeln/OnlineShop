@@ -105,7 +105,7 @@ private extension OnlineShopButton {
             backgroundColor = Resources.Colors.backgroundButton
             layer.cornerRadius = 15
             
-            label.text = Resources.String.ProfileController.buttonText
+            label.text = Resources.String.ProfileController.uploadItemButton
             label.textColor = Resources.Colors.defaultWhite
             label.font = Resources.Fonts.MontserratBold(with: 14)
             iconView.image = Resources.Images.ProfileController.uploadItem

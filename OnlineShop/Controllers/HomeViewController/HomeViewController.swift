@@ -9,7 +9,10 @@ import UIKit
 
 class HomeViewController : OnlineShopBaseViewController {
     
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 }
 
 

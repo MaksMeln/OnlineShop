@@ -9,7 +9,10 @@ import UIKit
 
 class ChosenByLikeController : OnlineShopBaseViewController {
     
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 }
 
 

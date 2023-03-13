@@ -12,6 +12,11 @@
 		48857FAD29BF30BB00E3B70E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FAC29BF30BB00E3B70E /* ViewController.swift */; };
 		48857FB229BF30C000E3B70E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48857FB129BF30C000E3B70E /* Assets.xcassets */; };
 		48857FB529BF30C000E3B70E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48857FB329BF30C000E3B70E /* LaunchScreen.storyboard */; };
+		48857FD729BF343B00E3B70E /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48857FC529BF343800E3B70E /* Montserrat-Bold.ttf */; };
+		48857FDB29BF343B00E3B70E /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48857FC929BF343900E3B70E /* Montserrat-SemiBold.ttf */; };
+		48857FDE29BF343B00E3B70E /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48857FCC29BF343A00E3B70E /* Montserrat-Regular.ttf */; };
+		48857FE429BF343B00E3B70E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48857FD229BF343B00E3B70E /* Montserrat-Medium.ttf */; };
+		48857FE729BF35BD00E3B70E /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FE629BF35BD00E3B70E /* Resourses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		48857FB129BF30C000E3B70E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48857FB429BF30C000E3B70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48857FB629BF30C000E3B70E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48857FC529BF343800E3B70E /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		48857FC929BF343900E3B70E /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		48857FCC29BF343A00E3B70E /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		48857FD229BF343B00E3B70E /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		48857FE629BF35BD00E3B70E /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,10 @@
 		48857FBF29BF33C000E3B70E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				48857FC529BF343800E3B70E /* Montserrat-Bold.ttf */,
+				48857FD229BF343B00E3B70E /* Montserrat-Medium.ttf */,
+				48857FCC29BF343A00E3B70E /* Montserrat-Regular.ttf */,
+				48857FC929BF343900E3B70E /* Montserrat-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -101,6 +115,7 @@
 		48857FC029BF33D200E3B70E /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				48857FE629BF35BD00E3B70E /* Resourses.swift */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -170,6 +185,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48857FD729BF343B00E3B70E /* Montserrat-Bold.ttf in Resources */,
+				48857FDB29BF343B00E3B70E /* Montserrat-SemiBold.ttf in Resources */,
+				48857FDE29BF343B00E3B70E /* Montserrat-Regular.ttf in Resources */,
+				48857FE429BF343B00E3B70E /* Montserrat-Medium.ttf in Resources */,
 				48857FB529BF30C000E3B70E /* LaunchScreen.storyboard in Resources */,
 				48857FB229BF30C000E3B70E /* Assets.xcassets in Resources */,
 			);
@@ -183,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48857FAD29BF30BB00E3B70E /* ViewController.swift in Sources */,
+				48857FE729BF35BD00E3B70E /* Resourses.swift in Sources */,
 				48857FA929BF30BB00E3B70E /* AppDelegate.swift in Sources */,
 				48857FAB29BF30BB00E3B70E /* SceneDelegate.swift in Sources */,
 			);

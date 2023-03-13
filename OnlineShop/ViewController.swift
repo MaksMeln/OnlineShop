@@ -12,8 +12,9 @@ class ViewController: UIViewController {
     
     let label : UILabel = {
        let label = UILabel()
-        label.text = "lABEL"
+        label.text = "LABEL"
         label.textColor = .white
+        label.font = UIFont(name: "Montserrat-Bold", size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

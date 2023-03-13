@@ -17,7 +17,13 @@ enum Resources {
         static let defaultGray = UIColor(hexString: "#808080")
         static let defaultBlue = UIColor(hexString: "#254FE6")
         
+        
+        //BackgroundColor
         static let backgroundColor = UIColor(hexString: "#FAF9FF")
+        static let circleBackground = UIColor(hexString: "#EEEFF4")
+        static let backgroundButton = UIColor(hexString: "#4E55D7")
+        static let backgroundProfileImage = UIColor(hexString: "#imaC0C0C0")
+
         
         //LOGIN
         static let backgroundRegistration = UIColor(hexString: "#E8E8E8")
@@ -25,8 +31,6 @@ enum Resources {
         
         // OtherColor
         static let nameLabel = UIColor(hexString: "#3F3F3F")
-        static let circleBackground = UIColor(hexString: "#EEEFF4")
-        static let backgroundButton = UIColor(hexString: "#4E55D7")
         
         //TabBar
         static let activeTabBar = UIColor(hexString: "#737297")
@@ -50,7 +54,7 @@ enum Resources {
                 static let restorePurchase = "Restore purchase"
                 static let help = "Help"
                 static let logOut = "Log out"
-                static let balanceData = "$1593"
+                static let balanceData = "$ 1593"
                 static let cell = "cell"
             }
         }
@@ -79,7 +83,7 @@ enum Resources {
             static let restorePurchase = UIImage(named: "restorePurchase")
             static let uploadItem = UIImage(named: "uploadItem")
             static let vector = UIImage(named: "vector")
-            static let profilePhoto = UIImage(named: "profilePhoto")
+            static let profileImage = UIImage(named: "profileImage")
         }
         
     }

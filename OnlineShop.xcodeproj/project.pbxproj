@@ -17,6 +17,7 @@
 		48857FDE29BF343B00E3B70E /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48857FCC29BF343A00E3B70E /* Montserrat-Regular.ttf */; };
 		48857FE429BF343B00E3B70E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48857FD229BF343B00E3B70E /* Montserrat-Medium.ttf */; };
 		48857FE729BF35BD00E3B70E /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FE629BF35BD00E3B70E /* Resourses.swift */; };
+		48857FE929BF370000E3B70E /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FE829BF370000E3B70E /* UIColor + ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		48857FCC29BF343A00E3B70E /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		48857FD229BF343B00E3B70E /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		48857FE629BF35BD00E3B70E /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
+		48857FE829BF370000E3B70E /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		48857FC129BF33E100E3B70E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				48857FE829BF370000E3B70E /* UIColor + ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				48857FAD29BF30BB00E3B70E /* ViewController.swift in Sources */,
 				48857FE729BF35BD00E3B70E /* Resourses.swift in Sources */,
 				48857FA929BF30BB00E3B70E /* AppDelegate.swift in Sources */,
+				48857FE929BF370000E3B70E /* UIColor + ext.swift in Sources */,
 				48857FAB29BF30BB00E3B70E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

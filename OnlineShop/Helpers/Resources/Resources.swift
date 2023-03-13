@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Resources.swift
 //  OnlineShop
 //
 //  Created by Максим Мельничук on 13.03.23.
@@ -7,15 +7,8 @@
 
 import UIKit
 
-enum Resourses {
+enum Resources {
     
-//    enum Images {
-//        enum TabBar {
-//
-//            static let
-//        }
-        
-//    }
     enum Colors {
         
         //DefaltColor
@@ -39,6 +32,24 @@ enum Resourses {
         static let activeTabBar = UIColor(hexString: "#737297")
         static let inactiveTabBar = UIColor(hexString: "#909090")
         static let backgoundTabBar = UIColor(hexString: "#FFFFFF")
+    }
+    
+    
+    
+    
+    enum Images {
+        enum TabBar {
+            static func icon(for tab: Tabs) -> UIImage? {
+                switch tab {
+                case .home : return UIImage(named: "homeTabBar")
+                case .chosenByLike : return UIImage(named: "chosenByLikeTabBar")
+                case .storage : return UIImage(named: "storageTabBar")
+                case .message : return UIImage(named: "messageTabBar")
+                case .profile : return UIImage(named: "profileTabBar")
+                }
+            }
+        }
+        
     }
     
     

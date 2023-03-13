@@ -9,6 +9,39 @@ import UIKit
 
 enum Resourses {
     
+//    enum Images {
+//        enum TabBar {
+//
+//            static let
+//        }
+        
+//    }
+    enum Colors {
+        
+        //DefaltColor
+        static let defaultWhite = UIColor(hexString: "#EAEAEA")
+        static let defaultBlack = UIColor(hexString: "#000000")
+        static let defaultGray = UIColor(hexString: "#808080")
+        static let defaultBlue = UIColor(hexString: "#254FE6")
+        
+        static let backgroundColor = UIColor(hexString: "#FAF9FF")
+        
+        //LOGIN
+        static let backgroundRegistration = UIColor(hexString: "#E8E8E8")
+        static let TitleLabel = UIColor(hexString: "#161826")
+        
+        // OtherColor
+        static let nameLabel = UIColor(hexString: "#3F3F3F")
+        static let circleBackground = UIColor(hexString: "#EEEFF4")
+        static let backgroundButton = UIColor(hexString: "#4E55D7")
+        
+        //TabBar
+        static let activeTabBar = UIColor(hexString: "#737297")
+        static let inactiveTabBar = UIColor(hexString: "#909090")
+        static let backgoundTabBar = UIColor(hexString: "#FFFFFF")
+    }
+    
+    
     
     
     enum Fonts {

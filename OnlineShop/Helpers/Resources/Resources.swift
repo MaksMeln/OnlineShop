@@ -36,7 +36,7 @@ enum Resources {
     
     enum String {
         
-        enum Profile {
+        enum ProfileController {
             static let title = "Profile"
             static let changePhotoLabel = "Change photo"
             static let nameProfile = "Satria Adhi Pradana"

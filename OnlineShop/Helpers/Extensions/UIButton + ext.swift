@@ -78,7 +78,7 @@ private extension OnlineShopButton {
             backgroundColor = Resources.Colors.backgroundButton
             layer.cornerRadius = 15
             label.textColor = Resources.Colors.defaultWhite
-            label.font = Resources.Fonts.MontserratBold(with: 10)
+            label.font = Resources.Fonts.MontserratBold(with: 14)
             label.textAlignment = .center
             
         case .registration:

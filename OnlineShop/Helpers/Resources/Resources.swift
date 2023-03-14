@@ -22,10 +22,10 @@ enum Resources {
         static let backgroundColor = UIColor(hexString: "#FAF9FF")
         static let backgroundButton = UIColor(hexString: "#4E55D7")
         static let borderColorProfileImage = UIColor(hexString: "#C0C0C0")
-
+        
         //LOGIN
-        static let backgroundRegistration = UIColor(hexString: "#E8E8E8")
-        static let TitleLabel = UIColor(hexString: "#161826")
+        static let authorizationBackgoundTextField = UIColor(hexString: "#E8E8E8")
+        static let authorizationTitleLabel = UIColor(hexString: "#161826")
         
         // OtherColor
         static let nameLabel = UIColor(hexString: "#3F3F3F")
@@ -55,9 +55,20 @@ enum Resources {
                 static let balanceData = "$ 1593"
                 static let cell = "cell"
             }
-            enum Authorization {
-                static let signIn = "Sign In"
-            }
+            
+        }
+        enum Authorization {
+            static let signIn = "Sign in"
+            static let firstName = "First name"
+            static let lastName = "Last name"
+            static let email = "Email"
+            static let subtitleLogIn = "Already have an account?"
+            static let logIn = "Log in"
+            static let google = "Sign in with Google"
+            static let apple = "Sign in with Apple"
+            
+            static let welcomeBack = "Welcome Back"
+            static let password = "Password"
         }
         
     }
@@ -85,6 +96,12 @@ enum Resources {
             static let uploadItem = UIImage(named: "uploadItem")
             static let vector = UIImage(named: "vector")
             static let profileImage = UIImage(named: "profileImage")
+        }
+        
+        enum Autorization {
+            static let googleIcon = UIImage(named: "googleIcon")
+            static let aplleIcon = UIImage(named: "aplleIcon")
+            static let passwordIcon = UIImage(named: "passwordIcon")
         }
         
     }

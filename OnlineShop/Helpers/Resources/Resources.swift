@@ -100,7 +100,7 @@ enum Resources {
         
         enum Autorization {
             static let googleIcon = UIImage(named: "googleIcon")
-            static let aplleIcon = UIImage(named: "aplleIcon")
+            static let appleIcon = UIImage(named: "appleIcon")
             static let passwordIcon = UIImage(named: "passwordIcon")
         }
         

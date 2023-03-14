@@ -43,6 +43,8 @@ final class ProfileViewController : OnlineShopBaseViewController {
                                            font: Resources.Fonts.MontserratBold(with: 15),
                                            textColor: Resources.Colors.nameLabel)
     
+//    private let profilePhotoView = ProfileDataView()
+    
     private let uploudItemButton : OnlineShopButton = {
         let button = OnlineShopButton(with: .uploadItem)
         button.addTarget(self, action: #selector(uploudItemButtonPress), for: .touchUpInside)
@@ -63,8 +65,10 @@ extension ProfileViewController {
         view.setupView(profilePhoto)
         view.setupView(changePhotonButton)
         view.setupView(nameProfileLabel)
-        view.setupView(uploudItemButton)
+
         view.setupView(buttonView)
+//        view.setupView(profilePhotoView)
+        view.setupView(uploudItemButton)
         
     }
     
@@ -74,11 +78,16 @@ extension ProfileViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor , constant: 65),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//
+//            profilePhotoView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+//            profilePhotoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            profilePhotoView.heightAnchor.constraint(equalToConstant: 109),
+//            profilePhotoView.widthAnchor.constraint(equalToConstant: 400),
             
             profilePhoto.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 19),
             profilePhoto.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                        
-            changePhotonButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 83),
+
+            changePhotonButton.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor, constant: 8),
             changePhotonButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             changePhotonButton.heightAnchor.constraint(equalToConstant: 9),
             
@@ -98,7 +107,6 @@ extension ProfileViewController {
         super.configureAppearence()
         
         profileButtonsAction()
-        
         navigationController?.navigationBar.isHidden = true
     }
     

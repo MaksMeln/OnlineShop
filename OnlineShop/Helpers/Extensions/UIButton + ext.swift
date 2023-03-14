@@ -9,9 +9,10 @@
 import UIKit
 
 public enum OnlineShopButtonType {
-    case registration
+    case authorization
     case uploadItem
     case profileButton
+    case signInButton
 }
 
 class OnlineShopButton : UIButton {
@@ -92,9 +93,20 @@ private extension OnlineShopButton {
                 balance.centerYAnchor.constraint(equalTo: centerYAnchor),
             ])
             
+        case .authorization :
+            setDimensions(height: 46, width: 290)
+            label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+            label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        case .signInButton:
+            setDimensions(height: 25, width: 148)
             
-        case .registration :
-            break
+            NSLayoutConstraint.activate([
+                iconView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
+                
+                label.centerYAnchor.constraint(equalTo: centerYAnchor),
+                label.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 11),
+            ])
         }
     }
     //MARK: - CONFIGUREAPPEARANCE
@@ -118,8 +130,18 @@ private extension OnlineShopButton {
             balance.textColor = Resources.Colors.defaultBlack
             balance.font = Resources.Fonts.MontserratMedium(with: 14)
             
-        case .registration:
-            break
+        case .authorization:
+            backgroundColor = Resources.Colors.backgroundButton
+            layer.cornerRadius = 15
+            
+            label.textColor = Resources.Colors.defaultWhite
+            label.font = Resources.Fonts.MontserratBold(with: 10)
+            
+        case .signInButton:
+            backgroundColor = .none
+            
+            label.textColor = Resources.Colors.defaultBlack
+            label.font = Resources.Fonts.MontserratMedium(with: 12)
         }
         makeSystem(self)
     }

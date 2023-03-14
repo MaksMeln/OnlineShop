@@ -17,7 +17,7 @@ final class ProfileDataView: OnlineShopBaseView {
         profileImage.contentMode = .scaleAspectFit
         profileImage.setDimensions(height: 60, width: 60)
         profileImage.layer.cornerRadius = profileImage.frame.height/2
-        profileImage.layer.borderColor = Resources.Colors.backgroundProfileImage.cgColor
+        profileImage.layer.borderColor = Resources.Colors.borderColorProfileImage.cgColor
         profileImage.layer.borderWidth = 1
         profileImage.clipsToBounds = true
         

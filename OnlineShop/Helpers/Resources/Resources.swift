@@ -20,11 +20,9 @@ enum Resources {
         
         //BackgroundColor
         static let backgroundColor = UIColor(hexString: "#FAF9FF")
-        static let circleBackground = UIColor(hexString: "#EEEFF4")
         static let backgroundButton = UIColor(hexString: "#4E55D7")
-        static let backgroundProfileImage = UIColor(hexString: "#imaC0C0C0")
+        static let borderColorProfileImage = UIColor(hexString: "#C0C0C0")
 
-        
         //LOGIN
         static let backgroundRegistration = UIColor(hexString: "#E8E8E8")
         static let TitleLabel = UIColor(hexString: "#161826")
@@ -56,6 +54,9 @@ enum Resources {
                 static let logOut = "Log out"
                 static let balanceData = "$ 1593"
                 static let cell = "cell"
+            }
+            enum Authorization {
+                static let signIn = "Sign In"
             }
         }
         

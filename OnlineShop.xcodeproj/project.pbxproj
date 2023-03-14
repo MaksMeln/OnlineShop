@@ -200,7 +200,7 @@
 		48857FF429BF456A00E3B70E /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
-				4885800D29BFA93B00E3B70E /* ProfilleButtonView */,
+				4885800D29BFA93B00E3B70E /* ProfileView */,
 				48857FFE29BF46BC00E3B70E /* ProfileViewController.swift */,
 			);
 			path = ProfileViewController;
@@ -230,12 +230,12 @@
 			path = ChosenByLikeController;
 			sourceTree = "<group>";
 		};
-		4885800D29BFA93B00E3B70E /* ProfilleButtonView */ = {
+		4885800D29BFA93B00E3B70E /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
 				4885800E29BFA96700E3B70E /* ProfileButtonView.swift */,
 			);
-			path = ProfilleButtonView;
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		4885801029BFA9CB00E3B70E /* View */ = {
@@ -480,6 +480,8 @@
 				DEVELOPMENT_TEAM = H24VKTWR7D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OnlineShop/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow acces to take aprofile picture";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "PLease allow acces to select a photo for your profile.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -507,6 +509,8 @@
 				DEVELOPMENT_TEAM = H24VKTWR7D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OnlineShop/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow acces to take aprofile picture";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "PLease allow acces to select a photo for your profile.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -40,7 +40,6 @@ final class TabBarController: UITabBarController {
         
     
         tabBar.tintColor = Resources.Colors.activeTabBar
-//        tabBar.selectionIndicatorImage = UIImage
         tabBar.barTintColor = Resources.Colors.inactiveTabBar
         tabBar.backgroundColor = Resources.Colors.backgoundTabBar
         tabBar.layer.cornerRadius = 30
@@ -56,6 +55,7 @@ final class TabBarController: UITabBarController {
         }
         setViewControllers(controllers, animated: false)
     }
+        
     
     private func getController(for tab: Tabs) -> OnlineShopBaseViewController {
         switch tab {

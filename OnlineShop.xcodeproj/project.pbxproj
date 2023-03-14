@@ -30,6 +30,7 @@
 		4885800729BF8E3F00E3B70E /* UILabel + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885800629BF8E3F00E3B70E /* UILabel + ext.swift */; };
 		4885800F29BFA96700E3B70E /* ProfileButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885800E29BFA96700E3B70E /* ProfileButtonView.swift */; };
 		4885801229BFA9E200E3B70E /* OnlineShopBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885801129BFA9E200E3B70E /* OnlineShopBaseView.swift */; };
+		4885805A29C0CB7D00E3B70E /* ProfileDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885805929C0CB7C00E3B70E /* ProfileDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		4885800629BF8E3F00E3B70E /* UILabel + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + ext.swift"; sourceTree = "<group>"; };
 		4885800E29BFA96700E3B70E /* ProfileButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonView.swift; sourceTree = "<group>"; };
 		4885801129BFA9E200E3B70E /* OnlineShopBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineShopBaseView.swift; sourceTree = "<group>"; };
+		4885805929C0CB7C00E3B70E /* ProfileDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		481E0C2A29C11284005A8530 /* HomeViews */ = {
+			isa = PBXGroup;
+			children = (
+				481E0C2B29C11295005A8530 /* NavBarView */,
+			);
+			path = HomeViews;
+			sourceTree = "<group>";
+		};
+		481E0C2B29C11295005A8530 /* NavBarView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NavBarView;
+			sourceTree = "<group>";
+		};
 		48857F9C29BF30BB00E3B70E = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +200,7 @@
 		48857FF029BF443800E3B70E /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				481E0C2A29C11284005A8530 /* HomeViews */,
 				4885800029BF46C600E3B70E /* HomeViewController.swift */,
 			);
 			path = HomeViewController;
@@ -234,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				4885800E29BFA96700E3B70E /* ProfileButtonView.swift */,
+				4885805929C0CB7C00E3B70E /* ProfileDataView.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -326,6 +345,7 @@
 				48857FAD29BF30BB00E3B70E /* TabBarController.swift in Sources */,
 				48857FFD29BF46AB00E3B70E /* StorageViewController.swift in Sources */,
 				4885801229BFA9E200E3B70E /* OnlineShopBaseView.swift in Sources */,
+				4885805A29C0CB7D00E3B70E /* ProfileDataView.swift in Sources */,
 				48857FE729BF35BD00E3B70E /* Resources.swift in Sources */,
 				48857FFB29BF469F00E3B70E /* MessageViewController.swift in Sources */,
 				48857FFF29BF46BC00E3B70E /* ProfileViewController.swift in Sources */,

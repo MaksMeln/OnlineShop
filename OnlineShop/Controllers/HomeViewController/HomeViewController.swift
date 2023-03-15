@@ -12,6 +12,8 @@ class HomeViewController : OnlineShopBaseViewController {
     
     private let navBar = HomeNavBarView()
     
+    
+    
 }
 
 
@@ -31,7 +33,6 @@ extension HomeViewController {
             navBar.topAnchor.constraint(equalTo: view.topAnchor),
             navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-
            ])
     }
     
@@ -39,5 +40,16 @@ extension HomeViewController {
         super.configureAppearence()
         
         navigationController?.navigationBar.isHidden = true
+        navBar.navBarButtonAction(#selector(navBarButtonPress), with: self)
+        navBar.locationButtonAction(#selector(locationButtonPress), with: self)
     }
+    
+    @objc func navBarButtonPress() {
+        print("NavBarButton Press")
+    }
+    
+    @objc func locationButtonPress() {
+        print("LocationButton Press")
+    }
+    
 }

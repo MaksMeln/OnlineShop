@@ -31,13 +31,13 @@ final class HomeNavBarView : OnlineShopBaseView {
     private let locationButton = OnlineShopButton(with: .location)
     
     
-    //        func navBarButtonAction(_ action: Selector, with target: Any?) {
-    //            navBarButton.addTarget(target, action: action, for: .touchUpInside)
-    //        }
-    //
-    //        func locationButtonAction(_ action: Selector, with target: Any?) {
-    //            locationButton.addTarget(target, action: action, for: .touchUpInside)
-    //        }
+    func navBarButtonAction(_ action: Selector, with target: Any?) {
+        navBarButton.addTarget(target, action: action, for: .touchUpInside)
+    }
+    
+    func locationButtonAction(_ action: Selector, with target: Any?) {
+        locationButton.addTarget(target, action: action, for: .touchUpInside)
+    }
 }
 
 //MARK: - LIFECYCLE
@@ -66,6 +66,7 @@ extension HomeNavBarView {
             
             locationButton.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor, constant: 11),
             locationButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -34),
+            locationButton.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

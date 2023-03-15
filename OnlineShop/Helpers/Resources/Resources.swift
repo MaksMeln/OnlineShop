@@ -131,6 +131,8 @@ enum Resources {
             static let navBarButton = UIImage(named: "navBarButton")
             static let searchIcon = UIImage(named: "searchIcon")
             static let latestImage = UIImage(named: "latestImage")
+            static let profileImageHome = UIImage(named: "profileImageHome")
+            
             
         }
         

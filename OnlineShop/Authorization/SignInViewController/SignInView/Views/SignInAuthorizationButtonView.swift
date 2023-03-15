@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SignInWithButtonView : OnlineShopBaseView {
+final class SignInAuthorizationButtonView : OnlineShopBaseView {
     
     
     private let signInWithGoogleButton : OnlineShopButton = {
@@ -31,7 +31,7 @@ final class SignInWithButtonView : OnlineShopBaseView {
 }
 
 
-extension SignInWithButtonView {
+extension SignInAuthorizationButtonView {
     override func setupViews() {
         super.setupViews()
     }

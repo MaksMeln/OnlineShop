@@ -9,14 +9,16 @@ import UIKit
 
 
 final class LogInViewController: OnlineShopBaseViewController {
-
+    
 //MARK: - PROPERTIES
+    var iconClick = true
+    
     private let logInLabel = UILabel(text: Resources.String.Authorization.welcomeBack,
-                                      font: Resources.Fonts.MontserratSemiBold(with: 26),
-                                      textColor: Resources.Colors.authorizationTitleLabel)
+                                     font: Resources.Fonts.MontserratSemiBold(with: 26),
+                                     textColor: Resources.Colors.authorizationTitleLabel)
     
     private let logInTextFieldView = LogInTextFieldView()
-
+    
     private let logInButton : OnlineShopButton = {
         let button = OnlineShopButton(with: .authorization)
         button.setTitle(Resources.String.Authorization.logIn, for: .normal)
@@ -27,17 +29,17 @@ final class LogInViewController: OnlineShopBaseViewController {
 //MARK: - LIFECYCLE
 extension LogInViewController {
     
-   override func setupViews() {
-    super.setupViews()
-       
-       view.setupView(logInLabel)
-       view.setupView(logInTextFieldView)
-       view.setupView(logInButton)
+    override func setupViews() {
+        super.setupViews()
+        
+        view.setupView(logInLabel)
+        view.setupView(logInTextFieldView)
+        view.setupView(logInButton)
     }
-    
+        
     override func constraintViews() {
         super.constraintViews()
-                
+        
         NSLayoutConstraint.activate([
             
             logInLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 155),
@@ -53,6 +55,20 @@ extension LogInViewController {
     
     override func configureAppearence() {
         super.configureAppearence()
+        
+        logInTextFieldView.toggleShowHideAction(#selector(imageTaapped(tapGestureRecognizer:)), with: self)
+    }
+    
+//MARK: - @OBJC FUNC imageTaapped
+    @objc func imageTaapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        
+        if iconClick {
+            iconClick = false
+            logInTextFieldView.passwordTextField.isSecureTextEntry = false
+        } else {
+            iconClick = true
+            logInTextFieldView.passwordTextField.isSecureTextEntry = true
+        }
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 
 final class LogInViewController: OnlineShopBaseViewController {
@@ -22,7 +23,15 @@ final class LogInViewController: OnlineShopBaseViewController {
     private let logInButton : OnlineShopButton = {
         let button = OnlineShopButton(with: .authorization)
         button.setTitle(Resources.String.Authorization.logIn, for: .normal)
+        button.addTarget(self, action: #selector(logInTapped), for: .touchUpInside)
         return button
+    }()
+    
+   private var errorLabel : UILabel = {
+        var label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .red
+        return label
     }()
 }
 
@@ -35,6 +44,8 @@ extension LogInViewController {
         view.setupView(logInLabel)
         view.setupView(logInTextFieldView)
         view.setupView(logInButton)
+        
+        errorLabel.alpha = 0
     }
         
     override func constraintViews() {
@@ -70,5 +81,29 @@ extension LogInViewController {
             logInTextFieldView.passwordTextField.isSecureTextEntry = true
         }
     }
-}
-
+    
+    @objc func logInTapped() {
+        
+        print("LogInbutton")
+//        let firstName = logInTextFieldView.firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let password = logInTextFieldView.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//
+//        // Signing in the user
+////        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+////        Auth.auth().signIn(with: firstName: firstName, password: password) { (result, error) in
+//
+//            if error != nil {
+//                // Couldn't sign in
+//                self.errorLabel.text = error!.localizedDescription
+//                self.errorLabel.alpha = 1
+//            }
+//            else {
+//                let tabBarController = TabBarController()
+//
+//                view.window?.rootViewController = tabBarController
+//                view.window?.makeKeyAndVisible()
+//            }
+        }
+    }
+    
+//}

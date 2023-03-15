@@ -127,7 +127,7 @@ enum Resources {
             
             static let likeIcon = UIImage(named: "likeIcon")
             static let addIcon = UIImage(named: "addIcon")
-            static let locatioonVector = UIImage(named: "locatioonVector")
+            static let locationVector = UIImage(named: "locationVector")
             static let navBarButton = UIImage(named: "navBarButton")
             static let searchIcon = UIImage(named: "searchIcon")
             static let latestImage = UIImage(named: "latestImage")

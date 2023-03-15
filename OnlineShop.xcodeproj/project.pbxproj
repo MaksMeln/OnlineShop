@@ -18,6 +18,8 @@
 		481E0C4229C1AD0A005A8530 /* SignInTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4129C1AD0A005A8530 /* SignInTextFieldView.swift */; };
 		481E0C4429C1AFD8005A8530 /* SignInWithButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4329C1AFD8005A8530 /* SignInWithButtonView.swift */; };
 		481E0C4829C1B028005A8530 /* SignInLogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4729C1B028005A8530 /* SignInLogInView.swift */; };
+		481E0C4C29C1B468005A8530 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4B29C1B468005A8530 /* LogInViewController.swift */; };
+		481E0C4E29C1B545005A8530 /* LogInTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4D29C1B545005A8530 /* LogInTextFieldView.swift */; };
 		48857FA929BF30BB00E3B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FA829BF30BB00E3B70E /* AppDelegate.swift */; };
 		48857FAB29BF30BB00E3B70E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FAA29BF30BB00E3B70E /* SceneDelegate.swift */; };
 		48857FAD29BF30BB00E3B70E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FAC29BF30BB00E3B70E /* TabBarController.swift */; };
@@ -51,6 +53,8 @@
 		481E0C4129C1AD0A005A8530 /* SignInTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextFieldView.swift; sourceTree = "<group>"; };
 		481E0C4329C1AFD8005A8530 /* SignInWithButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithButtonView.swift; sourceTree = "<group>"; };
 		481E0C4729C1B028005A8530 /* SignInLogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInLogInView.swift; sourceTree = "<group>"; };
+		481E0C4B29C1B468005A8530 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		481E0C4D29C1B545005A8530 /* LogInTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInTextFieldView.swift; sourceTree = "<group>"; };
 		48857FA529BF30BB00E3B70E /* OnlineShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48857FA829BF30BB00E3B70E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48857FAA29BF30BB00E3B70E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 		481E0C2E29C1214C005A8530 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				481E0C4929C1B446005A8530 /* LogInViewController */,
 				481E0C4529C1AFE0005A8530 /* SignInViewController */,
 			);
 			path = Authorization;
@@ -135,6 +140,23 @@
 				481E0C3C29C125B8005A8530 /* SignInViewController.swift */,
 			);
 			path = SignInViewController;
+			sourceTree = "<group>";
+		};
+		481E0C4929C1B446005A8530 /* LogInViewController */ = {
+			isa = PBXGroup;
+			children = (
+				481E0C4A29C1B454005A8530 /* LogInView */,
+				481E0C4B29C1B468005A8530 /* LogInViewController.swift */,
+			);
+			path = LogInViewController;
+			sourceTree = "<group>";
+		};
+		481E0C4A29C1B454005A8530 /* LogInView */ = {
+			isa = PBXGroup;
+			children = (
+				481E0C4D29C1B545005A8530 /* LogInTextFieldView.swift */,
+			);
+			path = LogInView;
 			sourceTree = "<group>";
 		};
 		48857F9C29BF30BB00E3B70E = {
@@ -415,6 +437,7 @@
 				4885805A29C0CB7D00E3B70E /* ProfileDataView.swift in Sources */,
 				48857FE729BF35BD00E3B70E /* Resources.swift in Sources */,
 				48857FFB29BF469F00E3B70E /* MessageViewController.swift in Sources */,
+				481E0C4E29C1B545005A8530 /* LogInTextFieldView.swift in Sources */,
 				481E0C3D29C125B8005A8530 /* SignInViewController.swift in Sources */,
 				48857FFF29BF46BC00E3B70E /* ProfileViewController.swift in Sources */,
 				48857FA929BF30BB00E3B70E /* AppDelegate.swift in Sources */,
@@ -422,6 +445,7 @@
 				4885800F29BFA96700E3B70E /* ProfileButtonView.swift in Sources */,
 				48857FF329BF44A100E3B70E /* OnlineShopBaseViewController.swift in Sources */,
 				48857FAB29BF30BB00E3B70E /* SceneDelegate.swift in Sources */,
+				481E0C4C29C1B468005A8530 /* LogInViewController.swift in Sources */,
 				4885800129BF46C600E3B70E /* HomeViewController.swift in Sources */,
 				48857FF929BF45D300E3B70E /* ChosenByLikeController.swift in Sources */,
 				4885800729BF8E3F00E3B70E /* UILabel + ext.swift in Sources */,

@@ -84,6 +84,7 @@ extension SignInViewController {
         super.configureAppearence()
         
         signInTextFieldView.toggleShowHideAction(#selector(imageTaapped(tapGestureRecognizer:)), with: self)
+        signInLogInView.logInButtonAction(#selector(logInButtonPress), with: self)
     }
     
     //MARK: - @@objc FUNC imageTaapped
@@ -95,6 +96,16 @@ extension SignInViewController {
             iconClick = true
             signInTextFieldView.passwordTextField.isSecureTextEntry = true
         }
+    }
+    
+    @objc func logInButtonPress() {
+        print("press")
+        let vc = LogInViewController()
+//        let tabBarController = TabBarController()
+        
+        view.window?.rootViewController = vc
+        view.window?.makeKeyAndVisible()
+//        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

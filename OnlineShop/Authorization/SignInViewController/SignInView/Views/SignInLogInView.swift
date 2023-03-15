@@ -50,4 +50,10 @@ extension SignInLogInView {
     override func configureAppearance() {
         super.configureAppearance()
     }
+    
+    
+    func logInButtonAction(_ action: Selector, with target: Any?) {
+        logInButton.addTarget(target, action: action, for: .touchUpInside)
+    }
+    
 }

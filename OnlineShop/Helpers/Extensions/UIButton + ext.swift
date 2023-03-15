@@ -5,7 +5,13 @@
 //  Created by Максим Мельничук on 13.03.23.
 //
 
-
+/*
+ переименовать кнопку signIn - найти слово для google and apple
+ кнопка uploudItem - такая же как на авторизации, их нужно объеденить
+ изменить в кнопках баланса - убрать его, создать отдельную кнопку
+ добавить еще функции с разными вводными,чтобы не писать лишего кода в контроллерах
+ 
+ */
 import UIKit
 
 public enum OnlineShopButtonType {
@@ -13,6 +19,7 @@ public enum OnlineShopButtonType {
     case uploadItem
     case profileButton
     case signInButton
+    case location
 }
 
 class OnlineShopButton : UIButton {
@@ -107,6 +114,16 @@ private extension OnlineShopButton {
                 label.centerYAnchor.constraint(equalTo: centerYAnchor),
                 label.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 11),
             ])
+        case .location:
+            setDimensions(height: 10, width: 53)
+            
+            NSLayoutConstraint.activate([
+                iconView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
+                
+                label.centerYAnchor.constraint(equalTo: centerYAnchor),
+                label.leadingAnchor.constraint(equalTo: leadingAnchor),
+            ])
         }
     }
     //MARK: - CONFIGUREAPPEARANCE
@@ -142,6 +159,15 @@ private extension OnlineShopButton {
             
             label.textColor = Resources.Colors.defaultBlack
             label.font = Resources.Fonts.MontserratMedium(with: 12)
+        case .location:
+            backgroundColor = .none
+            
+            label.textColor = Resources.Colors.defaultGray
+            label.font = Resources.Fonts.MontserratMedium(with: 10)
+            label.text = Resources.String.HomeController.NavBar.location
+            
+            
+            iconView.image = Resources.Images.HomeController.locationVector
         }
         makeSystem(self)
     }

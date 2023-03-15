@@ -16,7 +16,8 @@ class SignInTextFieldView : OnlineShopBaseView {
     
     private let emailTextField = UITextField(placecholder: Resources.String.Authorization.email)
     
-    
+}
+extension SignInTextFieldView {
     override func setupViews() {
         super.setupViews()
     }
@@ -34,7 +35,7 @@ class SignInTextFieldView : OnlineShopBaseView {
             stackViewTextField.bottomAnchor.constraint(equalTo: bottomAnchor),
             stackViewTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackViewTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
-        
+            
         ])
     }
     

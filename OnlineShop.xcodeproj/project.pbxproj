@@ -15,6 +15,9 @@
 		481E0C3B29C12357005A8530 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 481E0C3A29C12357005A8530 /* FirebaseStorage */; };
 		481E0C3D29C125B8005A8530 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C3C29C125B8005A8530 /* SignInViewController.swift */; };
 		481E0C3F29C12787005A8530 /* UITextField + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C3E29C12787005A8530 /* UITextField + ext.swift */; };
+		481E0C4229C1AD0A005A8530 /* SignInTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4129C1AD0A005A8530 /* SignInTextFieldView.swift */; };
+		481E0C4429C1AFD8005A8530 /* SignInWithButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4329C1AFD8005A8530 /* SignInWithButtonView.swift */; };
+		481E0C4829C1B028005A8530 /* SignInLogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4729C1B028005A8530 /* SignInLogInView.swift */; };
 		48857FA929BF30BB00E3B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FA829BF30BB00E3B70E /* AppDelegate.swift */; };
 		48857FAB29BF30BB00E3B70E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FAA29BF30BB00E3B70E /* SceneDelegate.swift */; };
 		48857FAD29BF30BB00E3B70E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FAC29BF30BB00E3B70E /* TabBarController.swift */; };
@@ -45,6 +48,9 @@
 		481E0C2F29C1224D005A8530 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		481E0C3C29C125B8005A8530 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		481E0C3E29C12787005A8530 /* UITextField + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + ext.swift"; sourceTree = "<group>"; };
+		481E0C4129C1AD0A005A8530 /* SignInTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextFieldView.swift; sourceTree = "<group>"; };
+		481E0C4329C1AFD8005A8530 /* SignInWithButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithButtonView.swift; sourceTree = "<group>"; };
+		481E0C4729C1B028005A8530 /* SignInLogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInLogInView.swift; sourceTree = "<group>"; };
 		48857FA529BF30BB00E3B70E /* OnlineShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48857FA829BF30BB00E3B70E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48857FAA29BF30BB00E3B70E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,9 +113,28 @@
 		481E0C2E29C1214C005A8530 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				481E0C3C29C125B8005A8530 /* SignInViewController.swift */,
+				481E0C4529C1AFE0005A8530 /* SignInViewController */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		481E0C4029C1ACC7005A8530 /* SingInView */ = {
+			isa = PBXGroup;
+			children = (
+				481E0C4129C1AD0A005A8530 /* SignInTextFieldView.swift */,
+				481E0C4329C1AFD8005A8530 /* SignInWithButtonView.swift */,
+				481E0C4729C1B028005A8530 /* SignInLogInView.swift */,
+			);
+			path = SingInView;
+			sourceTree = "<group>";
+		};
+		481E0C4529C1AFE0005A8530 /* SignInViewController */ = {
+			isa = PBXGroup;
+			children = (
+				481E0C4029C1ACC7005A8530 /* SingInView */,
+				481E0C3C29C125B8005A8530 /* SignInViewController.swift */,
+			);
+			path = SignInViewController;
 			sourceTree = "<group>";
 		};
 		48857F9C29BF30BB00E3B70E = {
@@ -378,9 +403,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4885800329BF7E2E00E3B70E /* UIView + ext.swift in Sources */,
+				481E0C4829C1B028005A8530 /* SignInLogInView.swift in Sources */,
 				481E0C3F29C12787005A8530 /* UITextField + ext.swift in Sources */,
 				4885800529BF812500E3B70E /* UIButton + ext.swift in Sources */,
 				48857FEE29BF435F00E3B70E /* NavBarController.swift in Sources */,
+				481E0C4429C1AFD8005A8530 /* SignInWithButtonView.swift in Sources */,
+				481E0C4229C1AD0A005A8530 /* SignInTextFieldView.swift in Sources */,
 				48857FAD29BF30BB00E3B70E /* TabBarController.swift in Sources */,
 				48857FFD29BF46AB00E3B70E /* StorageViewController.swift in Sources */,
 				4885801229BFA9E200E3B70E /* OnlineShopBaseView.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInLogInView : OnlineShopBaseView {
+final class SignInLogInView : OnlineShopBaseView {
     
     
     private let subtitleLabelLogIn = UILabel(text: Resources.String.Authorization.subtitleLogIn,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInTextFieldView : OnlineShopBaseView {
+final class SignInTextFieldView : OnlineShopBaseView {
     
     
     private let firstNameTextField = UITextField(placecholder: Resources.String.Authorization.firstName)

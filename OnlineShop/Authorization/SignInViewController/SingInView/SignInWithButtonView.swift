@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInWithButtonView : OnlineShopBaseView {
+final class SignInWithButtonView : OnlineShopBaseView {
     
     
     private let signInWithGoogleButton : OnlineShopButton = {

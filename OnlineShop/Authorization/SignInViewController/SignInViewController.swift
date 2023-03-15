@@ -9,6 +9,11 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
+/*
+ переход на logInController через navigationcontroller
+ добавление вех View на отдельный SignInView
+ разобраться с error
+*/
 
 final class SignInViewController: OnlineShopBaseViewController {
     
@@ -31,7 +36,7 @@ final class SignInViewController: OnlineShopBaseViewController {
         return button
     }()
     
-    var errorLabel : UILabel = {
+   private var errorLabel : UILabel = {
         var label = UILabel()
         label.numberOfLines = 0
         label.textColor = .red

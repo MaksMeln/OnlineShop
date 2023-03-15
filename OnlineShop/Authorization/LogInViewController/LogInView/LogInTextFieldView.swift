@@ -15,7 +15,7 @@ final class LogInTextFieldView : OnlineShopBaseView {
        return imageView
    }()
     
-    private let firstNameTextField = UITextField(placecholder: Resources.String.Authorization.firstName)
+     let firstNameTextField = UITextField(placecholder: Resources.String.Authorization.firstName)
     
      let passwordTextField = UITextField(placecholder: Resources.String.Authorization.password)
  

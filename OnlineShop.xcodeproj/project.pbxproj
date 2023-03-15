@@ -21,6 +21,8 @@
 		481E0C4C29C1B468005A8530 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4B29C1B468005A8530 /* LogInViewController.swift */; };
 		481E0C4E29C1B545005A8530 /* LogInTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4D29C1B545005A8530 /* LogInTextFieldView.swift */; };
 		481E0C5129C1EFD3005A8530 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C5029C1EFD2005A8530 /* Utilities.swift */; };
+		484B2A5429C23691005403B0 /* HomeNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A5329C23691005403B0 /* HomeNavBarView.swift */; };
+		484B2A5629C23DC4005403B0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A5529C23DC4005403B0 /* ProfileView.swift */; };
 		48857FA929BF30BB00E3B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FA829BF30BB00E3B70E /* AppDelegate.swift */; };
 		48857FAB29BF30BB00E3B70E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FAA29BF30BB00E3B70E /* SceneDelegate.swift */; };
 		48857FAD29BF30BB00E3B70E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FAC29BF30BB00E3B70E /* TabBarController.swift */; };
@@ -57,6 +59,8 @@
 		481E0C4B29C1B468005A8530 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		481E0C4D29C1B545005A8530 /* LogInTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInTextFieldView.swift; sourceTree = "<group>"; };
 		481E0C5029C1EFD2005A8530 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		484B2A5329C23691005403B0 /* HomeNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavBarView.swift; sourceTree = "<group>"; };
+		484B2A5529C23DC4005403B0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		48857FA529BF30BB00E3B70E /* OnlineShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48857FA829BF30BB00E3B70E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48857FAA29BF30BB00E3B70E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		481E0C2B29C11295005A8530 /* NavBarView */ = {
 			isa = PBXGroup;
 			children = (
+				484B2A5329C23691005403B0 /* HomeNavBarView.swift */,
+				484B2A5529C23DC4005403B0 /* ProfileView.swift */,
 			);
 			path = NavBarView;
 			sourceTree = "<group>";
@@ -197,8 +203,8 @@
 		48857FA729BF30BB00E3B70E /* OnlineShop */ = {
 			isa = PBXGroup;
 			children = (
-				481E0C2E29C1214C005A8530 /* Authorization */,
 				48857FBE29BF339400E3B70E /* Helpers */,
+				481E0C2E29C1214C005A8530 /* Authorization */,
 				48857FEF29BF442A00E3B70E /* Controllers */,
 				48857FF129BF445800E3B70E /* BaseViewController */,
 				48857FEA29BF394300E3B70E /* Navigations */,
@@ -455,9 +461,11 @@
 				48857FFD29BF46AB00E3B70E /* StorageViewController.swift in Sources */,
 				4885801229BFA9E200E3B70E /* OnlineShopBaseView.swift in Sources */,
 				4885805A29C0CB7D00E3B70E /* ProfileDataView.swift in Sources */,
+				484B2A5629C23DC4005403B0 /* ProfileView.swift in Sources */,
 				48857FE729BF35BD00E3B70E /* Resources.swift in Sources */,
 				48857FFB29BF469F00E3B70E /* MessageViewController.swift in Sources */,
 				481E0C4E29C1B545005A8530 /* LogInTextFieldView.swift in Sources */,
+				484B2A5429C23691005403B0 /* HomeNavBarView.swift in Sources */,
 				481E0C3D29C125B8005A8530 /* SignInViewController.swift in Sources */,
 				48857FFF29BF46BC00E3B70E /* ProfileViewController.swift in Sources */,
 				48857FA929BF30BB00E3B70E /* AppDelegate.swift in Sources */,

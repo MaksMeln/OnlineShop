@@ -55,8 +55,8 @@ enum Resources {
                 static let balanceData = "$ 1593"
                 static let cell = "cell"
             }
-            
         }
+        
         enum Authorization {
             static let signIn = "Sign in"
             static let firstName = "First name"
@@ -71,6 +71,27 @@ enum Resources {
             static let password = "Password"
         }
         
+        enum HomeController {
+            enum NavBar {
+                static let firstTitle = "Trade by"
+                static let secondTitle = "bata"
+                static let location = "Location"
+            }
+            enum CategoryItem {
+                static let phones = "Phones"
+                static let headPhones = "Headphones"
+                static let games = "Games"
+                static let cars = "Cars"
+                static let furniture = "Furniture"
+                static let kids = "Kids"
+            }
+            
+            static let latest = "Latest"
+            static let flashSale = "Flash Sale"
+            static let brands = "Brands"
+            static let viewAll = "View all"
+            static let searchBar = "What are you looking for?"
+        }
     }
     
     
@@ -88,6 +109,31 @@ enum Resources {
             }
         }
         
+        enum Autorization {
+            static let googleIcon = UIImage(named: "googleIcon")
+            static let appleIcon = UIImage(named: "appleIcon")
+            static let passwordIcon = UIImage(named: "passwordIcon")
+        }
+
+        enum HomeController {
+            enum CategoryIcon {
+                static let carsIcon = UIImage(named: "carsIcon")
+                static let gamesIcon = UIImage(named: "gamesIcon")
+                static let furnitureIcon = UIImage(named: "furnitureIcon")
+                static let headPhonesIcon = UIImage(named: "headPhonesIcon")
+                static let kidsIcon = UIImage(named: "kidsIcon")
+                static let phoneIcon = UIImage(named: "phoneIcon")
+            }
+            
+            static let likeIcon = UIImage(named: "likeIcon")
+            static let addIcon = UIImage(named: "addIcon")
+            static let locatioonVector = UIImage(named: "locatioonVector")
+            static let navBarButton = UIImage(named: "navBarButton")
+            static let searchIcon = UIImage(named: "searchIcon")
+            static let latestImage = UIImage(named: "latestImage")
+            
+        }
+        
         enum ProfileController {
             static let tableIcon = UIImage(named: "tableIcon")
             static let help = UIImage(named: "help")
@@ -98,12 +144,7 @@ enum Resources {
             static let profileImage = UIImage(named: "profileImage")
         }
         
-        enum Autorization {
-            static let googleIcon = UIImage(named: "googleIcon")
-            static let appleIcon = UIImage(named: "appleIcon")
-            static let passwordIcon = UIImage(named: "passwordIcon")
-        }
-        
+                
     }
     
     

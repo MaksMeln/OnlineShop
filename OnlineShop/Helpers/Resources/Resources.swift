@@ -22,6 +22,7 @@ enum Resources {
         static let backgroundColor = UIColor(hexString: "#FAF9FF")
         static let backgroundButton = UIColor(hexString: "#4E55D7")
         static let borderColorProfileImage = UIColor(hexString: "#C0C0C0")
+        static let searchBarTextField = UIColor(hexString: "#F5F6F7")
         
         //LOGIN
         static let authorizationBackgoundTextField = UIColor(hexString: "#E8E8E8")
@@ -77,9 +78,9 @@ enum Resources {
                 static let secondTitle = "bata"
                 static let location = "Location"
             }
-            enum CategoryItem {
+            enum CategoryTitle {
                 static let phones = "Phones"
-                static let headPhones = "Headphones"
+                static let headphones = "Headphones"
                 static let games = "Games"
                 static let cars = "Cars"
                 static let furniture = "Furniture"
@@ -117,12 +118,13 @@ enum Resources {
 
         enum HomeController {
             enum CategoryIcon {
-                static let carsIcon = UIImage(named: "carsIcon")
-                static let gamesIcon = UIImage(named: "gamesIcon")
-                static let furnitureIcon = UIImage(named: "furnitureIcon")
-                static let headPhonesIcon = UIImage(named: "headPhonesIcon")
-                static let kidsIcon = UIImage(named: "kidsIcon")
-                static let phoneIcon = UIImage(named: "phoneIcon")
+                static let phoneIcon = UIImage(named: "phoneIcon")!
+                static let headphonesIcon = UIImage(named: "headphonesIcon")!
+                static let gamesIcon = UIImage(named: "gamesIcon")!
+                static let carsIcon = UIImage(named: "carsIcon")!
+                static let furnitureIcon = UIImage(named: "furnitureIcon")!
+                static let kidsIcon = UIImage(named: "kidsIcon")!
+                
             }
             
             static let likeIcon = UIImage(named: "likeIcon")
@@ -145,8 +147,29 @@ enum Resources {
             static let vector = UIImage(named: "vector")
             static let profileImage = UIImage(named: "profileImage")
         }
+    }
+    
+    enum CategoryCollection {
+        static let phones = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.phoneIcon,
+                                         categoryTitle: Resources.String.HomeController.CategoryTitle.phones)
         
-                
+        static let headphones = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.headphonesIcon,
+                                         categoryTitle: Resources.String.HomeController.CategoryTitle.headphones)
+        
+        static let games = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.gamesIcon,
+                                         categoryTitle: Resources.String.HomeController.CategoryTitle.games)
+        
+        static let cars = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.carsIcon,
+                                         categoryTitle: Resources.String.HomeController.CategoryTitle.cars)
+        
+        static let furniture = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.furnitureIcon,
+                                         categoryTitle: Resources.String.HomeController.CategoryTitle.furniture)
+        
+        static let kids = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.kidsIcon,
+                                         categoryTitle: Resources.String.HomeController.CategoryTitle.kids)
+        
+        static let collectionArray = [phones, headphones, games, cars, furniture, kids]
+        
     }
     
     

@@ -23,6 +23,11 @@
 		481E0C5129C1EFD3005A8530 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C5029C1EFD2005A8530 /* Utilities.swift */; };
 		484B2A5429C23691005403B0 /* HomeNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A5329C23691005403B0 /* HomeNavBarView.swift */; };
 		484B2A5929C25720005403B0 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A5829C25720005403B0 /* TitleView.swift */; };
+		484B2A5D29C300AE005403B0 /* OnlineShopTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A5C29C300AE005403B0 /* OnlineShopTextField.swift */; };
+		484B2A5F29C303EB005403B0 /* правки.txt in Resources */ = {isa = PBXBuildFile; fileRef = 484B2A5E29C303EB005403B0 /* правки.txt */; };
+		484B2A6229C30D21005403B0 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A6129C30D21005403B0 /* CategoryCollectionView.swift */; };
+		484B2A6429C30D35005403B0 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A6329C30D34005403B0 /* CategoryCollectionViewCell.swift */; };
+		484B2A6729C31096005403B0 /* CategoryLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A6629C31096005403B0 /* CategoryLModel.swift */; };
 		48857FA929BF30BB00E3B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FA829BF30BB00E3B70E /* AppDelegate.swift */; };
 		48857FAB29BF30BB00E3B70E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FAA29BF30BB00E3B70E /* SceneDelegate.swift */; };
 		48857FAD29BF30BB00E3B70E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48857FAC29BF30BB00E3B70E /* TabBarController.swift */; };
@@ -61,6 +66,11 @@
 		481E0C5029C1EFD2005A8530 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		484B2A5329C23691005403B0 /* HomeNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavBarView.swift; sourceTree = "<group>"; };
 		484B2A5829C25720005403B0 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		484B2A5C29C300AE005403B0 /* OnlineShopTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineShopTextField.swift; sourceTree = "<group>"; };
+		484B2A5E29C303EB005403B0 /* правки.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "правки.txt"; sourceTree = "<group>"; };
+		484B2A6129C30D21005403B0 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
+		484B2A6329C30D34005403B0 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		484B2A6629C31096005403B0 /* CategoryLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLModel.swift; sourceTree = "<group>"; };
 		48857FA529BF30BB00E3B70E /* OnlineShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48857FA829BF30BB00E3B70E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48857FAA29BF30BB00E3B70E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +118,7 @@
 		481E0C2A29C11284005A8530 /* HomeViews */ = {
 			isa = PBXGroup;
 			children = (
+				484B2A6029C30CD4005403B0 /* CategoryView */,
 				481E0C2B29C11295005A8530 /* NavBarView */,
 			);
 			path = HomeViews;
@@ -184,6 +195,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		484B2A6029C30CD4005403B0 /* CategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				484B2A6129C30D21005403B0 /* CategoryCollectionView.swift */,
+				484B2A6329C30D34005403B0 /* CategoryCollectionViewCell.swift */,
+				484B2A6629C31096005403B0 /* CategoryLModel.swift */,
+			);
+			path = CategoryView;
+			sourceTree = "<group>";
+		};
 		48857F9C29BF30BB00E3B70E = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +224,7 @@
 		48857FA729BF30BB00E3B70E /* OnlineShop */ = {
 			isa = PBXGroup;
 			children = (
+				484B2A5E29C303EB005403B0 /* правки.txt */,
 				48857FBE29BF339400E3B70E /* Helpers */,
 				481E0C2E29C1214C005A8530 /* Authorization */,
 				48857FEF29BF442A00E3B70E /* Controllers */,
@@ -271,6 +293,7 @@
 				4885800429BF812500E3B70E /* UIButton + ext.swift */,
 				4885800629BF8E3F00E3B70E /* UILabel + ext.swift */,
 				481E0C3E29C12787005A8530 /* UITextField + ext.swift */,
+				484B2A5C29C300AE005403B0 /* OnlineShopTextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -435,6 +458,7 @@
 				48857FD729BF343B00E3B70E /* Montserrat-Bold.ttf in Resources */,
 				48857FDB29BF343B00E3B70E /* Montserrat-SemiBold.ttf in Resources */,
 				48857FDE29BF343B00E3B70E /* Montserrat-Regular.ttf in Resources */,
+				484B2A5F29C303EB005403B0 /* правки.txt in Resources */,
 				48857FE429BF343B00E3B70E /* Montserrat-Medium.ttf in Resources */,
 				48857FB529BF30C000E3B70E /* LaunchScreen.storyboard in Resources */,
 				48857FB229BF30C000E3B70E /* Assets.xcassets in Resources */,
@@ -454,7 +478,9 @@
 				481E0C3F29C12787005A8530 /* UITextField + ext.swift in Sources */,
 				4885800529BF812500E3B70E /* UIButton + ext.swift in Sources */,
 				481E0C5129C1EFD3005A8530 /* Utilities.swift in Sources */,
+				484B2A5D29C300AE005403B0 /* OnlineShopTextField.swift in Sources */,
 				48857FEE29BF435F00E3B70E /* NavBarController.swift in Sources */,
+				484B2A6729C31096005403B0 /* CategoryLModel.swift in Sources */,
 				481E0C4429C1AFD8005A8530 /* SignInAuthorizationButtonView.swift in Sources */,
 				481E0C4229C1AD0A005A8530 /* SignInTextFieldView.swift in Sources */,
 				48857FAD29BF30BB00E3B70E /* TabBarController.swift in Sources */,
@@ -465,9 +491,11 @@
 				48857FFB29BF469F00E3B70E /* MessageViewController.swift in Sources */,
 				481E0C4E29C1B545005A8530 /* LogInTextFieldView.swift in Sources */,
 				484B2A5429C23691005403B0 /* HomeNavBarView.swift in Sources */,
+				484B2A6429C30D35005403B0 /* CategoryCollectionViewCell.swift in Sources */,
 				484B2A5929C25720005403B0 /* TitleView.swift in Sources */,
 				481E0C3D29C125B8005A8530 /* SignInViewController.swift in Sources */,
 				48857FFF29BF46BC00E3B70E /* ProfileViewController.swift in Sources */,
+				484B2A6229C30D21005403B0 /* CategoryCollectionView.swift in Sources */,
 				48857FA929BF30BB00E3B70E /* AppDelegate.swift in Sources */,
 				48857FE929BF370000E3B70E /* UIColor + ext.swift in Sources */,
 				4885800F29BFA96700E3B70E /* ProfileButtonView.swift in Sources */,

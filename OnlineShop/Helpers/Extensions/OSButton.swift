@@ -23,7 +23,7 @@ public enum OnlineShopButtonType {
     case viewAll
 }
 
-class OSButton : UIButton {
+final class OSButton : UIButton {
     
     private var type: OnlineShopButtonType = .uploadItem
     

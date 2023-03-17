@@ -15,19 +15,20 @@ final class LogInTextFieldView : OnlineShopBaseView {
        return imageView
    }()
     
-     let firstNameTextField = UITextField(placecholder: Resources.String.Authorization.firstName)
+    let firstNameTextField = OSTextField(with: .authorization,
+                                         placecholder: Resources.String.Authorization.firstName)
     
-     let passwordTextField = UITextField(placecholder: Resources.String.Authorization.password)
- 
+    let passwordTextField : OSTextField = {
+        let password =  OSTextField(with: .authorization,
+                                    placecholder: Resources.String.Authorization.password)
+        password.setIcon(Resources.Images.Autorization.passwordIcon)
+        return password
+    }()
 }
 
-//MARK: - LIFECYCLE
+//MARK: - CONSTRAINVIEWS
 extension LogInTextFieldView {
-    override func setupViews() {
-        super.setupViews()
-        
-    }
-    
+   
     override func constraintViews() {
         super.constraintViews()
         
@@ -44,17 +45,10 @@ extension LogInTextFieldView {
         ])
     }
     
-    override func configureAppearance() {
-        super.configureAppearance()
-        
-        passwordTextField.rightViewMode = UITextField.ViewMode.always
-        passwordTextField.rightView = imageViewPassword
-    }
-    
 //MARK: - FUNC toggleShowHideAction
     func toggleShowHideAction(_ action: Selector, with target: Any?) {
         let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
-        imageViewPassword.isUserInteractionEnabled = true
-        imageViewPassword.addGestureRecognizer(tapGestureRecognizer)
+        passwordTextField.iconView.isUserInteractionEnabled = true
+        passwordTextField.iconView.addGestureRecognizer(tapGestureRecognizer)
     }
 }

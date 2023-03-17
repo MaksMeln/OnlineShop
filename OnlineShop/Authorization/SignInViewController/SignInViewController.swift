@@ -29,8 +29,8 @@ final class SignInViewController: OnlineShopBaseViewController {
     
     private let signInLogInView = SignInLogInView()
     
-    private let signInButton : OnlineShopButton = {
-        let button = OnlineShopButton(with: .authorization)
+    private let signInButton : OSButton = {
+        let button = OSButton(with: .authorization)
         button.setTitle(Resources.String.Authorization.signIn, for: .normal)
         button.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
         return button

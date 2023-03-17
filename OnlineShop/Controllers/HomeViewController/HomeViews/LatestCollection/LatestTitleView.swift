@@ -13,7 +13,7 @@ final class LatestTitleView : OnlineShopBaseView{
                               font: Resources.Fonts.MontserratSemiBold(with: 15),
                               textColor: Resources.Colors.defaultBlack)
     
-    let latestTitleViewAllButton = OnlineShopButton(with: .viewAll)
+    let latestTitleViewAllButton = OSButton(with: .viewAll)
 }
 
 //MARK: - LIFECYCLE

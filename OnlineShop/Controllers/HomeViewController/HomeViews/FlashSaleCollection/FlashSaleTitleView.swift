@@ -14,7 +14,7 @@ final class FlashSaleTitleView : OnlineShopBaseView{
                               font: Resources.Fonts.MontserratSemiBold(with: 15),
                               textColor: Resources.Colors.defaultBlack)
     
-    let flashSaleTitleViewAllButton = OnlineShopButton(with: .viewAll)
+    let flashSaleTitleViewAllButton = OSButton(with: .viewAll)
 }
 
 //MARK: - LIFECYCLE

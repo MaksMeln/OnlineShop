@@ -45,8 +45,8 @@ final class ProfileViewController : OnlineShopBaseViewController {
     
 //    private let profilePhotoView = ProfileDataView()
     
-    private let uploudItemButton : OnlineShopButton = {
-        let button = OnlineShopButton(with: .uploadItem)
+    private let uploudItemButton : OSButton = {
+        let button = OSButton(with: .uploadItem)
         button.addTarget(self, action: #selector(uploudItemButtonPress), for: .touchUpInside)
         return button
     }()

@@ -20,8 +20,8 @@ final class LogInViewController: OnlineShopBaseViewController {
     
     private let logInTextFieldView = LogInTextFieldView()
     
-    private let logInButton : OnlineShopButton = {
-        let button = OnlineShopButton(with: .authorization)
+    private let logInButton : OSButton = {
+        let button = OSButton(with: .authorization)
         button.setTitle(Resources.String.Authorization.logIn, for: .normal)
         button.addTarget(self, action: #selector(logInTapped), for: .touchUpInside)
         return button

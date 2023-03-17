@@ -10,8 +10,8 @@ import UIKit
 final class SignInAuthorizationButtonView : OnlineShopBaseView {
     
     
-    private let signInWithGoogleButton : OnlineShopButton = {
-          let button = OnlineShopButton(with: .signInButton)
+    private let signInWithGoogleButton : OSButton = {
+          let button = OSButton(with: .signInButton)
           button.setInfo(Resources.String.Authorization.google,
                          Resources.Images.Autorization.googleIcon,
                          nil,
@@ -19,8 +19,8 @@ final class SignInAuthorizationButtonView : OnlineShopBaseView {
           return button
       }()
   
-      private let signInWithAppleButton : OnlineShopButton = {
-          let button = OnlineShopButton(with: .signInButton)
+      private let signInWithAppleButton : OSButton = {
+          let button = OSButton(with: .signInButton)
           button.setInfo(Resources.String.Authorization.apple,
                          Resources.Images.Autorization.appleIcon,
                          nil,

@@ -1,5 +1,5 @@
 //
-//  UIButton + ext.swift
+//  OSButton.swift
 //  OnlineShop
 //
 //  Created by Максим Мельничук on 13.03.23.
@@ -23,7 +23,7 @@ public enum OnlineShopButtonType {
     case viewAll
 }
 
-class OnlineShopButton : UIButton {
+class OSButton : UIButton {
     
     private var type: OnlineShopButtonType = .uploadItem
     
@@ -58,7 +58,7 @@ class OnlineShopButton : UIButton {
     }
 }
 
-private extension OnlineShopButton {
+private extension OSButton {
     
     func setupViews() {
         setupView(label)

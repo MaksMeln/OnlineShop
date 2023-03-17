@@ -10,8 +10,8 @@ import UIKit
 final class ProfileButtonView: OnlineShopBaseView {
     
     //MARK: - PROPERTIES(BUTTON)
-    let tradeStoreButton : OnlineShopButton = {
-        let button = OnlineShopButton(with: .profileButton)
+    let tradeStoreButton : OSButton = {
+        let button = OSButton(with: .profileButton)
         button.setInfo(Resources.String.ProfileController.ProfileButton.tradeStore,
                        Resources.Images.ProfileController.tableIcon,
                        Resources.Images.ProfileController.vector,
@@ -19,8 +19,8 @@ final class ProfileButtonView: OnlineShopBaseView {
         return button
     }()
     
-    let paymentMethodButton : OnlineShopButton = {
-        let button = OnlineShopButton(with: .profileButton)
+    let paymentMethodButton : OSButton = {
+        let button = OSButton(with: .profileButton)
         button.setInfo(Resources.String.ProfileController.ProfileButton.paymentMethod,
                        Resources.Images.ProfileController.tableIcon,
                        Resources.Images.ProfileController.vector,
@@ -28,8 +28,8 @@ final class ProfileButtonView: OnlineShopBaseView {
         return button
     }()
     
-    let balanceButton : OnlineShopButton = {
-        let button = OnlineShopButton(with: .profileButton)
+    let balanceButton : OSButton = {
+        let button = OSButton(with: .profileButton)
         button.setInfo(Resources.String.ProfileController.ProfileButton.balance,
                        Resources.Images.ProfileController.tableIcon,
                        nil,
@@ -37,8 +37,8 @@ final class ProfileButtonView: OnlineShopBaseView {
         return button
     }()
     
-    let tradeHistoryButton : OnlineShopButton = {
-        let button = OnlineShopButton(with: .profileButton)
+    let tradeHistoryButton : OSButton = {
+        let button = OSButton(with: .profileButton)
         button.setInfo(Resources.String.ProfileController.ProfileButton.tradeHistory,
                        Resources.Images.ProfileController.tableIcon,
                        Resources.Images.ProfileController.vector,
@@ -46,8 +46,8 @@ final class ProfileButtonView: OnlineShopBaseView {
         return button
     }()
     
-    let restorePurchaseButton : OnlineShopButton = {
-        let button = OnlineShopButton(with: .profileButton)
+    let restorePurchaseButton : OSButton = {
+        let button = OSButton(with: .profileButton)
         button.setInfo(Resources.String.ProfileController.ProfileButton.restorePurchase,
                        Resources.Images.ProfileController.restorePurchase,
                        Resources.Images.ProfileController.vector,
@@ -55,8 +55,8 @@ final class ProfileButtonView: OnlineShopBaseView {
         return button
     }()
     
-    let helpButton : OnlineShopButton = {
-        let button = OnlineShopButton(with: .profileButton)
+    let helpButton : OSButton = {
+        let button = OSButton(with: .profileButton)
         button.setInfo(Resources.String.ProfileController.ProfileButton.help,
                        Resources.Images.ProfileController.help,
                        nil,
@@ -64,8 +64,8 @@ final class ProfileButtonView: OnlineShopBaseView {
         return button
     }()
     
-    let logOutButton : OnlineShopButton = {
-        let button = OnlineShopButton(with: .profileButton)
+    let logOutButton : OSButton = {
+        let button = OSButton(with: .profileButton)
         button.setInfo(Resources.String.ProfileController.ProfileButton.logOut,
                        Resources.Images.ProfileController.logOut,
                        nil,
@@ -90,7 +90,7 @@ final class ProfileButtonView: OnlineShopBaseView {
         ])
     }
     //MARK: - FUNC profileButtonAction
-    func profileButtonAction(button: OnlineShopButton, _ action: Selector, with target: Any?) {
+    func profileButtonAction(button: OSButton, _ action: Selector, with target: Any?) {
         button.addTarget(target, action: action, for: .touchUpInside)
     }
 }

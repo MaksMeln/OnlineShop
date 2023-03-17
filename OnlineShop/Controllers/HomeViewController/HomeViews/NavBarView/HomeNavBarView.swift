@@ -28,7 +28,7 @@ final class HomeNavBarView : OnlineShopBaseView {
         return profileImage
     }()
     
-    private let locationButton = OnlineShopButton(with: .location)
+    private let locationButton = OSButton(with: .location)
     
     
     func navBarButtonAction(_ action: Selector, with target: Any?) {

@@ -9,7 +9,6 @@ import UIKit
 
 public enum OSTextFieldType {
     case authorization
-    case authorizationPassword
     case searchBar
 }
 
@@ -17,8 +16,7 @@ final class OSTextField : UITextField {
     
     private var type: OSTextFieldType = .authorization
     
-    
-    private var iconView = UIImageView ()
+    var iconView = UIImageView ()
     
     
     init(with type: OSTextFieldType,placecholder text: String? ) {
@@ -42,8 +40,6 @@ final class OSTextField : UITextField {
     func setIcon( _ iconViewImage: UIImage?) {
         iconView.image = iconViewImage
     }
-    
-    
 }
 
 private extension OSTextField {
@@ -61,9 +57,6 @@ private extension OSTextField {
         case .searchBar:
             setDimensions(height: 24, width: 262)
             iconView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -17).isActive = true
-            
-        case .authorizationPassword:
-            break
         }
     }
     //MARK: - CONFIGUREAPPEARANCE
@@ -72,10 +65,11 @@ private extension OSTextField {
             
         case .authorization:
             backgroundColor = Resources.Colors.authorizationBackgoundTextField
-            
             layer.cornerRadius = 15
             textAlignment = .center
             font = Resources.Fonts.MontserratMedium(with: 11)
+            rightViewMode = UITextField.ViewMode.always
+            rightView = iconView
             
         case .searchBar:
             backgroundColor = Resources.Colors.searchBarTextField
@@ -90,11 +84,8 @@ private extension OSTextField {
             iconView.image = Resources.Images.HomeController.searchIcon
             rightViewMode = UITextField.ViewMode.always
             rightView = iconView
-            
-        case .authorizationPassword:
-            break
         }
+    }
 }
-}
-    
-    
+
+

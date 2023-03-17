@@ -16,13 +16,20 @@ final class SignInTextFieldView : OnlineShopBaseView {
        return imageView
    }()
     
-     let firstNameTextField = UITextField(placecholder: Resources.String.Authorization.firstName)
+    let firstNameTextField = OSTextField(with: .authorization,
+                                         placecholder:Resources.String.Authorization.firstName)
     
-     let lastNameTextField = UITextField(placecholder: Resources.String.Authorization.lastName)
+     let lastNameTextField = OSTextField(with: .authorization,
+                                         placecholder:Resources.String.Authorization.lastName)
     
-     let emailTextField = UITextField(placecholder: Resources.String.Authorization.email)
+     let emailTextField = OSTextField(with: .authorization,
+                                      placecholder:Resources.String.Authorization.email)
     
-     let passwordTextField = UITextField(placecholder: Resources.String.Authorization.password)
+    let passwordTextField : OSTextField = {
+        let password =  OSTextField(with: .authorization, placecholder: Resources.String.Authorization.password)
+        password.setIcon(Resources.Images.Autorization.passwordIcon)
+        return password
+    }()
 }
 
 //MARK: - LIFECYCLE
@@ -47,16 +54,10 @@ extension SignInTextFieldView {
         ])
     }
     
-    override func configureAppearance() {
-        super.configureAppearance()
-        passwordTextField.rightViewMode = UITextField.ViewMode.always
-        passwordTextField.rightView = imageViewPassword
-    }
-
 //MARK: - FUNC toggleShowHideAction
     func toggleShowHideAction(_ action: Selector, with target: Any?) {
         let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
-        imageViewPassword.isUserInteractionEnabled = true
-        imageViewPassword.addGestureRecognizer(tapGestureRecognizer)
+        passwordTextField.iconView.isUserInteractionEnabled = true
+        passwordTextField.addGestureRecognizer(tapGestureRecognizer)
     }
 }

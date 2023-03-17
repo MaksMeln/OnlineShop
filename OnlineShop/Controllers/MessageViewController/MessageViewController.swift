@@ -7,24 +7,18 @@
 
 import UIKit
 
-class MessageViewController : OnlineShopBaseViewController {
-    
- 
+final class MessageViewController : OnlineShopBaseViewController {
+
 }
 
-
 extension MessageViewController {
-    
-    
+
     override func setupViews() {
         super.setupViews()
-        
     }
     
     override func constraintViews() {
         super.constraintViews()
-        
-        
     }
     
     override func configureAppearence() {

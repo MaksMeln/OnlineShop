@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  Page1ViewController.swift
 //  OnlineShop
 //
 //  Created by Максим Мельничук on 13.03.23.
@@ -15,7 +15,7 @@ scrollview не прокручивается дальше safearea
 
 import UIKit
 
-final class HomeViewController : OnlineShopBaseViewController {
+final class Page1ViewController : OnlineShopBaseViewController {
 
 //MARK: - SCROLLVIEW
     private var contentCize: CGSize {
@@ -30,7 +30,7 @@ final class HomeViewController : OnlineShopBaseViewController {
 //MARK: - PROPERTIES
     
     private let navBar = HomeNavBarView()
-    private let searchBar = OSTextField(with: .searchBar, placecholder: Resources.String.HomeController.searchBar)
+    private let searchBar = OSTextField(with: .searchBar, placecholder: Resources.String.Page1Controller.searchBar)
     private let categoryCollection = CategoryCollectionView()
     
     private let latestTitle = LatestTitleView()
@@ -44,7 +44,7 @@ final class HomeViewController : OnlineShopBaseViewController {
 }
 
 //MARK: - LIFECYCLE
-extension HomeViewController {
+extension Page1ViewController {
     
     override func setupViews() {
         super.setupViews()

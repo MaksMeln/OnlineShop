@@ -10,7 +10,7 @@ import UIKit
 final class FlashSaleTitleView : OnlineShopBaseView{
 
 //MARK: - PROPERTIES
-    let flashSaleTitleLabel = UILabel(text: Resources.String.HomeController.flashSale,
+    let flashSaleTitleLabel = UILabel(text: Resources.String.Page1Controller.flashSale,
                               font: Resources.Fonts.MontserratSemiBold(with: 15),
                               textColor: Resources.Colors.defaultBlack)
     

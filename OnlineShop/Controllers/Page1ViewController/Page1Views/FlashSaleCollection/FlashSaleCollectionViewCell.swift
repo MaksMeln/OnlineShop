@@ -21,7 +21,7 @@ final class FlashSaleColectionViewCell : UICollectionViewCell {
     
     var userIcon : UIImageView = {
         var imageView = UIImageView()
-        imageView.image = Resources.Images.HomeController.flashSaleUserIcon
+        imageView.image = Resources.Images.Page1Controller.flashSaleUserIcon
         return imageView
     }()
     
@@ -52,13 +52,13 @@ final class FlashSaleColectionViewCell : UICollectionViewCell {
     
     private var likeButton : UIButton = {
         var button = UIButton()
-         button.setImage(Resources.Images.HomeController.likeIcon, for: .normal)
+         button.setImage(Resources.Images.Page1Controller.likeIcon, for: .normal)
          return button
      }()
 
     private var addButton : UIButton = {
        var button = UIButton()
-        button.setImage(Resources.Images.HomeController.addIconFlashSale, for: .normal)
+        button.setImage(Resources.Images.Page1Controller.addIconFlashSale, for: .normal)
         return button
     }()
 

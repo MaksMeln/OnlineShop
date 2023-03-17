@@ -103,7 +103,7 @@ private extension OSNameCategoryView {
             label.font = Resources.Fonts.MontserratBold(with: 10)
             label.textColor = Resources.Colors.defaultWhite
             
-            discountLabel.text = Resources.String.HomeController.discount
+            discountLabel.text = Resources.String.Page1Controller.discount
             discountLabel.font = Resources.Fonts.MontserratSemiBold(with: 10)
             discountLabel.textColor = Resources.Colors.defaultWhite
         }

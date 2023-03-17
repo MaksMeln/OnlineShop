@@ -9,7 +9,7 @@ import UIKit
 
 final class LatestTitleView : OnlineShopBaseView{
 //MARK: - PROPERTIES
-    let latestTitleLabel = UILabel(text: Resources.String.HomeController.latest,
+    let latestTitleLabel = UILabel(text: Resources.String.Page1Controller.latest,
                               font: Resources.Fonts.MontserratSemiBold(with: 15),
                               textColor: Resources.Colors.defaultBlack)
     

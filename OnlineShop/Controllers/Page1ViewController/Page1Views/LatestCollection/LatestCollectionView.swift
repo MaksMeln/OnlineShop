@@ -39,7 +39,7 @@ final class LatestCollectionView: UICollectionView {
         backgroundColor = Resources.Colors.backgroundColor
         contentInset = UIEdgeInsets(top: 0, left: 11, bottom: 0, right: 0)
         
-        register(LatestCollectionViewCell.self, forCellWithReuseIdentifier: Resources.String.HomeController.categoryCollectionCell)
+        register(LatestCollectionViewCell.self, forCellWithReuseIdentifier: Resources.String.Page1Controller.categoryCollectionCell)
         delegate = self
         dataSource = self
     }
@@ -55,7 +55,7 @@ extension LatestCollectionView: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.String.HomeController.categoryCollectionCell, for: indexPath) as! LatestCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.String.Page1Controller.categoryCollectionCell, for: indexPath) as! LatestCollectionViewCell
         
 //        cell.latestImageView.image =
         

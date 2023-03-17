@@ -78,10 +78,10 @@ private extension OSTextField {
             textAlignment = .center
             font = Resources.Fonts.MontserratMedium(with: 9)
             textColor = Resources.Colors.defaultGray
-            attributedPlaceholder = NSAttributedString(string: Resources.String.HomeController.searchBar,
+            attributedPlaceholder = NSAttributedString(string: Resources.String.Page1Controller.searchBar,
                                                        attributes: [NSAttributedString.Key.foregroundColor: Resources.Colors.defaultGray])
             
-            iconView.image = Resources.Images.HomeController.searchIcon
+            iconView.image = Resources.Images.Page1Controller.searchIcon
             rightViewMode = UITextField.ViewMode.always
             rightView = iconView
         }

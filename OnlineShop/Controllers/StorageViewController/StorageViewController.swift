@@ -7,13 +7,9 @@
 
 import UIKit
 
-class StorageViewController : OnlineShopBaseViewController {
+final class StorageViewController : OnlineShopBaseViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-     
-    }
+    
 }
 
 

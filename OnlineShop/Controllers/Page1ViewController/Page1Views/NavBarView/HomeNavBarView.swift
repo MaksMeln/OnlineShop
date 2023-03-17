@@ -14,13 +14,13 @@ final class HomeNavBarView : OnlineShopBaseView {
     
     private let navBarButton: UIButton = {
         let button = UIButton()
-        button.setImage(Resources.Images.HomeController.navBarButton, for: .normal)
+        button.setImage(Resources.Images.Page1Controller.navBarButton, for: .normal)
         return button
     }()
     
     private var profilePhoto : UIImageView = {
         var profileImage = UIImageView()
-        profileImage.image = Resources.Images.HomeController.profileImageHome
+        profileImage.image = Resources.Images.Page1Controller.profileImageHome
         profileImage.layer.masksToBounds = true
         profileImage.contentMode = .scaleAspectFit
         profileImage.clipsToBounds = true

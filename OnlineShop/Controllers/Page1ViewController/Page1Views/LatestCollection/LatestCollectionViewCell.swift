@@ -15,7 +15,7 @@ final class LatestCollectionViewCell : UICollectionViewCell {
     
     var latestImageView : UIImageView = {
         var imageView = UIImageView()
-        imageView.image = Resources.Images.HomeController.latestImage
+        imageView.image = Resources.Images.Page1Controller.latestImage
         return imageView
     }()
     
@@ -38,7 +38,7 @@ final class LatestCollectionViewCell : UICollectionViewCell {
     
    private var addButton : UIButton = {
        var button = UIButton()
-        button.setImage(Resources.Images.HomeController.addIcon, for: .normal)
+        button.setImage(Resources.Images.Page1Controller.addIcon, for: .normal)
         return button
     }()
 

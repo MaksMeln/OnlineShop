@@ -76,7 +76,7 @@ enum Resources {
             static let password = "Password"
         }
         
-        enum HomeController {
+        enum Page1Controller {
             enum NavBar {
                 static let firstTitle = "Trade by"
                 static let secondTitle = "bata"
@@ -107,7 +107,7 @@ enum Resources {
         enum TabBar {
             static func icon(for tab: Tabs) -> UIImage? {
                 switch tab {
-                case .home : return UIImage(named: "homeTabBar")
+                case .page1 : return UIImage(named: "page1TabBar")
                 case .chosenByLike : return UIImage(named: "chosenByLikeTabBar")
                 case .storage : return UIImage(named: "storageTabBar")
                 case .message : return UIImage(named: "messageTabBar")
@@ -122,7 +122,7 @@ enum Resources {
             static let passwordIcon = UIImage(named: "passwordIcon")
         }
 
-        enum HomeController {
+        enum Page1Controller {
             enum CategoryIcon {
                 static let phoneIcon = UIImage(named: "phoneIcon")!
                 static let headphonesIcon = UIImage(named: "headphonesIcon")!
@@ -158,23 +158,23 @@ enum Resources {
     }
     
     enum CategoryCollection {
-        static let phones = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.phoneIcon,
-                                         categoryTitle: Resources.String.HomeController.CategoryTitle.phones)
+        static let phones = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.phoneIcon,
+                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.phones)
         
-        static let headphones = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.headphonesIcon,
-                                         categoryTitle: Resources.String.HomeController.CategoryTitle.headphones)
+        static let headphones = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.headphonesIcon,
+                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.headphones)
         
-        static let games = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.gamesIcon,
-                                         categoryTitle: Resources.String.HomeController.CategoryTitle.games)
+        static let games = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.gamesIcon,
+                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.games)
         
-        static let cars = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.carsIcon,
-                                         categoryTitle: Resources.String.HomeController.CategoryTitle.cars)
+        static let cars = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.carsIcon,
+                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.cars)
         
-        static let furniture = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.furnitureIcon,
-                                         categoryTitle: Resources.String.HomeController.CategoryTitle.furniture)
+        static let furniture = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.furnitureIcon,
+                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.furniture)
         
-        static let kids = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.kidsIcon,
-                                         categoryTitle: Resources.String.HomeController.CategoryTitle.kids)
+        static let kids = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.kidsIcon,
+                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.kids)
         
         static let collectionArray = [phones, headphones, games, cars, furniture, kids, phones, headphones, games, cars, furniture, kids]
         

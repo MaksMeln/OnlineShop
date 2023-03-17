@@ -9,7 +9,7 @@ import UIKit
 
 final class BrandsTitleView : OnlineShopBaseView{
 //MARK: - PROPERTIES
-    let brandsTitleLabel = UILabel(text: Resources.String.HomeController.brands,
+    let brandsTitleLabel = UILabel(text: Resources.String.Page1Controller.brands,
                               font: Resources.Fonts.MontserratSemiBold(with: 15),
                               textColor: Resources.Colors.defaultBlack)
     

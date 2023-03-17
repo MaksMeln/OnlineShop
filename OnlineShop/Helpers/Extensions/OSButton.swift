@@ -167,12 +167,12 @@ private extension OSButton {
             
             label.textColor = Resources.Colors.defaultGray
             label.font = Resources.Fonts.MontserratMedium(with: 10)
-            label.text = Resources.String.HomeController.NavBar.location
+            label.text = Resources.String.Page1Controller.NavBar.location
             
             
-            iconView.image = Resources.Images.HomeController.locationVector
+            iconView.image = Resources.Images.Page1Controller.locationVector
         case .viewAll:
-            label.text = Resources.String.HomeController.viewAll
+            label.text = Resources.String.Page1Controller.viewAll
             label.font = Resources.Fonts.MontserratSemiBold(with: 9)
             label.textColor = Resources.Colors.defaultGray
         }

@@ -7,12 +7,8 @@
 
 import UIKit
 
-class ChosenByLikeController : OnlineShopBaseViewController {
+final class ChosenByLikeController : OnlineShopBaseViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 }
 
 

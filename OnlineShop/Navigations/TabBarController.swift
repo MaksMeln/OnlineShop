@@ -11,7 +11,7 @@ import UIKit
  */
 
 enum Tabs : Int , CaseIterable{
-    case home
+    case page1
     case chosenByLike
     case storage
     case message
@@ -24,7 +24,7 @@ final class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         configureTabBar()
-        switchTo(tab: .home)
+        switchTo(tab: .page1)
     }
     
     required init?(coder: NSCoder) {
@@ -67,7 +67,7 @@ final class TabBarController: UITabBarController {
     
     private func getController(for tab: Tabs) -> OnlineShopBaseViewController {
         switch tab {
-        case .home:  return HomeViewController()
+        case .page1:  return Page1ViewController()
         case .chosenByLike: return ChosenByLikeController()
         case .storage: return StorageViewController()
         case .message:  return MessageViewController()

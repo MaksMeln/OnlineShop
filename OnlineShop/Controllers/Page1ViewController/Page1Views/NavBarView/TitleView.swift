@@ -9,11 +9,11 @@ import UIKit
 
 final class TitleView: OnlineShopBaseView {
     
-    private let firstTitleLabel = UILabel(text: Resources.String.HomeController.NavBar.firstTitle,
+    private let firstTitleLabel = UILabel(text: Resources.String.Page1Controller.NavBar.firstTitle,
                                           font: Resources.Fonts.MontserratBold(with: 20),
                                           textColor: Resources.Colors.defaultBlack)
     
-    private let secondTitleLabel = UILabel(text: Resources.String.HomeController.NavBar.secondTitle,
+    private let secondTitleLabel = UILabel(text: Resources.String.Page1Controller.NavBar.secondTitle,
                                           font: Resources.Fonts.MontserratBold(with: 20),
                                           textColor: Resources.Colors.backgroundButton)
 

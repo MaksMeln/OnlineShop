@@ -20,6 +20,7 @@ public enum OnlineShopButtonType {
     case profileButton
     case signInButton
     case location
+    case viewAll
 }
 
 class OnlineShopButton : UIButton {
@@ -124,6 +125,8 @@ private extension OnlineShopButton {
                 label.centerYAnchor.constraint(equalTo: centerYAnchor),
                 label.leadingAnchor.constraint(equalTo: leadingAnchor),
             ])
+        case .viewAll:
+            setDimensions(height: 9, width: 37)
         }
     }
     //MARK: - CONFIGUREAPPEARANCE
@@ -168,6 +171,10 @@ private extension OnlineShopButton {
             
             
             iconView.image = Resources.Images.HomeController.locationVector
+        case .viewAll:
+            label.text = Resources.String.HomeController.viewAll
+            label.font = Resources.Fonts.MontserratSemiBold(with: 9)
+            label.textColor = Resources.Colors.defaultGray
         }
         makeSystem(self)
     }

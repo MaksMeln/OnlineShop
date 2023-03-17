@@ -31,6 +31,9 @@ enum Resources {
         // OtherColor
         static let nameLabel = UIColor(hexString: "#3F3F3F")
         static let cateoryTitle = UIColor(hexString: "#A6A7AB")
+        static let categoryNameBackground = UIColor(hexString: "#C4C4C4")
+        static let diskountBackground = UIColor(hexString: "#F93A3A")
+        
         
         //TabBar
         static let activeTabBar = UIColor(hexString: "#737297")
@@ -94,6 +97,7 @@ enum Resources {
             static let viewAll = "View all"
             static let searchBar = "What are you looking for?"
             static let categoryCollectionCell = "cell"
+            static let discount = "% off"
         }
     }
     
@@ -136,6 +140,10 @@ enum Resources {
             static let searchIcon = UIImage(named: "searchIcon")
             static let latestImage = UIImage(named: "latestImage")
             static let profileImageHome = UIImage(named: "profileImageHome")
+            static let flashSaleUserIcon = UIImage(named: "flashSaleUserIcon")
+            static let addIconFlashSale = UIImage(named: "addIconFlashSale")
+            
+
         }
         
         enum ProfileController {
@@ -168,7 +176,7 @@ enum Resources {
         static let kids = CategoryList(categoryIcon: Resources.Images.HomeController.CategoryIcon.kidsIcon,
                                          categoryTitle: Resources.String.HomeController.CategoryTitle.kids)
         
-        static let collectionArray = [phones, headphones, games, cars, furniture, kids]
+        static let collectionArray = [phones, headphones, games, cars, furniture, kids, phones, headphones, games, cars, furniture, kids]
         
     }
     

@@ -1,29 +1,27 @@
 //
-//  OnlineShopTextField.swift
+//  OSTextField.swift
 //  OnlineShop
 //
 //  Created by Максим Мельничук on 16.03.23.
 //
 
-
-
 import UIKit
 
-public enum OnlineShopTextFieldType {
+public enum OSTextFieldType {
     case authorization
     case authorizationPassword
     case searchBar
 }
 
-final class OnlineShopTextField : UITextField {
+final class OSTextField : UITextField {
     
-    private var type: OnlineShopTextFieldType = .authorization
+    private var type: OSTextFieldType = .authorization
     
     
     private var iconView = UIImageView ()
     
     
-    init(with type: OnlineShopTextFieldType,placecholder text: String? ) {
+    init(with type: OSTextFieldType,placecholder text: String? ) {
         super.init(frame: .zero)
         self.type = type
         self.placeholder = text
@@ -48,7 +46,7 @@ final class OnlineShopTextField : UITextField {
     
 }
 
-private extension OnlineShopTextField {
+private extension OSTextField {
     
     func setupViews() {
         setupView(iconView)

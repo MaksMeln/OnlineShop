@@ -9,6 +9,12 @@ import UIKit
 
 extension UIView {
     
+    convenience init(contentSize: CGSize) {
+        self.init()
+        
+        self.frame.size = contentSize
+    }
+    
     @objc func setupView(_ view: UIView) {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false

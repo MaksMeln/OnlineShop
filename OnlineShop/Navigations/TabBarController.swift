@@ -45,6 +45,14 @@ final class TabBarController: UITabBarController {
         tabBar.layer.cornerRadius = 30
         tabBar.layer.masksToBounds = true
         tabBar.itemPositioning = .centered
+        
+        if #available(iOS 15.0, *) {
+               let appearance = UITabBarAppearance()
+               appearance.configureWithOpaqueBackground()
+               appearance.backgroundColor = Resources.Colors.backgoundTabBar
+               UITabBar.appearance().standardAppearance = appearance
+               UITabBar.appearance().scrollEdgeAppearance = UITabBar.appearance().standardAppearance
+           }
        
         let controllers : [NavBarController] = Tabs.allCases.map { tab in
             let controller = NavBarController(rootViewController: getController(for: tab))

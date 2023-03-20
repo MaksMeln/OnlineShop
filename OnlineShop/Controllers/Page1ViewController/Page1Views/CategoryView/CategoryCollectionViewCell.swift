@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-class CategoryCollectionViewCell : UICollectionViewCell {
+final class CategoryCollectionViewCell : UICollectionViewCell {
 
     var categoryImageView = UIImageView()
 
-    var categoryTitle =  UILabel(text: "",
+    var categoryTitle =  OSLabel(textLabel: "",
                                  font: Resources.Fonts.MontserratSemiBold(with: 8),
-                                 textColor: Resources.Colors.cateoryTitle)
+                                 textColor: Resources.Colors.OtherColors.cateoryTitle)
 
     override init(frame: CGRect) {
         super.init(frame: frame)

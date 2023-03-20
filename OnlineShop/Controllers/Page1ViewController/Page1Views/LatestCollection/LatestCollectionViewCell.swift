@@ -24,17 +24,17 @@ final class LatestCollectionViewCell : UICollectionViewCell {
     var categoryView = OSNameCategoryView(with: .nameCategoryLatest)
     
     
-    var latestNameLabel : UILabel = {
-    let label = UILabel(text: "PlayStation 5 console",
+    var latestNameLabel : OSLabel = {
+    let label = OSLabel(textLabel: "PlayStation 5 console",
                         font: Resources.Fonts.MontserratSemiBold(with: 9),
-                        textColor: Resources.Colors.defaultWhite)
+                        textColor: Resources.Colors.Default.defaultWhite)
         label.numberOfLines = 0
     return label
     }()
         
-    var priceLabel = UILabel(text: "$ 90,000",
+    var priceLabel = OSLabel(textLabel: "$ 90,000",
                              font: Resources.Fonts.MontserratSemiBold(with: 7),
-                             textColor: Resources.Colors.defaultWhite)
+                             textColor: Resources.Colors.Default.defaultWhite)
     
    private var addButton : UIButton = {
        var button = UIButton()

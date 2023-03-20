@@ -64,7 +64,7 @@ private extension OSTextField {
         switch type {
             
         case .authorization:
-            backgroundColor = Resources.Colors.authorizationBackgoundTextField
+            backgroundColor = Resources.Colors.Authorization.authorizationBackgoundTextField
             layer.cornerRadius = 15
             textAlignment = .center
             font = Resources.Fonts.MontserratMedium(with: 11)
@@ -72,14 +72,14 @@ private extension OSTextField {
             rightView = iconView
             
         case .searchBar:
-            backgroundColor = Resources.Colors.searchBarTextField
+            backgroundColor = Resources.Colors.Background.searchBarTextFieldBackground
             
             layer.cornerRadius = 12
             textAlignment = .center
             font = Resources.Fonts.MontserratMedium(with: 9)
-            textColor = Resources.Colors.defaultGray
+            textColor = Resources.Colors.Default.defaultGray
             attributedPlaceholder = NSAttributedString(string: Resources.String.Page1Controller.searchBar,
-                                                       attributes: [NSAttributedString.Key.foregroundColor: Resources.Colors.defaultGray])
+                                                       attributes: [NSAttributedString.Key.foregroundColor: Resources.Colors.Default.defaultGray])
             
             iconView.image = Resources.Images.Page1Controller.searchIcon
             rightViewMode = UITextField.ViewMode.always

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CategoryCollectionView: UICollectionView {
+final class CategoryCollectionView: UICollectionView {
 //MARK: - PROPERTIES
     var categoryArray = [CategoryList]()
        
@@ -36,7 +36,7 @@ class CategoryCollectionView: UICollectionView {
             
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
-        backgroundColor = Resources.Colors.backgroundColor
+        backgroundColor = Resources.Colors.Background.backgroundColor
         contentInset = UIEdgeInsets(top: 0, left: CategoryConstants.distanceToView, bottom: 0, right: CategoryConstants.distanceToView)
         
         register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: Resources.String.Page1Controller.categoryCollectionCell)

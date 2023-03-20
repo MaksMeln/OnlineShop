@@ -35,7 +35,7 @@ final class FlashSaleCollectionView: UICollectionView {
             
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
-        backgroundColor = Resources.Colors.backgroundColor
+        backgroundColor = Resources.Colors.Background.backgroundColor
         contentInset = UIEdgeInsets(top: 0, left: 11, bottom: 0, right: 7)
         
         register(FlashSaleColectionViewCell.self, forCellWithReuseIdentifier: Resources.String.Page1Controller.categoryCollectionCell)

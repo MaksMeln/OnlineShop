@@ -9,9 +9,9 @@ import UIKit
 
 final class BrandsTitleView : OnlineShopBaseView{
 //MARK: - PROPERTIES
-    let brandsTitleLabel = UILabel(text: Resources.String.Page1Controller.brands,
+    let brandsTitleLabel = OSLabel(textLabel: Resources.String.Page1Controller.brands,
                               font: Resources.Fonts.MontserratSemiBold(with: 15),
-                              textColor: Resources.Colors.defaultBlack)
+                                   textColor: Resources.Colors.Default.defaultBlack)
     
     let brandsTitleViewAllButton = OSButton(with: .viewAll)
 }

@@ -19,9 +19,9 @@ final class SignInViewController: OnlineShopBaseViewController {
     
     var iconClick = true
     //MARK: - PROPERTIES
-    private let signInLabel = UILabel(text: Resources.String.Authorization.signIn,
+    private let signInLabel = OSLabel(textLabel: Resources.String.Authorization.signIn,
                                       font: Resources.Fonts.MontserratSemiBold(with: 26),
-                                      textColor: Resources.Colors.authorizationTitleLabel)
+                                      textColor: Resources.Colors.Authorization.authorizationTitleLabel)
     
     private let signInTextFieldView = SignInTextFieldView()
     

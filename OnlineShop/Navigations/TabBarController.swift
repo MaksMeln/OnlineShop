@@ -39,9 +39,9 @@ final class TabBarController: UITabBarController {
     private func configureTabBar() {
         
     
-        tabBar.tintColor = Resources.Colors.activeTabBar
-        tabBar.barTintColor = Resources.Colors.inactiveTabBar
-        tabBar.backgroundColor = Resources.Colors.backgoundTabBar
+        tabBar.tintColor = Resources.Colors.TabBar.activeTabBar
+        tabBar.barTintColor = Resources.Colors.TabBar.inactiveTabBar
+        tabBar.backgroundColor = Resources.Colors.Background.backgoundTabBar
         tabBar.layer.cornerRadius = 30
         tabBar.layer.masksToBounds = true
         tabBar.itemPositioning = .centered
@@ -49,7 +49,7 @@ final class TabBarController: UITabBarController {
         if #available(iOS 15.0, *) {
                let appearance = UITabBarAppearance()
                appearance.configureWithOpaqueBackground()
-               appearance.backgroundColor = Resources.Colors.backgoundTabBar
+            appearance.backgroundColor = Resources.Colors.Background.backgoundTabBar
                UITabBar.appearance().standardAppearance = appearance
                UITabBar.appearance().scrollEdgeAppearance = UITabBar.appearance().standardAppearance
            }

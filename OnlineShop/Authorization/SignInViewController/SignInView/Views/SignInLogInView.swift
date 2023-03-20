@@ -10,14 +10,14 @@ import UIKit
 final class SignInLogInView : OnlineShopBaseView {
     
     
-    private let subtitleLabelLogIn = UILabel(text: Resources.String.Authorization.subtitleLogIn,
+    private let subtitleLabelLogIn = OSLabel(textLabel: Resources.String.Authorization.subtitleLogIn,
                                              font: Resources.Fonts.MontserratMedium(with: 10),
-                                             textColor: Resources.Colors.defaultGray)
+                                             textColor: Resources.Colors.Default.defaultGray)
     
     private let logInButton : UIButton = {
         let button = UIButton()
         button.setTitle(Resources.String.Authorization.logIn, for: .normal)
-        button.setTitleColor(Resources.Colors.defaultBlue, for: .normal)
+        button.setTitleColor(Resources.Colors.Default.defaultBlue, for: .normal)
         button.titleLabel?.font = Resources.Fonts.MontserratMedium(with: 10)
         return button
     }()

@@ -9,13 +9,13 @@ import UIKit
 
 final class TitleView: OnlineShopBaseView {
     
-    private let firstTitleLabel = UILabel(text: Resources.String.Page1Controller.NavBar.firstTitle,
+    private let firstTitleLabel = OSLabel(textLabel: Resources.String.Page1Controller.NavBar.firstTitle,
                                           font: Resources.Fonts.MontserratBold(with: 20),
-                                          textColor: Resources.Colors.defaultBlack)
+                                          textColor: Resources.Colors.Default.defaultBlack)
     
-    private let secondTitleLabel = UILabel(text: Resources.String.Page1Controller.NavBar.secondTitle,
+    private let secondTitleLabel = OSLabel(textLabel: Resources.String.Page1Controller.NavBar.secondTitle,
                                           font: Resources.Fonts.MontserratBold(with: 20),
-                                          textColor: Resources.Colors.backgroundButton)
+                                           textColor: Resources.Colors.Background.backgroundButton)
 
     override func constraintViews() {
         super.constraintViews()

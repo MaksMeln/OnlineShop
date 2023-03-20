@@ -23,6 +23,6 @@ class OnlineShopBaseViewController: UIViewController {
     func setupViews() {}
     func constraintViews() {}
     func configureAppearence() {
-        view.backgroundColor = Resources.Colors.backgroundColor
+        view.backgroundColor = Resources.Colors.Background.backgroundColor
     }
 }

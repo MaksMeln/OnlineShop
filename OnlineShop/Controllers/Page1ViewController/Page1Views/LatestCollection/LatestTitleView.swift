@@ -9,9 +9,9 @@ import UIKit
 
 final class LatestTitleView : OnlineShopBaseView{
 //MARK: - PROPERTIES
-    let latestTitleLabel = UILabel(text: Resources.String.Page1Controller.latest,
+    let latestTitleLabel = OSLabel(textLabel: Resources.String.Page1Controller.latest,
                               font: Resources.Fonts.MontserratSemiBold(with: 15),
-                              textColor: Resources.Colors.defaultBlack)
+                                   textColor: Resources.Colors.Default.defaultBlack)
     
     let latestTitleViewAllButton = OSButton(with: .viewAll)
 }

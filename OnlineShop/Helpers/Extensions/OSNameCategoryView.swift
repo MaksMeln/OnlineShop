@@ -81,31 +81,31 @@ private extension OSNameCategoryView {
         switch type {
             
         case .nameCategoryLatest:
-            backgroundColor = Resources.Colors.categoryNameBackground.withAlphaComponent(0.85)
+            backgroundColor = Resources.Colors.Background.categoryNameBackground.withAlphaComponent(0.85)
             layer.cornerRadius = 5
             
             label.textAlignment = .center
             label.font = Resources.Fonts.MontserratSemiBold(with: 6)
-            label.textColor = Resources.Colors.defaultBlack
+            label.textColor = Resources.Colors.Default.defaultBlack
         
         case .nameCategotyFlashSale:
-            backgroundColor = Resources.Colors.categoryNameBackground.withAlphaComponent(0.85)
+            backgroundColor = Resources.Colors.Background.categoryNameBackground.withAlphaComponent(0.85)
             layer.cornerRadius = 8.5
             
             label.textAlignment = .center
             label.font = Resources.Fonts.MontserratSemiBold(with: 9)
-            label.textColor = Resources.Colors.defaultBlack
+            label.textColor = Resources.Colors.Default.defaultBlack
             
         case .discount:
-            backgroundColor = Resources.Colors.diskountBackground
+            backgroundColor = Resources.Colors.Background.diskountBackground
             layer.cornerRadius = 9
             
             label.font = Resources.Fonts.MontserratBold(with: 10)
-            label.textColor = Resources.Colors.defaultWhite
+            label.textColor = Resources.Colors.Default.defaultWhite
             
             discountLabel.text = Resources.String.Page1Controller.discount
             discountLabel.font = Resources.Fonts.MontserratSemiBold(with: 10)
-            discountLabel.textColor = Resources.Colors.defaultWhite
+            discountLabel.textColor = Resources.Colors.Default.defaultWhite
         }
     }
 }

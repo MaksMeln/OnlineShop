@@ -10,39 +10,40 @@ import UIKit
 enum Resources {
     
     enum Colors {
+        enum Background{
+            static let backgroundColor = UIColor(hexString: "#FAF9FF")
+            static let backgroundButton = UIColor(hexString: "#4E55D7")
+            static let searchBarTextFieldBackground = UIColor(hexString: "#F5F6F7")
+            static let categoryNameBackground = UIColor(hexString: "#C4C4C4")
+            static let diskountBackground = UIColor(hexString: "#F93A3A")
+            static let backgoundTabBar = UIColor(hexString: "#FFFFFF")
+        }
         
-        //DefaltColor
-        static let defaultWhite = UIColor(hexString: "#EAEAEA")
-        static let defaultBlack = UIColor(hexString: "#000000")
-        static let defaultGray = UIColor(hexString: "#808080")
-        static let defaultBlue = UIColor(hexString: "#254FE6")
+        enum Default {
+            static let defaultWhite = UIColor(hexString: "#EAEAEA")
+            static let defaultBlack = UIColor(hexString: "#000000")
+            static let defaultGray = UIColor(hexString: "#808080")
+            static let defaultBlue = UIColor(hexString: "#254FE6")
+        }
         
+        enum TabBar {
+            static let activeTabBar = UIColor(hexString: "#737297")
+            static let inactiveTabBar = UIColor(hexString: "#909090")
+        }
         
-        //BackgroundColor
-        static let backgroundColor = UIColor(hexString: "#FAF9FF")
-        static let backgroundButton = UIColor(hexString: "#4E55D7")
-        static let borderColorProfileImage = UIColor(hexString: "#C0C0C0")
-        static let searchBarTextField = UIColor(hexString: "#F5F6F7")
+        enum Authorization {
+            static let authorizationBackgoundTextField = UIColor(hexString: "#E8E8E8")
+            static let authorizationTitleLabel = UIColor(hexString: "#161826")
+        }
         
-        //LOGIN
-        static let authorizationBackgoundTextField = UIColor(hexString: "#E8E8E8")
-        static let authorizationTitleLabel = UIColor(hexString: "#161826")
-        
-        // OtherColor
-        static let nameLabel = UIColor(hexString: "#3F3F3F")
-        static let cateoryTitle = UIColor(hexString: "#A6A7AB")
-        static let categoryNameBackground = UIColor(hexString: "#C4C4C4")
-        static let diskountBackground = UIColor(hexString: "#F93A3A")
-        
-        
-        //TabBar
-        static let activeTabBar = UIColor(hexString: "#737297")
-        static let inactiveTabBar = UIColor(hexString: "#909090")
-        static let backgoundTabBar = UIColor(hexString: "#FFFFFF")
+        enum OtherColors {
+            static let nameLabel = UIColor(hexString: "#3F3F3F")
+            static let cateoryTitle = UIColor(hexString: "#A6A7AB")
+            static let borderColorProfileImage = UIColor(hexString: "#C0C0C0")
+        }
     }
     
     enum String {
-        
         enum ProfileController {
             static let title = "Profile"
             static let changePhotoLabel = "Change photo"
@@ -121,7 +122,7 @@ enum Resources {
             static let appleIcon = UIImage(named: "appleIcon")
             static let passwordIcon = UIImage(named: "passwordIcon")
         }
-
+        
         enum Page1Controller {
             enum CategoryIcon {
                 static let phoneIcon = UIImage(named: "phoneIcon")!
@@ -130,7 +131,6 @@ enum Resources {
                 static let carsIcon = UIImage(named: "carsIcon")!
                 static let furnitureIcon = UIImage(named: "furnitureIcon")!
                 static let kidsIcon = UIImage(named: "kidsIcon")!
-                
             }
             
             static let likeIcon = UIImage(named: "likeIcon")
@@ -143,7 +143,6 @@ enum Resources {
             static let flashSaleUserIcon = UIImage(named: "flashSaleUserIcon")
             static let addIconFlashSale = UIImage(named: "addIconFlashSale")
             
-
         }
         
         enum ProfileController {
@@ -162,19 +161,19 @@ enum Resources {
                                          categoryTitle: Resources.String.Page1Controller.CategoryTitle.phones)
         
         static let headphones = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.headphonesIcon,
-                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.headphones)
+                                             categoryTitle: Resources.String.Page1Controller.CategoryTitle.headphones)
         
         static let games = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.gamesIcon,
-                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.games)
+                                        categoryTitle: Resources.String.Page1Controller.CategoryTitle.games)
         
         static let cars = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.carsIcon,
-                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.cars)
+                                       categoryTitle: Resources.String.Page1Controller.CategoryTitle.cars)
         
         static let furniture = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.furnitureIcon,
-                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.furniture)
+                                            categoryTitle: Resources.String.Page1Controller.CategoryTitle.furniture)
         
         static let kids = CategoryList(categoryIcon: Resources.Images.Page1Controller.CategoryIcon.kidsIcon,
-                                         categoryTitle: Resources.String.Page1Controller.CategoryTitle.kids)
+                                       categoryTitle: Resources.String.Page1Controller.CategoryTitle.kids)
         
         static let collectionArray = [phones, headphones, games, cars, furniture, kids, phones, headphones, games, cars, furniture, kids]
         

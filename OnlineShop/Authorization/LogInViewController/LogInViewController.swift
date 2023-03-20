@@ -14,9 +14,9 @@ final class LogInViewController: OnlineShopBaseViewController {
 //MARK: - PROPERTIES
     var iconClick = true
     
-    private let logInLabel = UILabel(text: Resources.String.Authorization.welcomeBack,
+    private let logInLabel = OSLabel(textLabel: Resources.String.Authorization.welcomeBack,
                                      font: Resources.Fonts.MontserratSemiBold(with: 26),
-                                     textColor: Resources.Colors.authorizationTitleLabel)
+                                     textColor: Resources.Colors.Authorization.authorizationTitleLabel)
     
     private let logInTextFieldView = LogInTextFieldView()
     
@@ -27,10 +27,9 @@ final class LogInViewController: OnlineShopBaseViewController {
         return button
     }()
     
-   private var errorLabel : UILabel = {
-        var label = UILabel()
+   private var errorLabel : OSLabel = {
+       var label = OSLabel(textLabel: "", font: nil, textColor: .red)
         label.numberOfLines = 0
-        label.textColor = .red
         return label
     }()
 }

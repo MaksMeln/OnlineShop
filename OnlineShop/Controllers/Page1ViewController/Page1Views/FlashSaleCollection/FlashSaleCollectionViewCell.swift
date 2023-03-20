@@ -34,21 +34,21 @@ final class FlashSaleColectionViewCell : UICollectionViewCell {
     var categoryView = OSNameCategoryView(with: .nameCategotyFlashSale)
     
     
-    var latestNameLabel : UILabel = {
-    let label = UILabel(text: "New balance sneakers",
+    var latestNameLabel : OSLabel = {
+    let label = OSLabel(textLabel: "New balance sneakers",
                         font: Resources.Fonts.MontserratBold(with: 13),
-                        textColor: Resources.Colors.defaultWhite)
+                        textColor: Resources.Colors.Default.defaultWhite)
         label.numberOfLines = 0
     return label
     }()
     
-    var dollarLabel = UILabel(text: "$",
+    var dollarLabel = OSLabel(textLabel: "$",
                               font: Resources.Fonts.MontserratSemiBold(with: 10),
-                              textColor: Resources.Colors.defaultWhite)
+                              textColor: Resources.Colors.Default.defaultWhite)
         
-    var priceLabel = UILabel(text: "33,00",
+    var priceLabel = OSLabel(textLabel: "33,00",
                              font: Resources.Fonts.MontserratSemiBold(with: 10),
-                             textColor: Resources.Colors.defaultWhite)
+                             textColor: Resources.Colors.Default.defaultWhite)
     
     private var likeButton : UIButton = {
         var button = UIButton()

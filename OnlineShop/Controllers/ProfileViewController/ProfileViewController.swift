@@ -10,9 +10,9 @@ import UIKit
 final class ProfileViewController : OnlineShopBaseViewController {
     
 //MARK: - PROPERTIES
-    private let titleLabel = UILabel(text: Resources.String.ProfileController.title,
+    private let titleLabel = OSLabel(textLabel: Resources.String.ProfileController.title,
                                      font: Resources.Fonts.MontserratBold(with: 15),
-                                     textColor: Resources.Colors.defaultBlack)
+                                     textColor: Resources.Colors.Default.defaultBlack)
     
     private var profilePhoto : UIImageView = {
         var profileImage = UIImageView()
@@ -21,7 +21,7 @@ final class ProfileViewController : OnlineShopBaseViewController {
         profileImage.contentMode = .scaleAspectFit
         profileImage.setDimensions(height: 60, width: 60)
         profileImage.layer.cornerRadius = profileImage.frame.height/2
-        profileImage.layer.borderColor = Resources.Colors.borderColorProfileImage.cgColor
+        profileImage.layer.borderColor = Resources.Colors.OtherColors.borderColorProfileImage.cgColor
         profileImage.layer.borderWidth = 1
         profileImage.clipsToBounds = true
         
@@ -32,16 +32,16 @@ final class ProfileViewController : OnlineShopBaseViewController {
         let button = UIButton()
         button.setTitle(Resources.String.ProfileController.changePhotoLabel,
                         for: .normal)
-        button.setTitleColor(Resources.Colors.defaultGray, for: .normal)
+        button.setTitleColor(Resources.Colors.Default.defaultGray, for: .normal)
         button.titleLabel?.font = Resources.Fonts.MontserratMedium(with: 8)
         button.addTarget(self, action: #selector(changePhotonButtonPress), for: .touchUpInside)
         
         return button
     }()
     
-    private let nameProfileLabel = UILabel(text: Resources.String.ProfileController.nameProfile,
+    private let nameProfileLabel = OSLabel(textLabel: Resources.String.ProfileController.nameProfile,
                                            font: Resources.Fonts.MontserratBold(with: 15),
-                                           textColor: Resources.Colors.nameLabel)
+                                           textColor: Resources.Colors.OtherColors.nameLabel)
     
 //    private let profilePhotoView = ProfileDataView()
     

@@ -134,38 +134,38 @@ private extension OSButton {
         switch type {
             
         case .uploadItem:
-            backgroundColor = Resources.Colors.backgroundButton
+            backgroundColor = Resources.Colors.Background.backgroundButton
             layer.cornerRadius = 15
             
             label.text = Resources.String.ProfileController.uploadItemButton
-            label.textColor = Resources.Colors.defaultWhite
+            label.textColor = Resources.Colors.Default.defaultWhite
             label.font = Resources.Fonts.MontserratBold(with: 14)
             iconView.image = Resources.Images.ProfileController.uploadItem
             
         case .profileButton:
             backgroundColor = .none
             
-            label.textColor = Resources.Colors.defaultBlack
+            label.textColor = Resources.Colors.Default.defaultBlack
             label.font = Resources.Fonts.MontserratMedium(with: 14)
-            balance.textColor = Resources.Colors.defaultBlack
+            balance.textColor = Resources.Colors.Default.defaultBlack
             balance.font = Resources.Fonts.MontserratMedium(with: 14)
             
         case .authorization:
-            backgroundColor = Resources.Colors.backgroundButton
+            backgroundColor = Resources.Colors.Background.backgroundButton
             layer.cornerRadius = 15
             
-            label.textColor = Resources.Colors.defaultWhite
+            label.textColor = Resources.Colors.Default.defaultWhite
             label.font = Resources.Fonts.MontserratBold(with: 10)
             
         case .signInButton:
             backgroundColor = .none
             
-            label.textColor = Resources.Colors.defaultBlack
+            label.textColor = Resources.Colors.Default.defaultBlack
             label.font = Resources.Fonts.MontserratMedium(with: 12)
         case .location:
             backgroundColor = .none
             
-            label.textColor = Resources.Colors.defaultGray
+            label.textColor = Resources.Colors.Default.defaultGray
             label.font = Resources.Fonts.MontserratMedium(with: 10)
             label.text = Resources.String.Page1Controller.NavBar.location
             
@@ -174,7 +174,7 @@ private extension OSButton {
         case .viewAll:
             label.text = Resources.String.Page1Controller.viewAll
             label.font = Resources.Fonts.MontserratSemiBold(with: 9)
-            label.textColor = Resources.Colors.defaultGray
+            label.textColor = Resources.Colors.Default.defaultGray
         }
         makeSystem(self)
     }

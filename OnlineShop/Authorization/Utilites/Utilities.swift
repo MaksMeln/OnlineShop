@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Utilities {
+final class Utilities {
     
     static func isPasswordValid(_ password : String) -> Bool {
         

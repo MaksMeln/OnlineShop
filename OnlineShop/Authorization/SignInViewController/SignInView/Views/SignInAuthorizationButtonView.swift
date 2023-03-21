@@ -9,7 +9,7 @@ import UIKit
 
 final class SignInAuthorizationButtonView : OnlineShopBaseView {
     
-    
+//MARK: - PROPERTISE
     private let signInWithGoogleButton : OSButton = {
           let button = OSButton(with: .signInButton)
           button.setInfo(Resources.String.Authorization.google,
@@ -27,14 +27,10 @@ final class SignInAuthorizationButtonView : OnlineShopBaseView {
                          nil)
           return button
       }()
-    
 }
 
-
+//MARK: - LIFECYCLE
 extension SignInAuthorizationButtonView {
-    override func setupViews() {
-        super.setupViews()
-    }
     
     override func constraintViews() {
         super.constraintViews()
@@ -49,12 +45,6 @@ extension SignInAuthorizationButtonView {
             stackViewSignInButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             stackViewSignInButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackViewSignInButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            
         ])
     }
-    
-    override func configureAppearance() {
-        super.configureAppearance()
-    }
 }
-

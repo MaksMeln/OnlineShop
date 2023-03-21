@@ -5,6 +5,7 @@
 //  Created by Максим Мельничук on 13.03.23.
 //
 
+
 import UIKit
 
 final class ProfileViewController : OnlineShopBaseViewController {
@@ -39,7 +40,7 @@ final class ProfileViewController : OnlineShopBaseViewController {
         return button
     }()
     
-    private let nameProfileLabel = OSLabel(textLabel: Resources.String.ProfileController.nameProfile,
+    private var nameProfileLabel = OSLabel(textLabel: Resources.String.ProfileController.nameProfile,
                                            font: Resources.Fonts.MontserratBold(with: 15),
                                            textColor: Resources.Colors.OtherColors.nameLabel)
     
@@ -108,6 +109,8 @@ extension ProfileViewController {
         
         profileButtonsAction()
         navigationController?.navigationBar.isHidden = true
+        
+        setModel()
     }
     
 //MARK: - profileButtonsAction
@@ -158,7 +161,14 @@ extension ProfileViewController {
     }
     
     @objc func logOutButtonPress() {
-        print("logOutButton press")
+        let signInViewController = SignInViewController()
+        
+        view.window?.rootViewController = signInViewController
+        view.window?.makeKeyAndVisible()    }
+    
+    func setModel() {
+        guard let activeUser = DataBase.shared.activeUser else {return}
+        nameProfileLabel.text = activeUser.firstName
     }
 
 }
@@ -175,26 +185,12 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
                                             style: .cancel,
                                             handler: nil))
         
-        actionSheet.addAction(UIAlertAction(title: "Take Photo",
-                                            style: .default,
-                                            handler: { [weak self] _ in
-                                            self?.presentCamera()
-        }))
         actionSheet.addAction(UIAlertAction(title: "Chose Photo",
                                             style: .default,
                                             handler:  { [weak self] _ in
                                             self?.presentPhotoPicker()
         }))
         present(actionSheet, animated: true)
-        
-    }
-    
-    func presentCamera() {
-        let vc = UIImagePickerController()
-        vc.sourceType = .camera
-        vc.delegate = self
-        vc.allowsEditing = true
-        present(vc, animated: true)
     }
     
     func presentPhotoPicker() {
@@ -210,7 +206,6 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
         
         self.profilePhoto.image = selectedImage
     }
-    
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

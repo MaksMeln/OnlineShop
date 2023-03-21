@@ -6,19 +6,27 @@
 //
 
 import UIKit
-import FirebaseAuth
-import Firebase
 
 /*
  переход на logInController через navigationcontroller
  добавление вех View на отдельный SignInView
  разобраться с error
-*/
+ */
 
 final class SignInViewController: OnlineShopBaseViewController {
     
     var iconClick = true
     //MARK: - PROPERTIES
+    
+    private var contentCize: CGSize {
+        CGSize(width: view.frame.width, height: view.frame.height)
+    }
+    
+    private lazy var scrollView = OSScrollView(frame: view.bounds,
+                                               contentSize: contentCize)
+    
+    private lazy var contentView = UIView(contentSize: contentCize)
+    
     private let signInLabel = OSLabel(textLabel: Resources.String.Authorization.signIn,
                                       font: Resources.Fonts.MontserratSemiBold(with: 26),
                                       textColor: Resources.Colors.Authorization.authorizationTitleLabel)
@@ -27,7 +35,7 @@ final class SignInViewController: OnlineShopBaseViewController {
     
     private let signInWithButtonView = SignInAuthorizationButtonView()
     
-    private let signInLogInView = SignInLogInView()
+    private let signInLoginView = SignInLoginButtonView()
     
     private let signInButton : OSButton = {
         let button = OSButton(with: .authorization)
@@ -36,12 +44,22 @@ final class SignInViewController: OnlineShopBaseViewController {
         return button
     }()
     
-   private var errorLabel : UILabel = {
+    private var errorLabel : UILabel = {
         var label = UILabel()
+        label.text = ""
+        label.textAlignment = .center
         label.numberOfLines = 0
-        label.textColor = .red
         return label
     }()
+    
+    let firstNameValidType: String.ValidTypes = .name
+    let lastNameValidType: String.ValidTypes = .name
+    let emailValueType : String.ValidTypes = .email
+    let passwordValueType : String.ValidTypes = .password
+    
+    deinit {
+        removeKeyboardNotification()
+    }
 }
 
 //MARK: - LIFECYCLE
@@ -50,14 +68,15 @@ extension SignInViewController {
     override func setupViews() {
         super.setupViews()
         
-        view.setupView(signInLabel)
-        view.setupView(signInButton)
-        view.setupView(signInTextFieldView)
-        view.setupView(signInLogInView)
-        view.setupView(signInWithButtonView)
-        view.setupView(errorLabel)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
         
-        errorLabel.alpha = 0
+        contentView.setupView(signInLabel)
+        contentView.setupView(signInButton)
+        contentView.setupView(signInTextFieldView)
+        contentView.setupView(signInLoginView)
+        contentView.setupView(signInWithButtonView)
+        contentView.setupView(errorLabel)
     }
     
     override func constraintViews() {
@@ -65,23 +84,24 @@ extension SignInViewController {
         
         NSLayoutConstraint.activate([
             
-            signInLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 155),
-            signInLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signInLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 155),
+            signInLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
             signInTextFieldView.topAnchor.constraint(equalTo: signInLabel.bottomAnchor, constant: 78),
-            signInTextFieldView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signInTextFieldView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
             signInButton.topAnchor.constraint(equalTo: signInTextFieldView.bottomAnchor, constant: 35),
-            signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signInButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
-            signInLogInView.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 17),
-            signInLogInView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 42),
+            signInLoginView.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 17),
+            signInLoginView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 42),
             
-            signInWithButtonView.topAnchor.constraint(equalTo: signInLogInView.bottomAnchor, constant: 74),
-            signInWithButtonView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signInWithButtonView.topAnchor.constraint(equalTo: signInLoginView.bottomAnchor, constant: 74),
+            signInWithButtonView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
-            errorLabel.topAnchor.constraint(equalTo: signInLogInView.bottomAnchor, constant: 20),
-            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorLabel.topAnchor.constraint(equalTo: signInLoginView.bottomAnchor, constant: 20),
+            errorLabel.widthAnchor.constraint(equalToConstant: 200),
+            errorLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
         ])
     }
     
@@ -89,95 +109,195 @@ extension SignInViewController {
         super.configureAppearence()
         
         signInTextFieldView.toggleShowHideAction(#selector(imageTaapped(tapGestureRecognizer:)), with: self)
-        signInLogInView.logInButtonAction(#selector(logInButtonPress), with: self)
+        signInLoginView.loginButtonAction(#selector(logInButtonPress), with: self)
+        
+        registerKeyboardNotification()
+        setupDelegate()
+        
     }
     
-    //MARK: - @@objc FUNC imageTaapped
+//    MARK: - @@objc FUNC imageTaapped
     @objc func imageTaapped(tapGestureRecognizer: UITapGestureRecognizer) {
         if iconClick {
-            iconClick = false
+            iconClick = true
             signInTextFieldView.passwordTextField.isSecureTextEntry = false
         } else {
-            iconClick = true
+            iconClick = false
             signInTextFieldView.passwordTextField.isSecureTextEntry = true
         }
     }
     
     @objc func logInButtonPress() {
-        print("press")
         let vc = LogInViewController()
-//        let tabBarController = TabBarController()
-        
+        //        navigationController?.pushViewController(vc, animated: true)
         view.window?.rootViewController = vc
         view.window?.makeKeyAndVisible()
-//        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func setupDelegate() {
+        
+        signInTextFieldView.firstNameTextField.delegate = self
+        signInTextFieldView.lastNameTextField.delegate = self
+        signInTextFieldView.emailTextField.delegate = self
+        signInTextFieldView.passwordTextField.delegate = self
     }
 }
 
+//MARK: - EXTENSION KEYBOARD SHOW HIDE
+extension SignInViewController {
+    private func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    private func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo
+        let keyboardHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardHeight.height / 2)
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        scrollView.contentOffset = CGPoint.zero
+    }
+    
+}
 
-//MARK: - CONFIGURE SIGNIN FIREBASE
+
+// MARK: - EXTENSION SETTEXTFIELD
+extension SignInViewController : UITextFieldDelegate {
+    
+    private func setTextField(textField: UITextField, validType: String.ValidTypes , validMessage: String , wrongMessage : String, string: String, range: NSRange) {
+        
+        let text = (textField.text ?? "") + string
+        let result: String
+        
+        if range.length == 1 {
+            let end = text.index(text.startIndex, offsetBy: text.count - 1)
+            result = String(text[text.startIndex..<end])
+        } else {
+            result = text
+        }
+        
+        textField.text = result
+        
+        
+        if result.isValid(validType: validType) {
+            errorLabel.text = validMessage
+            errorLabel.textColor = .green
+        } else {
+            errorLabel.text = wrongMessage
+            errorLabel.textColor = .red
+        }
+    }
+
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField {
+        case signInTextFieldView.firstNameTextField :
+            setTextField(textField: signInTextFieldView.firstNameTextField,
+                         validType: firstNameValidType,
+                         validMessage: "Name is valid",
+                         wrongMessage: "Only A - Z characters, min 1 character",
+                         string: string,
+                         range: range)
+            
+        case signInTextFieldView.lastNameTextField :
+            setTextField(textField: signInTextFieldView.lastNameTextField,
+                         validType: lastNameValidType,
+                         validMessage: "Name is valid",
+                         wrongMessage: "Only A - Z characters, min 1 character",
+                         string: string,
+                         range: range)
+            
+        case signInTextFieldView.emailTextField :
+            setTextField(textField: signInTextFieldView.emailTextField,
+                         validType: emailValueType,
+                         validMessage: "Email is valid",
+                         wrongMessage: "Email is not a valid",
+                         string: string,
+                         range: range)
+        case signInTextFieldView.passwordTextField :
+            setTextField(textField: signInTextFieldView.passwordTextField,
+                         validType: passwordValueType,
+                         validMessage: "Password is valid",
+                         wrongMessage: "Password is not a valid",
+                         string: string,
+                         range: range)
+        default :
+            break
+        }
+        return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    
+        signInTextFieldView.firstNameTextField.resignFirstResponder()
+        signInTextFieldView.lastNameTextField.resignFirstResponder()
+        signInTextFieldView.emailTextField.resignFirstResponder()
+        signInTextFieldView.passwordTextField.resignFirstResponder()
+     
+        return true
+    }
+}
+
+//MARK: - BUTTON SIGNUP TAPPED
 extension SignInViewController {
     
-    func validateFields() -> String? {
-        
-        if signInTextFieldView.firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            signInTextFieldView.lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            signInTextFieldView.emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            signInTextFieldView.passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
-            return "Please fill in all fields."
-        }
-        
-        let cleanedPassword = signInTextFieldView.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        if Utilities.isPasswordValid(cleanedPassword) == false {
-            return "Please make sure your password is at least 8 characters, contains a special character and a number."
-        }
-        return nil
-    }
-    
-    @objc func signUpTapped() {
-        
-        let error = validateFields()
-        
-        if error != nil {
-            showError(error!)
-        }
-        else {
-            let firstName = signInTextFieldView.firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lastName = signInTextFieldView.lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let email = signInTextFieldView.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let password = signInTextFieldView.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                
-                if err != nil {
-                    self.showError("Error creating user")
-                }
-                else {
-                    let db = Firestore.firestore()
-                    
-                    db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid ]) { (error) in
-                        
-                        if error != nil {
-                            self.showError("Error saving user data")
-                        }
-                    }
-                    self.transitionToHome()
+         private func findUserDataBase(userFirrstName: String, userLastName: String, userEmail: String, userPassword: String) -> User? {
+            let dataBase = DataBase.shared.users
+           
+             for user in dataBase {
+                if user.firstName == userFirrstName &&
+                    user.lastName == userLastName &&
+                    user.password == userPassword &&
+                    user.email == userEmail {
+                    return user
                 }
             }
+            return nil
         }
-    }
     
-    func showError(_ message:String) {
-        errorLabel.text = message
-        errorLabel.alpha = 1
-    }
-    
-    func transitionToHome() {
-        let tabBarController = TabBarController()
+    @objc func signUpTapped() {
+        let firstNameText = signInTextFieldView.firstNameTextField.text ?? ""
+        let lastNameText = signInTextFieldView.lastNameTextField.text ?? ""
+        let emailText = signInTextFieldView.emailTextField.text ?? ""
+        let passwordText = signInTextFieldView.passwordTextField.text ?? ""
+        let user = findUserDataBase(userFirrstName: firstNameText, userLastName: lastNameText, userEmail: emailText, userPassword: passwordText)
         
-        view.window?.rootViewController = tabBarController
-        view.window?.makeKeyAndVisible()
+        if firstNameText.isValid(validType: firstNameValidType) &&
+            lastNameText.isValid(validType: lastNameValidType) &&
+            emailText.isValid(validType: emailValueType) &&
+            passwordText.isValid(validType: passwordValueType) &&
+            user == nil
+        {
+            DataBase.shared.saveUser(firstName: firstNameText,
+                                     lastName: lastNameText,
+                                     email: emailText,
+                                     password: passwordText)
+            errorLabel.text = "Registration Complete!"
+            
+            let tabBarController = TabBarController()
+            
+            view.window?.rootViewController = tabBarController
+            view.window?.makeKeyAndVisible()
+            
+        } else if user != nil {
+            errorLabel.text = "Пользователь с таким именем  уже существует"
+        } else {
+            errorLabel.text = "Registration not complide!"
+        }
     }
 }

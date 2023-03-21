@@ -4,14 +4,12 @@
 //
 //  Created by Максим Мельничук on 15.03.23.
 //
-
 import UIKit
-import FirebaseAuth
 
 
 final class LogInViewController: OnlineShopBaseViewController {
     
-//MARK: - PROPERTIES
+    //MARK: - PROPERTIES
     var iconClick = true
     
     private let logInLabel = OSLabel(textLabel: Resources.String.Authorization.welcomeBack,
@@ -27,9 +25,10 @@ final class LogInViewController: OnlineShopBaseViewController {
         return button
     }()
     
-   private var errorLabel : OSLabel = {
-       var label = OSLabel(textLabel: "", font: nil, textColor: .red)
+    private var errorLabel : UILabel = {
+        var label = UILabel()
         label.numberOfLines = 0
+        label.textColor = .red
         return label
     }()
 }
@@ -43,10 +42,9 @@ extension LogInViewController {
         view.setupView(logInLabel)
         view.setupView(logInTextFieldView)
         view.setupView(logInButton)
-        
-        errorLabel.alpha = 0
+        view.setupView(errorLabel)
     }
-        
+    
     override func constraintViews() {
         super.constraintViews()
         
@@ -58,8 +56,12 @@ extension LogInViewController {
             logInTextFieldView.topAnchor.constraint(equalTo: logInLabel.bottomAnchor, constant: 78),
             logInTextFieldView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            logInButton.topAnchor.constraint(equalTo: logInTextFieldView.bottomAnchor, constant: 35),
+            errorLabel.topAnchor.constraint(equalTo: logInTextFieldView.bottomAnchor, constant: 40),
+            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            logInButton.topAnchor.constraint(equalTo: logInTextFieldView.bottomAnchor, constant: 100),
             logInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            
         ])
     }
     
@@ -69,7 +71,7 @@ extension LogInViewController {
         logInTextFieldView.toggleShowHideAction(#selector(imageTaapped(tapGestureRecognizer:)), with: self)
     }
     
-//MARK: - @OBJC FUNC imageTaapped
+    //MARK: - @OBJC FUNC imageTaapped
     @objc func imageTaapped(tapGestureRecognizer: UITapGestureRecognizer) {
         
         if iconClick {
@@ -81,28 +83,39 @@ extension LogInViewController {
         }
     }
     
-    @objc func logInTapped() {
+//MARK: - LOGIN AUTHORIZATION
+    
+    private func findUserDataBase(name: String) -> User? {
+        let dataBase = DataBase.shared.users
+        print(dataBase)
         
-        print("LogInbutton")
-//        let firstName = logInTextFieldView.firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        let password = logInTextFieldView.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//
-//        // Signing in the user
-////        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-////        Auth.auth().signIn(with: firstName: firstName, password: password) { (result, error) in
-//
-//            if error != nil {
-//                // Couldn't sign in
-//                self.errorLabel.text = error!.localizedDescription
-//                self.errorLabel.alpha = 1
-//            }
-//            else {
-//                let tabBarController = TabBarController()
-//
-//                view.window?.rootViewController = tabBarController
-//                view.window?.makeKeyAndVisible()
-//            }
+        for user in dataBase {
+            if user.firstName == name {
+                return user
+            }
         }
+        return nil
     }
     
-//}
+    @objc func logInTapped() {
+    
+        let firstName = logInTextFieldView.firstNameTextField.text ?? ""
+        let password = logInTextFieldView.passwordTextField.text ?? ""
+        let user = findUserDataBase(name: firstName)
+        
+        if user == nil {
+            errorLabel.text = "User not found"
+        } else if user?.password == password {
+            let tabBarController = TabBarController()
+            
+            view.window?.rootViewController = tabBarController
+            view.window?.makeKeyAndVisible()
+            
+            guard let activeUser = user else {return}
+            DataBase.shared.saveActiveUser(user: activeUser)
+        }
+        else {
+            errorLabel.text = "Wrong password"
+        }
+    }
+}

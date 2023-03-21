@@ -8,27 +8,29 @@
 import UIKit
 
 final class SignInTextFieldView : OnlineShopBaseView {
-
-//MARK: - PROPERTIES
     
-    let firstNameTextField = OSTextField(with: .authorization,
-                                         placecholder:Resources.String.Authorization.firstName)
-    
-     let lastNameTextField = OSTextField(with: .authorization,
-                                         placecholder:Resources.String.Authorization.lastName)
-    
-     let emailTextField = OSTextField(with: .authorization,
-                                      placecholder:Resources.String.Authorization.email)
-    
-    let passwordTextField : OSTextField = {
-        let password =  OSTextField(with: .authorization, placecholder: Resources.String.Authorization.password)
-        password.setIcon(Resources.Images.Autorization.passwordIcon)
-        return password
+    //MARK: - PROPERTIES
+    let imageViewPassword : UIImageView = {
+        let imageView  = UIImageView(frame: CGRect(x: -20, y: 0, width: 14, height: 14))
+        imageView.image = Resources.Images.Autorization.passwordIcon
+        return imageView
     }()
+    
+    var firstNameTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.firstName)
+    
+    var lastNameTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.lastName)
+    
+    var emailTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.email)
+    
+    var passwordTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.password)
 }
 
 //MARK: - LIFECYCLE
 extension SignInTextFieldView {
+    override func setupViews() {
+        super.setupViews()
+    }
+    
     override func constraintViews() {
         super.constraintViews()
         
@@ -45,10 +47,17 @@ extension SignInTextFieldView {
         ])
     }
     
-//MARK: - FUNC toggleShowHideAction
-    func toggleShowHideAction(_ action: Selector, with target: Any?) {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
-        passwordTextField.iconView.isUserInteractionEnabled = true
-        passwordTextField.addGestureRecognizer(tapGestureRecognizer)
+    override func configureAppearance() {
+        super.configureAppearance()
+        passwordTextField.rightViewMode = UITextField.ViewMode.always
+        passwordTextField.rightView = imageViewPassword
+        
     }
-}
+    
+    //MARK: - FUNC toggleShowHideAction
+      func toggleShowHideAction(_ action: Selector, with target: Any?) {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
+        imageViewPassword.isUserInteractionEnabled = true
+        imageViewPassword.addGestureRecognizer(tapGestureRecognizer)
+    }
+    

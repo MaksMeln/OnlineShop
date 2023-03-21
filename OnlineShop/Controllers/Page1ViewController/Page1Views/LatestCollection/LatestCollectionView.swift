@@ -10,8 +10,9 @@ import UIKit
 
 final class LatestCollectionView: UICollectionView {
 //MARK: - PROPERTIES
-//    var categoryArray = [CategoryList]()
-       
+    
+    private var latestModel = LatestViewModel()
+    
 //MARK: - LIFECYCLE
     init() {
         let categoryLayout = UICollectionViewFlowLayout()
@@ -21,16 +22,12 @@ final class LatestCollectionView: UICollectionView {
         super.init(frame: .zero, collectionViewLayout: categoryLayout)
         
         configureAppearance()
-        
+        loadLatestData()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    func set(category: [CategoryList]) {
-//        self.categoryArray = category
-//    }
     
     func configureAppearance() {
             
@@ -40,8 +37,14 @@ final class LatestCollectionView: UICollectionView {
         contentInset = UIEdgeInsets(top: 0, left: 11, bottom: 0, right: 0)
         
         register(LatestCollectionViewCell.self, forCellWithReuseIdentifier: Resources.String.Page1Controller.categoryCollectionCell)
-        delegate = self
-        dataSource = self
+    }
+    
+    private func loadLatestData() {
+        latestModel.fetchLatestData { [weak self] in
+            self?.dataSource = self
+            self?.reloadData()
+            self?.delegate = self
+        }
     }
 }
 
@@ -50,15 +53,14 @@ final class LatestCollectionView: UICollectionView {
 extension LatestCollectionView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return categoryArray.count
-        return 3
+        return latestModel.numberOfRowsInSection(section: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.String.Page1Controller.categoryCollectionCell, for: indexPath) as! LatestCollectionViewCell
-        
-//        cell.latestImageView.image =
-        
+
+        let latest = latestModel.cellForRowAt(indexPath: indexPath)
+        cell.setCellWithValuesOfLatest(latest)
         return cell
     }
     
@@ -68,10 +70,3 @@ extension LatestCollectionView: UICollectionViewDataSource, UICollectionViewDele
                       height: frame.height)
     }
 }
-
-
-
-
-
-
-

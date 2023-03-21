@@ -9,39 +9,26 @@ import Foundation
 import UIKit
 
 final class LatestCollectionViewCell : UICollectionViewCell {
-
+    
 //MARK: - PROPERTIES
-//    var latestImageView = UIImageView()
     
-    var latestImageView : UIImageView = {
-        var imageView = UIImageView()
-        imageView.image = Resources.Images.Page1Controller.latestImage
-        return imageView
-    }()
+    var latestImageView = UIImageView()
     
-    var categoryNameLabel = "Games"
-    
-    var categoryView = OSNameCategoryView(with: .nameCategoryLatest)
-    
-    
-    var latestNameLabel : OSLabel = {
-    let label = OSLabel(textLabel: "PlayStation 5 console",
-                        font: Resources.Fonts.MontserratSemiBold(with: 9),
-                        textColor: Resources.Colors.Default.defaultWhite)
-        label.numberOfLines = 0
-    return label
-    }()
+    var categoryView = OSCollectionLabelView(with: .nameCategoryLatest, text: "")
+   
+    var latestNameLabel = OSLabel(textLabel: "",
+                            font: Resources.Fonts.MontserratSemiBold(with: 9),
+                            textColor: Resources.Colors.Default.defaultWhite)
         
-    var priceLabel = OSLabel(textLabel: "$ 90,000",
-                             font: Resources.Fonts.MontserratSemiBold(with: 7),
-                             textColor: Resources.Colors.Default.defaultWhite)
+    var priceView = OSCollectionLabelView(with: .latestPrice, text: "")
     
-   private var addButton : UIButton = {
-       var button = UIButton()
+    private var addButton : UIButton = {
+        var button = UIButton()
         button.setImage(Resources.Images.Page1Controller.addIcon, for: .normal)
         return button
     }()
-
+    
+    
 //MARK: - LIFECYCLE
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,19 +36,18 @@ final class LatestCollectionViewCell : UICollectionViewCell {
         layer.cornerRadius = 9
         
         setupView(latestImageView)
-        
         setupView(categoryView)
-        categoryView.label.text = categoryNameLabel
         
         setupView(latestNameLabel)
-        setupView(priceLabel)
+        setupView(priceView)
         setupView(addButton)
         constraintViews()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+//MARK: - CONSTRAINTVIEWS
     func constraintViews() {
         NSLayoutConstraint.activate([
             latestImageView.topAnchor.constraint(equalTo: topAnchor),
@@ -77,12 +63,52 @@ final class LatestCollectionViewCell : UICollectionViewCell {
             latestNameLabel.widthAnchor.constraint(equalToConstant: 75),
             latestNameLabel.heightAnchor.constraint(equalToConstant: 22),
             
-            priceLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
-            priceLabel.leadingAnchor.constraint(equalTo: latestNameLabel.leadingAnchor),
+            priceView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
+            priceView.leadingAnchor.constraint(equalTo: latestNameLabel.leadingAnchor),
             
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             addButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-        
+            
         ])
+    }
+
+// MARK: - FUNC FROM CELL
+    func setCellWithValuesOfLatest(_ latest:LatestItem) {
+        updateUI(name: latest.name, category: latest.category, price: latest.price, image: latest.image_url)
+    }
+    
+    private func updateUI(name: String?, category: String?, price: Int?, image: String?) {
+        
+        self.latestNameLabel.text = name
+        self.priceView.label.text = String(price!)
+        self.categoryView.label.text = category
+        
+        guard let latestString = image else { return }
+
+        self.latestImageView.image = nil
+        
+        guard let latestImageURL = URL(string: latestString) else {
+            self.latestImageView.image = UIImage(named: "noImageAvailable")
+            return
+        }
+        
+        getImageDataFrom(url: latestImageURL)
+    }
+
+    
+    private func getImageDataFrom(url: URL) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil { return }
+            
+            guard let data = data else { return }
+            
+            DispatchQueue.main.async {
+                if let image = UIImage(data: data) {
+                    self.latestImageView.clipsToBounds = true
+                    self.latestImageView.layer.cornerRadius = 9
+                    self.latestImageView.image = image
+                }
+            }
+        }.resume()
     }
 }

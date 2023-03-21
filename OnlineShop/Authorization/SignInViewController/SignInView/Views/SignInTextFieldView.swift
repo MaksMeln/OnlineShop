@@ -60,4 +60,4 @@ extension SignInTextFieldView {
         imageViewPassword.isUserInteractionEnabled = true
         imageViewPassword.addGestureRecognizer(tapGestureRecognizer)
     }
-    
+}

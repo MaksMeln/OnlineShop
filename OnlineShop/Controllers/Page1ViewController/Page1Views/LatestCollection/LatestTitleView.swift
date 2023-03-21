@@ -36,8 +36,6 @@ extension LatestTitleView {
             
             latestTitleViewAllButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             latestTitleViewAllButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
         ])
     }
 }
-

@@ -11,13 +11,8 @@ import UIKit
 final class FlashSaleColectionViewCell : UICollectionViewCell {
 
 //MARK: - PROPERTIES
-//    var latestImageView = UIImageView()
     
-    var latestImageView : UIImageView = {
-        var imageView = UIImageView()
-        imageView.image = UIImage(named: "FlashSaleImage")
-        return imageView
-    }()
+    var flashSaleImage = UIImageView()
     
     var userIcon : UIImageView = {
         var imageView = UIImageView()
@@ -25,30 +20,27 @@ final class FlashSaleColectionViewCell : UICollectionViewCell {
         return imageView
     }()
     
-    var discountLabel = "30"
-    
-    var discountView = OSNameCategoryView(with: .discount)
-    
-    var categoryNameLabel = "Kids"
-    
-    var categoryView = OSNameCategoryView(with: .nameCategotyFlashSale)
-    
-    
-    var latestNameLabel : OSLabel = {
-    let label = OSLabel(textLabel: "New balance sneakers",
-                        font: Resources.Fonts.MontserratBold(with: 13),
-                        textColor: Resources.Colors.Default.defaultWhite)
-        label.numberOfLines = 0
-    return label
+    var discountView : OSCollectionLabelView =  {
+        var view = OSCollectionLabelView(with: .discount, text: "")
+        view.label.text = ""
+        return view
+    }()
+      
+    var categoryView : OSCollectionLabelView =  {
+        var view = OSCollectionLabelView(with: .nameCategotyFlashSale, text: "")
+        view.label.text = ""
+        return view
     }()
     
-    var dollarLabel = OSLabel(textLabel: "$",
-                              font: Resources.Fonts.MontserratSemiBold(with: 10),
-                              textColor: Resources.Colors.Default.defaultWhite)
-        
-    var priceLabel = OSLabel(textLabel: "33,00",
-                             font: Resources.Fonts.MontserratSemiBold(with: 10),
-                             textColor: Resources.Colors.Default.defaultWhite)
+    var flashSaleNameLabel = OSLabel(textLabel: "",
+                        font: Resources.Fonts.MontserratBold(with: 13),
+                        textColor: Resources.Colors.Default.defaultWhite)
+    
+    var priceView : OSCollectionLabelView =  {
+        var view = OSCollectionLabelView(with: .flashSalePrice, text: "")
+        view.label.text = ""
+        return view
+    }()
     
     private var likeButton : UIButton = {
         var button = UIButton()
@@ -66,20 +58,17 @@ final class FlashSaleColectionViewCell : UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
     
-        layer.cornerRadius = 9
+        layer.cornerRadius = 11
         
-        setupView(latestImageView)
+        setupView(flashSaleImage)
         setupView(userIcon)
         
         setupView(discountView)
-        discountView.label.text = discountLabel
-        
         setupView(categoryView)
-        categoryView.label.text = categoryNameLabel
+        setupView(priceView)
         
-        setupView(latestNameLabel)
-        setupView(dollarLabel)
-        setupView(priceLabel)
+        setupView(flashSaleNameLabel)
+        
         setupView(likeButton)
         setupView(addButton)
         constraintViews()
@@ -88,12 +77,13 @@ final class FlashSaleColectionViewCell : UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+//MARK: - CONSTRAINTS
     func constraintViews() {
         NSLayoutConstraint.activate([
-            latestImageView.topAnchor.constraint(equalTo: topAnchor),
-            latestImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            latestImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            latestImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            flashSaleImage.topAnchor.constraint(equalTo: topAnchor),
+            flashSaleImage.bottomAnchor.constraint(equalTo: bottomAnchor),
+            flashSaleImage.leadingAnchor.constraint(equalTo: leadingAnchor),
+            flashSaleImage.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             userIcon.topAnchor.constraint(equalTo: topAnchor, constant: 7.5),
             userIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7.5),
@@ -104,23 +94,60 @@ final class FlashSaleColectionViewCell : UICollectionViewCell {
             categoryView.topAnchor.constraint(equalTo: topAnchor, constant: 121),
             categoryView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             
-            latestNameLabel.topAnchor.constraint(equalTo: categoryView.bottomAnchor, constant: 9),
-            latestNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            latestNameLabel.widthAnchor.constraint(equalToConstant: 92),
-            latestNameLabel.heightAnchor.constraint(equalToConstant: 32),
+            flashSaleNameLabel.topAnchor.constraint(equalTo: categoryView.bottomAnchor, constant: 9),
+            flashSaleNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            flashSaleNameLabel.widthAnchor.constraint(equalToConstant: 92),
+            flashSaleNameLabel.heightAnchor.constraint(equalToConstant: 32),
             
-            dollarLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16 ),
-            dollarLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.5),
-            
-            priceLabel.bottomAnchor.constraint(equalTo: dollarLabel.bottomAnchor),
-            priceLabel.leadingAnchor.constraint(equalTo: dollarLabel.trailingAnchor, constant: 2),
-            
+            priceView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16 ),
+            priceView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.5),
+                        
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
             addButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -7),
             
             likeButton.trailingAnchor.constraint(equalTo: addButton.leadingAnchor, constant: -5),
             likeButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-
         ])
+    }
+    
+// MARK: - FUNC FROM CELL
+    func setCellWithValuesOfFlashSale(_ flashSale : FlashSaleElement) {
+        updateUI(name: flashSale.name, category: flashSale.category, price: flashSale.price, discount: flashSale.discount, image: flashSale.image_url)
+    }
+    
+    private func updateUI(name: String?, category: String?, price: Double?, discount: Int?,  image: String?) {
+        
+        self.flashSaleNameLabel.text = name
+        self.priceView.label.text = String(price!)
+        self.categoryView.label.text = category
+        self.discountView.label.text = String(discount!)
+        
+        guard let flashSaleString = image else { return }
+
+        self.flashSaleImage.image = nil
+        
+        guard let latestImageURL = URL(string: flashSaleString) else {
+            self.flashSaleImage.image = UIImage(named: "noImageAvailable")
+            return
+        }
+        
+        getImageDataFrom(url: latestImageURL)
+    }
+
+    private func getImageDataFrom(url: URL) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil { return }
+            
+            guard let data = data else { return }
+            
+            DispatchQueue.main.async {
+                if let image = UIImage(data: data) {
+                    self.flashSaleImage.clipsToBounds = true
+                    self.flashSaleImage.contentMode = .scaleToFill
+                    self.flashSaleImage.layer.cornerRadius = 11
+                    self.flashSaleImage.image = image
+                }
+            }
+        }.resume()
     }
 }

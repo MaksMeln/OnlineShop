@@ -10,7 +10,7 @@ import UIKit
 
 final class FlashSaleCollectionView: UICollectionView {
 //MARK: - PROPERTIES
-//    var categoryArray = [CategoryList]()
+   private var flashSaleModel = FlashSaleViewModel()
        
 //MARK: - LIFECYCLE
     init() {
@@ -21,16 +21,14 @@ final class FlashSaleCollectionView: UICollectionView {
     
         super.init(frame: .zero, collectionViewLayout: categoryLayout)
         configureAppearance()
+        loadFlashSaleData()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    func set(category: [CategoryList]) {
-//        self.categoryArray = category
-//    }
-    
+
     func configureAppearance() {
             
         translatesAutoresizingMaskIntoConstraints = false
@@ -39,8 +37,14 @@ final class FlashSaleCollectionView: UICollectionView {
         contentInset = UIEdgeInsets(top: 0, left: 11, bottom: 0, right: 7)
         
         register(FlashSaleColectionViewCell.self, forCellWithReuseIdentifier: Resources.String.Page1Controller.categoryCollectionCell)
-        delegate = self
-        dataSource = self
+    }
+    
+    private func loadFlashSaleData() {
+        flashSaleModel.fetchFlashSaleData { [weak self] in
+            self?.dataSource = self
+            self?.reloadData()
+            self?.delegate = self
+        }
     }
 }
 
@@ -49,16 +53,16 @@ final class FlashSaleCollectionView: UICollectionView {
 extension FlashSaleCollectionView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return categoryArray.count
-        return 3
+        return flashSaleModel.numberOfRowsInSection(section: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.String.Page1Controller.categoryCollectionCell, for: indexPath) as! FlashSaleColectionViewCell
         
-//        cell.latestImageView.image =
-        
+        let flashSaleCell = flashSaleModel.cellForRowAt(indexPath: indexPath)
+        cell.setCellWithValuesOfFlashSale(flashSaleCell)
         return cell
+  
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -67,11 +71,3 @@ extension FlashSaleCollectionView: UICollectionViewDataSource, UICollectionViewD
                       height: frame.height)
     }
 }
-
-
-
-
-
-
-
-

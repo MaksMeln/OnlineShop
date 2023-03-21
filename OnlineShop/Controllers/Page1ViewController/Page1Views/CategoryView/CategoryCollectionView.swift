@@ -16,7 +16,7 @@ final class CategoryCollectionView: UICollectionView {
     init() {
         let categoryLayout = UICollectionViewFlowLayout()
         categoryLayout.scrollDirection = .horizontal
-        categoryLayout.minimumLineSpacing = 10
+        categoryLayout.minimumLineSpacing = CategoryConstants.categoryminimumLineSpacing
     
         super.init(frame: .zero, collectionViewLayout: categoryLayout)
         

@@ -1,27 +1,35 @@
 //
-//  OSNameCategoryView.swift
+//  OSCollectionLabelView.swift
 //  OnlineShop
 //
 //  Created by Максим Мельничук on 18.03.23.
 //
 import UIKit
 
-public enum OSNameCategoryViewType {
+public enum OSCollectionLabelViewType {
     case nameCategoryLatest
     case nameCategotyFlashSale
     case discount
+    case latestPrice
+    case flashSalePrice
 }
 
-final class OSNameCategoryView : UIView {
+final class OSCollectionLabelView : UIView {
     
-    var type: OSNameCategoryViewType = .nameCategoryLatest
+    var type: OSCollectionLabelViewType = .nameCategoryLatest
     
     var label = UILabel()
     var discountLabel = UILabel()
+    var flashSalePriceLabel = UILabel()
+    var latestPriceLabel = UILabel()
     
-    init(with type: OSNameCategoryViewType) {
+    
+    
+    init(with type: OSCollectionLabelViewType, text labelText : String?) {
         super.init(frame: .zero)
         self.type = type
+        self.label.text = labelText
+        
         setupViews()
         constraintViews()
         configureAppearance()
@@ -36,11 +44,13 @@ final class OSNameCategoryView : UIView {
     }
 }
 
-private extension OSNameCategoryView {
+private extension OSCollectionLabelView {
     
     func setupViews() {
         setupView(label)
         setupView(discountLabel)
+        setupView(latestPriceLabel)
+        setupView(flashSalePriceLabel)
     }
     
     //MARK: - CONSTRAINTVIEWS
@@ -62,7 +72,6 @@ private extension OSNameCategoryView {
                 label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
             ])
        
-            
         case .discount:
             NSLayoutConstraint.activate([
                 
@@ -74,6 +83,27 @@ private extension OSNameCategoryView {
                 discountLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -7),
                 discountLabel.centerYAnchor.constraint(equalTo: label.centerYAnchor)
             ])
+            
+        case .latestPrice:
+            NSLayoutConstraint.activate([
+                
+                latestPriceLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+                latestPriceLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+                
+                label.bottomAnchor.constraint(equalTo: bottomAnchor),
+                label.leadingAnchor.constraint(equalTo: latestPriceLabel.trailingAnchor, constant: 1)
+            ])
+            
+        case .flashSalePrice:
+            NSLayoutConstraint.activate([
+                
+                flashSalePriceLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+                flashSalePriceLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+                
+                label.bottomAnchor.constraint(equalTo: bottomAnchor),
+                label.leadingAnchor.constraint(equalTo: flashSalePriceLabel.trailingAnchor, constant: 2)
+            ])
+        
         }
     }
     //MARK: - CONFIGUREAPPEARANCE
@@ -106,6 +136,22 @@ private extension OSNameCategoryView {
             discountLabel.text = Resources.String.Page1Controller.discount
             discountLabel.font = Resources.Fonts.MontserratSemiBold(with: 10)
             discountLabel.textColor = Resources.Colors.Default.defaultWhite
+            
+        case .flashSalePrice:
+            label.font = Resources.Fonts.MontserratSemiBold(with: 10)
+            label.textColor = Resources.Colors.Default.defaultWhite
+            
+            flashSalePriceLabel.text = "$"
+            flashSalePriceLabel.font =  Resources.Fonts.MontserratSemiBold(with: 10)
+            flashSalePriceLabel.textColor = Resources.Colors.Default.defaultWhite
+            
+        case .latestPrice:
+            label.font = Resources.Fonts.MontserratSemiBold(with: 7)
+            label.textColor = Resources.Colors.Default.defaultWhite
+            
+            latestPriceLabel.text = "$"
+            latestPriceLabel.font = Resources.Fonts.MontserratSemiBold(with: 7)
+            latestPriceLabel.textColor = Resources.Colors.Default.defaultWhite
         }
     }
 }

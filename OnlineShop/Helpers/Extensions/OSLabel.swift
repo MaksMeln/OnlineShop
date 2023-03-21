@@ -15,6 +15,7 @@ final class OSLabel : UILabel {
         self.text = textLabel
         self.font = font
         self.textColor = textColor
+        self.numberOfLines = 0
         
         
         

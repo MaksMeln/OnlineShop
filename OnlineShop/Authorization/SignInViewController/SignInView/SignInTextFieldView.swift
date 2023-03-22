@@ -16,13 +16,13 @@ final class SignInTextFieldView : OnlineShopBaseView {
         return imageView
     }()
     
-    var firstNameTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.firstName)
+    var firstNameTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.TextField.firstName)
     
-    var lastNameTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.lastName)
+    var lastNameTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.TextField.lastName)
     
-    var emailTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.email)
+    var emailTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.TextField.email)
     
-    var passwordTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.password)
+    var passwordTextField = OSTextField(with: .authorization, placecholder: Resources.String.Authorization.TextField.password)
 }
 
 //MARK: - LIFECYCLE
@@ -34,16 +34,16 @@ extension SignInTextFieldView {
     override func constraintViews() {
         super.constraintViews()
         
-        let stackViewTextField = UIStackView(arrangedSubviews: [firstNameTextField, lastNameTextField, emailTextField, passwordTextField])
-        stackViewTextField.axis = .vertical
-        stackViewTextField.spacing = 35
-        self.setupView(stackViewTextField)
+        let stackView = UIStackView(arrangedSubviews: [firstNameTextField, lastNameTextField, emailTextField, passwordTextField])
+        stackView.axis = .vertical
+        stackView.spacing = 35
+        self.setupView(stackView)
         
         NSLayoutConstraint.activate([
-            stackViewTextField.topAnchor.constraint(equalTo: topAnchor),
-            stackViewTextField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            stackViewTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackViewTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
         ])
     }
     

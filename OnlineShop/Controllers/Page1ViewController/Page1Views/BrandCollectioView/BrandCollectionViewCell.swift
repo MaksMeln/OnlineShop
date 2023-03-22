@@ -12,7 +12,7 @@ final class BrandsCollectionViewCell : UICollectionViewCell {
 //MARK: - PROPERTIES
     var brandsImageView : UIImageView = {
         var imageView = UIImageView()
-        imageView.image = Resources.Images.Page1Controller.latestImage
+        imageView.image = Resources.Images.Page1Controller.brandImage
         return imageView
     }()
 //MARK: - LIFECYCLE

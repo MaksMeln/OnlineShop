@@ -1,5 +1,5 @@
 //
-//  LogInViewController.swift
+//  LoginViewController.swift
 //  OnlineShop
 //
 //  Created by Максим Мельничук on 15.03.23.
@@ -7,41 +7,39 @@
 import UIKit
 
 
-final class LogInViewController: OnlineShopBaseViewController {
+final class LoginViewController: OnlineShopBaseViewController {
     
     //MARK: - PROPERTIES
     var iconClick = true
     
-    private let logInLabel = OSLabel(textLabel: Resources.String.Authorization.welcomeBack,
+    private let loginLabel = OSLabel(textLabel: Resources.String.Authorization.Title.welcomeBack,
                                      font: Resources.Fonts.MontserratSemiBold(with: 26),
                                      textColor: Resources.Colors.Authorization.authorizationTitleLabel)
     
-    private let logInTextFieldView = LogInTextFieldView()
+    private let loginTextFieldView = LoginTextFieldView()
     
-    private let logInButton : OSButton = {
+    private let loginButton : OSButton = {
         let button = OSButton(with: .authorization)
-        button.setTitle(Resources.String.Authorization.logIn, for: .normal)
-        button.addTarget(self, action: #selector(logInTapped), for: .touchUpInside)
+        button.setTitle(Resources.String.Authorization.Login.login, for: .normal)
+        button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         return button
     }()
     
-    private var errorLabel : UILabel = {
-        var label = UILabel()
-        label.numberOfLines = 0
-        label.textColor = .red
-        return label
-    }()
+    private var errorLabel = OSLabel(textLabel: "",
+                                     font:  Resources.Fonts.MontserratSemiBold(with: 10),
+                                     textColor: Resources.Colors.Background.diskountBackground)
+
 }
 
 //MARK: - LIFECYCLE
-extension LogInViewController {
+extension LoginViewController {
     
     override func setupViews() {
         super.setupViews()
         
-        view.setupView(logInLabel)
-        view.setupView(logInTextFieldView)
-        view.setupView(logInButton)
+        view.setupView(loginLabel)
+        view.setupView(loginTextFieldView)
+        view.setupView(loginButton)
         view.setupView(errorLabel)
     }
     
@@ -50,17 +48,17 @@ extension LogInViewController {
         
         NSLayoutConstraint.activate([
             
-            logInLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 155),
-            logInLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 155),
+            loginLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            logInTextFieldView.topAnchor.constraint(equalTo: logInLabel.bottomAnchor, constant: 78),
-            logInTextFieldView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginTextFieldView.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 78),
+            loginTextFieldView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            errorLabel.topAnchor.constraint(equalTo: logInTextFieldView.bottomAnchor, constant: 40),
+            errorLabel.topAnchor.constraint(equalTo: loginTextFieldView.bottomAnchor, constant: 40),
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            logInButton.topAnchor.constraint(equalTo: logInTextFieldView.bottomAnchor, constant: 100),
-            logInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            loginButton.topAnchor.constraint(equalTo: loginTextFieldView.bottomAnchor, constant: 100),
+            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             
         ])
     }
@@ -68,7 +66,7 @@ extension LogInViewController {
     override func configureAppearence() {
         super.configureAppearence()
         
-        logInTextFieldView.toggleShowHideAction(#selector(imageTaapped(tapGestureRecognizer:)), with: self)
+        loginTextFieldView.toggleShowHideAction(#selector(imageTaapped(tapGestureRecognizer:)), with: self)
     }
     
     //MARK: - @OBJC FUNC imageTaapped
@@ -76,10 +74,10 @@ extension LogInViewController {
         
         if iconClick {
             iconClick = false
-            logInTextFieldView.passwordTextField.isSecureTextEntry = false
+            loginTextFieldView.passwordTextField.isSecureTextEntry = false
         } else {
             iconClick = true
-            logInTextFieldView.passwordTextField.isSecureTextEntry = true
+            loginTextFieldView.passwordTextField.isSecureTextEntry = true
         }
     }
     
@@ -97,14 +95,14 @@ extension LogInViewController {
         return nil
     }
     
-    @objc func logInTapped() {
+    @objc func loginTapped() {
     
-        let firstName = logInTextFieldView.firstNameTextField.text ?? ""
-        let password = logInTextFieldView.passwordTextField.text ?? ""
+        let firstName = loginTextFieldView.firstNameTextField.text ?? ""
+        let password = loginTextFieldView.passwordTextField.text ?? ""
         let user = findUserDataBase(name: firstName)
         
         if user == nil {
-            errorLabel.text = "User not found"
+            errorLabel.text = Resources.String.Authorization.Error.userNotExist
         } else if user?.password == password {
             let tabBarController = TabBarController()
             
@@ -115,7 +113,7 @@ extension LogInViewController {
             DataBase.shared.saveActiveUser(user: activeUser)
         }
         else {
-            errorLabel.text = "Wrong password"
+            errorLabel.text = Resources.String.Authorization.Error.password
         }
     }
 }

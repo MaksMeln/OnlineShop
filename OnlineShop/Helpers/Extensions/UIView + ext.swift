@@ -49,6 +49,4 @@ extension UIView {
     @objc func handleOut() {
         UIView.animate(withDuration: 0.15) { self.alpha = 1 }
     }
-
-    
 }

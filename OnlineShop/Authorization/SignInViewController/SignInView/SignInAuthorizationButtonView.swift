@@ -11,8 +11,8 @@ final class SignInAuthorizationButtonView : OnlineShopBaseView {
     
 //MARK: - PROPERTISE
     private let signInWithGoogleButton : OSButton = {
-          let button = OSButton(with: .signInButton)
-          button.setInfo(Resources.String.Authorization.google,
+          let button = OSButton(with: .signInWithHelpersButton)
+        button.setInfo(Resources.String.Authorization.ButtonHelpers.google,
                          Resources.Images.Autorization.googleIcon,
                          nil,
                          nil)
@@ -20,8 +20,8 @@ final class SignInAuthorizationButtonView : OnlineShopBaseView {
       }()
   
       private let signInWithAppleButton : OSButton = {
-          let button = OSButton(with: .signInButton)
-          button.setInfo(Resources.String.Authorization.apple,
+          let button = OSButton(with: .signInWithHelpersButton)
+          button.setInfo(Resources.String.Authorization.ButtonHelpers.apple,
                          Resources.Images.Autorization.appleIcon,
                          nil,
                          nil)
@@ -35,16 +35,16 @@ extension SignInAuthorizationButtonView {
     override func constraintViews() {
         super.constraintViews()
         
-        let stackViewSignInButton = UIStackView(arrangedSubviews: [signInWithGoogleButton , signInWithAppleButton])
-        stackViewSignInButton.axis = .vertical
-        stackViewSignInButton.spacing = 38
-        self.setupView(stackViewSignInButton)
+        let stackView = UIStackView(arrangedSubviews: [signInWithGoogleButton , signInWithAppleButton])
+        stackView.axis = .vertical
+        stackView.spacing = 38
+        self.setupView(stackView)
         
         NSLayoutConstraint.activate([
-            stackViewSignInButton.topAnchor.constraint(equalTo: topAnchor),
-            stackViewSignInButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            stackViewSignInButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackViewSignInButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
         ])
     }
 }

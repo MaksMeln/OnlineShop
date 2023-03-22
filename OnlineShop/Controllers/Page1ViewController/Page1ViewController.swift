@@ -21,10 +21,8 @@ final class Page1ViewController : OnlineShopBaseViewController {
     private var contentCize: CGSize {
         CGSize(width: view.frame.width, height: view.frame.height)
     }
-    
     private lazy var scrollView = OSScrollView(frame: view.bounds,
                                                contentSize: contentCize)
-    
     private lazy var contentView = UIView(contentSize: contentCize)
     
 //MARK: - PROPERTIES

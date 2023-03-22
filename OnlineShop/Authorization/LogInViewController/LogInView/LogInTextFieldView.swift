@@ -7,36 +7,36 @@
 
 import UIKit
 
-final class LogInTextFieldView : OnlineShopBaseView {
+final class LoginTextFieldView : OnlineShopBaseView {
 //MARK: - PROPERTIES
     
     let firstNameTextField = OSTextField(with: .authorization,
-                                         placecholder: Resources.String.Authorization.firstName)
+                                         placecholder: Resources.String.Authorization.TextField.firstName)
     
     let passwordTextField : OSTextField = {
         let password =  OSTextField(with: .authorization,
-                                    placecholder: Resources.String.Authorization.password)
+                                    placecholder: Resources.String.Authorization.TextField.password)
         password.setIcon(Resources.Images.Autorization.passwordIcon)
         return password
     }()
 }
 
 //MARK: - CONSTRAINVIEWS
-extension LogInTextFieldView {
+extension LoginTextFieldView {
    
     override func constraintViews() {
         super.constraintViews()
         
-        let stackViewTextField = UIStackView(arrangedSubviews: [firstNameTextField, passwordTextField])
-        stackViewTextField.axis = .vertical
-        stackViewTextField.spacing = 35
-        self.setupView(stackViewTextField)
+        let stackView = UIStackView(arrangedSubviews: [firstNameTextField, passwordTextField])
+        stackView.axis = .vertical
+        stackView.spacing = 35
+        self.setupView(stackView)
         
         NSLayoutConstraint.activate([
-            stackViewTextField.topAnchor.constraint(equalTo: topAnchor),
-            stackViewTextField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            stackViewTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackViewTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
         ])
     }
     

@@ -16,18 +16,17 @@ import UIKit
 final class SignInViewController: OnlineShopBaseViewController {
     
     var iconClick = true
-    //MARK: - PROPERTIES
+//MARK: - SCROLLVIEW
     
     private var contentCize: CGSize {
         CGSize(width: view.frame.width, height: view.frame.height)
     }
-    
     private lazy var scrollView = OSScrollView(frame: view.bounds,
                                                contentSize: contentCize)
-    
     private lazy var contentView = UIView(contentSize: contentCize)
-    
-    private let signInLabel = OSLabel(textLabel: Resources.String.Authorization.signIn,
+ 
+//MARK: - PROPERTIES
+    private let signInLabel = OSLabel(textLabel: Resources.String.Authorization.Title.signIn,
                                       font: Resources.Fonts.MontserratSemiBold(with: 26),
                                       textColor: Resources.Colors.Authorization.authorizationTitleLabel)
     
@@ -39,19 +38,16 @@ final class SignInViewController: OnlineShopBaseViewController {
     
     private let signInButton : OSButton = {
         let button = OSButton(with: .authorization)
-        button.setTitle(Resources.String.Authorization.signIn, for: .normal)
+        button.setTitle(Resources.String.Authorization.Title.signIn, for: .normal)
         button.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
         return button
     }()
     
-    private var errorLabel : UILabel = {
-        var label = UILabel()
-        label.text = ""
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        return label
-    }()
-    
+    private var errorLabel = OSLabel(textLabel: "",
+                                     font:  Resources.Fonts.MontserratSemiBold(with: 10),
+                                     textColor: Resources.Colors.Background.diskountBackground)
+
+//MARK: - VALIDTYPE
     let firstNameValidType: String.ValidTypes = .name
     let lastNameValidType: String.ValidTypes = .name
     let emailValueType : String.ValidTypes = .email
@@ -77,6 +73,7 @@ extension SignInViewController {
         contentView.setupView(signInLoginView)
         contentView.setupView(signInWithButtonView)
         contentView.setupView(errorLabel)
+       
     }
     
     override func constraintViews() {
@@ -128,8 +125,9 @@ extension SignInViewController {
     }
     
     @objc func logInButtonPress() {
-        let vc = LogInViewController()
-        //        navigationController?.pushViewController(vc, animated: true)
+        let vc = LoginViewController()
+//                navigationController?.pushViewController(vc, animated: true)
+        
         view.window?.rootViewController = vc
         view.window?.makeKeyAndVisible()
     }
@@ -178,7 +176,7 @@ extension SignInViewController {
 // MARK: - EXTENSION SETTEXTFIELD
 extension SignInViewController : UITextFieldDelegate {
     
-    private func setTextField(textField: UITextField, validType: String.ValidTypes , validMessage: String , wrongMessage : String, string: String, range: NSRange) {
+    private func setTextField(textField: UITextField, validType: String.ValidTypes , wrongMessage : String, string: String, range: NSRange) {
         
         let text = (textField.text ?? "") + string
         let result: String
@@ -193,10 +191,8 @@ extension SignInViewController : UITextFieldDelegate {
         textField.text = result
         
         
-        if result.isValid(validType: validType) {
-            errorLabel.text = validMessage
-            errorLabel.textColor = .green
-        } else {
+        if result.isValid(validType: validType) {}
+        else {
             errorLabel.text = wrongMessage
             errorLabel.textColor = .red
         }
@@ -209,31 +205,27 @@ extension SignInViewController : UITextFieldDelegate {
         case signInTextFieldView.firstNameTextField :
             setTextField(textField: signInTextFieldView.firstNameTextField,
                          validType: firstNameValidType,
-                         validMessage: "Name is valid",
-                         wrongMessage: "Only A - Z characters, min 1 character",
+                         wrongMessage: Resources.String.Authorization.Error.name,
                          string: string,
                          range: range)
             
         case signInTextFieldView.lastNameTextField :
             setTextField(textField: signInTextFieldView.lastNameTextField,
                          validType: lastNameValidType,
-                         validMessage: "Name is valid",
-                         wrongMessage: "Only A - Z characters, min 1 character",
+                         wrongMessage: Resources.String.Authorization.Error.name,
                          string: string,
                          range: range)
             
         case signInTextFieldView.emailTextField :
             setTextField(textField: signInTextFieldView.emailTextField,
                          validType: emailValueType,
-                         validMessage: "Email is valid",
-                         wrongMessage: "Email is not a valid",
+                         wrongMessage: Resources.String.Authorization.Error.email,
                          string: string,
                          range: range)
         case signInTextFieldView.passwordTextField :
             setTextField(textField: signInTextFieldView.passwordTextField,
                          validType: passwordValueType,
-                         validMessage: "Password is valid",
-                         wrongMessage: "Password is not a valid",
+                         wrongMessage: Resources.String.Authorization.Error.password,
                          string: string,
                          range: range)
         default :
@@ -287,7 +279,7 @@ extension SignInViewController {
                                      lastName: lastNameText,
                                      email: emailText,
                                      password: passwordText)
-            errorLabel.text = "Registration Complete!"
+            errorLabel.text = Resources.String.Authorization.Error.registrationSucces
             
             let tabBarController = TabBarController()
             
@@ -295,9 +287,9 @@ extension SignInViewController {
             view.window?.makeKeyAndVisible()
             
         } else if user != nil {
-            errorLabel.text = "Пользователь с таким именем  уже существует"
+            errorLabel.text = Resources.String.Authorization.Error.userExists
         } else {
-            errorLabel.text = "Registration not complide!"
+            errorLabel.text = Resources.String.Authorization.Error.registrationError
         }
     }
 }

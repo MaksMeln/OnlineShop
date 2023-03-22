@@ -9,7 +9,6 @@ import Foundation
 
 extension String {
     
-    
     enum ValidTypes {
         case name
         case email
@@ -37,5 +36,4 @@ extension String {
         
         return NSPredicate(format: format, regex).evaluate(with: self)
     }
-    
 }

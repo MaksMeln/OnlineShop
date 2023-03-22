@@ -24,7 +24,7 @@ final class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         configureTabBar()
-        switchTo(tab: .page1)
+        switchTo(tab: .profile)
     }
     
     required init?(coder: NSCoder) {

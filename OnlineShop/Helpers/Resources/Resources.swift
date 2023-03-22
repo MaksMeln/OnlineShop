@@ -40,6 +40,7 @@ enum Resources {
             static let nameLabel = UIColor(hexString: "#3F3F3F")
             static let cateoryTitle = UIColor(hexString: "#A6A7AB")
             static let borderColorProfileImage = UIColor(hexString: "#C0C0C0")
+            static let borderColorPage1Image = UIColor(hexString: "#4E4D4D")
         }
     }
     
@@ -64,17 +65,40 @@ enum Resources {
         }
         
         enum Authorization {
-            static let signIn = "Sign in"
-            static let firstName = "First name"
-            static let lastName = "Last name"
-            static let email = "Email"
-            static let subtitleLogIn = "Already have an account?"
-            static let logIn = "Log in"
-            static let google = "Sign in with Google"
-            static let apple = "Sign in with Apple"
             
-            static let welcomeBack = "Welcome Back"
-            static let password = "Password"
+            enum TextField {
+                static let firstName = "First name"
+                static let lastName = "Last name"
+                static let email = "Email"
+                static let password = "Password"
+            }
+            
+            enum Title {
+                static let signIn = "Sign in"
+                static let welcomeBack = "Welcome Back"
+            }
+            
+            enum ButtonHelpers {
+                static let google = "Sign in with Google"
+                static let apple = "Sign in with Apple"
+            }
+            
+            enum Login {
+                static let subtitleLogin = "Already have an account?"
+                static let login = "Login"
+            }
+            
+            enum Error {
+                static let userExists = "Пользователь с таким именем  уже существует"
+                static let registrationSucces = "Регистрация успешно завершена!"
+                static let registrationError = "Регистрация не завершена!"
+                static let password = "Пароль введен неккоректно"
+                static let email = "Email введен неккоректно "
+                static let name = "Only A - Z characters, min 1 character"
+                static let userNotExist = "Пользователь не найден"
+            
+            }
+              
         }
         
         enum Page1Controller {
@@ -138,9 +162,8 @@ enum Resources {
             static let locationVector = UIImage(named: "locationVector")
             static let navBarButton = UIImage(named: "navBarButton")
             static let searchIcon = UIImage(named: "searchIcon")
-            static let latestImage = UIImage(named: "latestImage")
-            static let profileImageHome = UIImage(named: "profileImageHome")
             static let flashSaleUserIcon = UIImage(named: "flashSaleUserIcon")
+            static let brandImage = UIImage(named: "brandImage")
             static let addIconFlashSale = UIImage(named: "addIconFlashSale")
             
         }

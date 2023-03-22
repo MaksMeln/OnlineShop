@@ -15,44 +15,17 @@ final class ProfileViewController : OnlineShopBaseViewController {
                                      font: Resources.Fonts.MontserratBold(with: 15),
                                      textColor: Resources.Colors.Default.defaultBlack)
     
-    private var profilePhoto : UIImageView = {
-        var profileImage = UIImageView()
-        profileImage.image = Resources.Images.ProfileController.profileImage
-        profileImage.layer.masksToBounds = true
-        profileImage.contentMode = .scaleAspectFit
-        profileImage.setDimensions(height: 60, width: 60)
-        profileImage.layer.cornerRadius = profileImage.frame.height/2
-        profileImage.layer.borderColor = Resources.Colors.OtherColors.borderColorProfileImage.cgColor
-        profileImage.layer.borderWidth = 1
-        profileImage.clipsToBounds = true
-        
-        return profileImage
-    }()
+    private var profilePhoto = OSRoundedImageView(with: .profile)
     
-    private let changePhotonButton : UIButton = {
-        let button = UIButton()
-        button.setTitle(Resources.String.ProfileController.changePhotoLabel,
-                        for: .normal)
-        button.setTitleColor(Resources.Colors.Default.defaultGray, for: .normal)
-        button.titleLabel?.font = Resources.Fonts.MontserratMedium(with: 8)
-        button.addTarget(self, action: #selector(changePhotonButtonPress), for: .touchUpInside)
-        
-        return button
-    }()
+    
+    private let changePhotoButton = OSButton(with: .changePhoto)
     
     private var nameProfileLabel = OSLabel(textLabel: Resources.String.ProfileController.nameProfile,
                                            font: Resources.Fonts.MontserratBold(with: 15),
                                            textColor: Resources.Colors.OtherColors.nameLabel)
     
-//    private let profilePhotoView = ProfileDataView()
-    
-    private let uploudItemButton : OSButton = {
-        let button = OSButton(with: .uploadItem)
-        button.addTarget(self, action: #selector(uploudItemButtonPress), for: .touchUpInside)
-        return button
-    }()
-    
-    
+    private let uploudItemButton = OSButton(with: .uploadItem)
+     
     private let buttonView = ProfileButtonView()
     
 }
@@ -64,7 +37,7 @@ extension ProfileViewController {
         
         view.setupView(titleLabel)
         view.setupView(profilePhoto)
-        view.setupView(changePhotonButton)
+        view.setupView(changePhotoButton)
         view.setupView(nameProfileLabel)
 
         view.setupView(buttonView)
@@ -79,20 +52,15 @@ extension ProfileViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor , constant: 65),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//
-//            profilePhotoView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-//            profilePhotoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            profilePhotoView.heightAnchor.constraint(equalToConstant: 109),
-//            profilePhotoView.widthAnchor.constraint(equalToConstant: 400),
             
             profilePhoto.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 19),
             profilePhoto.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            changePhotonButton.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor, constant: 8),
-            changePhotonButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            changePhotonButton.heightAnchor.constraint(equalToConstant: 9),
+            changePhotoButton.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor, constant: 8),
+            changePhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            changePhotoButton.heightAnchor.constraint(equalToConstant: 9),
             
-            nameProfileLabel.topAnchor.constraint(equalTo: changePhotonButton.bottomAnchor, constant: 20),
+            nameProfileLabel.topAnchor.constraint(equalTo: changePhotoButton.bottomAnchor, constant: 20),
             nameProfileLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             uploudItemButton.topAnchor.constraint(equalTo: nameProfileLabel.bottomAnchor, constant: 38),
@@ -115,6 +83,9 @@ extension ProfileViewController {
     
 //MARK: - profileButtonsAction
     private func profileButtonsAction() {
+        changePhotoButton.addTarget(self, action: #selector(changePhotonButtonPress), for: .touchUpInside)
+        uploudItemButton.addTarget(self, action: #selector(uploudItemButtonPress), for: .touchUpInside)
+        
         buttonView.profileButtonAction(button: buttonView.tradeStoreButton ,#selector(tradeStoreButtonPress), with: self)
         buttonView.profileButtonAction(button: buttonView.paymentMethodButton ,#selector(paymentMethodButtonPress), with: self)
         buttonView.profileButtonAction(button: buttonView.balanceButton ,#selector(balanceButtonPress), with: self)

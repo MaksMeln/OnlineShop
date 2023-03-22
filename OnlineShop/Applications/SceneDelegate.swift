@@ -15,13 +15,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let tabBarController = TabBarController()
-//        let viewController = SignInViewController()
+//        let tabBarController = TabBarController()
+        let viewController = SignInViewController()
         
         window = UIWindow(frame: windowScene.screen.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = tabBarController
-//        window?.rootViewController = viewController
+//        window?.rootViewController = tabBarController
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         
     }

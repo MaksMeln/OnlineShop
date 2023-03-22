@@ -16,6 +16,7 @@ final class OSLabel : UILabel {
         self.font = font
         self.textColor = textColor
         self.numberOfLines = 0
+        self.textAlignment = .center
         
         
         

@@ -18,9 +18,11 @@ public enum OnlineShopButtonType {
     case authorization
     case uploadItem
     case profileButton
-    case signInButton
+    case signInWithHelpersButton
     case location
     case viewAll
+    case changePhoto
+    case login
 }
 
 final class OSButton : UIButton {
@@ -67,7 +69,7 @@ private extension OSButton {
         setupView(balance)
     }
     
-    //MARK: - CONSTRAINTVIEWS
+//MARK: - CONSTRAINTVIEWS
     func constraintViews() {
         switch type {
         case .uploadItem :
@@ -105,7 +107,8 @@ private extension OSButton {
             setDimensions(height: 46, width: 290)
             label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
             label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        case .signInButton:
+       
+        case .signInWithHelpersButton:
             setDimensions(height: 25, width: 148)
             
             NSLayoutConstraint.activate([
@@ -127,6 +130,10 @@ private extension OSButton {
             ])
         case .viewAll:
             setDimensions(height: 9, width: 37)
+        case .changePhoto:
+            setDimensions(height: 9, width: 60)
+        case .login:
+            break
         }
     }
     //MARK: - CONFIGUREAPPEARANCE
@@ -136,7 +143,6 @@ private extension OSButton {
         case .uploadItem:
             backgroundColor = Resources.Colors.Background.backgroundButton
             layer.cornerRadius = 15
-            
             label.text = Resources.String.ProfileController.uploadItemButton
             label.textColor = Resources.Colors.Default.defaultWhite
             label.font = Resources.Fonts.MontserratBold(with: 14)
@@ -144,7 +150,6 @@ private extension OSButton {
             
         case .profileButton:
             backgroundColor = .none
-            
             label.textColor = Resources.Colors.Default.defaultBlack
             label.font = Resources.Fonts.MontserratMedium(with: 14)
             balance.textColor = Resources.Colors.Default.defaultBlack
@@ -153,31 +158,35 @@ private extension OSButton {
         case .authorization:
             backgroundColor = Resources.Colors.Background.backgroundButton
             layer.cornerRadius = 15
-            
             label.textColor = Resources.Colors.Default.defaultWhite
             label.font = Resources.Fonts.MontserratBold(with: 10)
             
-        case .signInButton:
+        case .signInWithHelpersButton:
             backgroundColor = .none
-            
             label.textColor = Resources.Colors.Default.defaultBlack
             label.font = Resources.Fonts.MontserratMedium(with: 12)
+            
         case .location:
             backgroundColor = .none
-            
             label.textColor = Resources.Colors.Default.defaultGray
             label.font = Resources.Fonts.MontserratMedium(with: 10)
             label.text = Resources.String.Page1Controller.NavBar.location
-            
-            
             iconView.image = Resources.Images.Page1Controller.locationVector
+            
         case .viewAll:
             label.text = Resources.String.Page1Controller.viewAll
             label.font = Resources.Fonts.MontserratSemiBold(with: 9)
             label.textColor = Resources.Colors.Default.defaultGray
+       
+        case .changePhoto:
+            label.text = Resources.String.ProfileController.changePhotoLabel
+            label.textColor = Resources.Colors.Default.defaultGray
+            label.font = Resources.Fonts.MontserratMedium(with: 8)
+        case .login:
+            label.text = Resources.String.Authorization.Login.login
+            label.textColor = Resources.Colors.Default.defaultBlue
+            label.font = Resources.Fonts.MontserratMedium(with: 10)
         }
         makeSystem(self)
     }
-    
 }
-

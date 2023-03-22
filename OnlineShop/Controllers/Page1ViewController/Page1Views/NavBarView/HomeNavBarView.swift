@@ -18,26 +18,10 @@ final class HomeNavBarView : OnlineShopBaseView {
         return button
     }()
     
-    private var profilePhoto : UIImageView = {
-        var profileImage = UIImageView()
-        profileImage.image = Resources.Images.Page1Controller.profileImageHome
-        profileImage.layer.masksToBounds = true
-        profileImage.contentMode = .scaleAspectFit
-        profileImage.clipsToBounds = true
-        
-        return profileImage
-    }()
+    private var profilePage1Photo = OSRoundedImageView(with: .page1)
     
     private let locationButton = OSButton(with: .location)
     
-    
-    func navBarButtonAction(_ action: Selector, with target: Any?) {
-        navBarButton.addTarget(target, action: action, for: .touchUpInside)
-    }
-    
-    func locationButtonAction(_ action: Selector, with target: Any?) {
-        locationButton.addTarget(target, action: action, for: .touchUpInside)
-    }
 }
 
 //MARK: - LIFECYCLE
@@ -47,7 +31,7 @@ extension HomeNavBarView {
         
         setupView(titleLabel)
         setupView(navBarButton)
-        setupView(profilePhoto)
+        setupView(profilePage1Photo)
         setupView(locationButton)
     }
     
@@ -61,12 +45,22 @@ extension HomeNavBarView {
             titleLabel.leadingAnchor.constraint(equalTo: navBarButton.trailingAnchor, constant: 65),
             titleLabel.centerYAnchor.constraint(equalTo: navBarButton.centerYAnchor),
             
-            profilePhoto.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 4),
-            profilePhoto.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -44),
+            profilePage1Photo.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 4),
+            profilePage1Photo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -44),
             
-            locationButton.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor, constant: 11),
+            locationButton.topAnchor.constraint(equalTo: profilePage1Photo.bottomAnchor, constant: 11),
             locationButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -34),
             locationButton.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+    
+    
+//MARK: - BUTTONS ACTION
+    func navBarButtonAction(_ action: Selector, with target: Any?) {
+        navBarButton.addTarget(target, action: action, for: .touchUpInside)
+    }
+    
+    func locationButtonAction(_ action: Selector, with target: Any?) {
+        locationButton.addTarget(target, action: action, for: .touchUpInside)
     }
 }

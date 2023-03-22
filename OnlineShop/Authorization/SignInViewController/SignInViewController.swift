@@ -191,7 +191,9 @@ extension SignInViewController : UITextFieldDelegate {
         textField.text = result
         
         
-        if result.isValid(validType: validType) {}
+        if result.isValid(validType: validType) {
+            errorLabel.text = ""
+        }
         else {
             errorLabel.text = wrongMessage
             errorLabel.textColor = .red

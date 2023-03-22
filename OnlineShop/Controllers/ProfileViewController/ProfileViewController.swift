@@ -39,9 +39,7 @@ extension ProfileViewController {
         view.setupView(profilePhoto)
         view.setupView(changePhotoButton)
         view.setupView(nameProfileLabel)
-
         view.setupView(buttonView)
-//        view.setupView(profilePhotoView)
         view.setupView(uploudItemButton)
         
     }
@@ -139,9 +137,9 @@ extension ProfileViewController {
     
     func setModel() {
         guard let activeUser = DataBase.shared.activeUser else {return}
-        nameProfileLabel.text = activeUser.firstName
+        nameProfileLabel.text = activeUser.firstName + " " + activeUser.lastName
     }
-
+    
 }
 
 // MARK: - EXTENSION UIImagePickerControllerDelegate, UINavigationControllerDelegate

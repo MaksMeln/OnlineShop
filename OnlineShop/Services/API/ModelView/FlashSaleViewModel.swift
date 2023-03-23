@@ -9,7 +9,7 @@ import Foundation
 
 final class FlashSaleViewModel {
     
-    private var apiService = FlashSaleApiService()
+    private var apiService = FlashSaleAPIService()
     private var flashSaleList = [FlashSaleElement]()
     
     func fetchFlashSaleData(completion: @escaping () -> ()) {

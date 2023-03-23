@@ -9,7 +9,7 @@ import Foundation
 
 final class LatestViewModel {
     
-    private var apiService = LatestApiService()
+    private var apiService = LatestAPIService()
     private var latestList = [LatestItem]()
     
     func fetchLatestData(completion: @escaping () -> ()) {

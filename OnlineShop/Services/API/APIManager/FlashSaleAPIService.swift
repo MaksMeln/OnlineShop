@@ -1,5 +1,5 @@
 //
-//  FlashSaleApiServce.swift
+//  FlashSaleAPIService.swift
 //  OnlineShop
 //
 //  Created by Максим Мельничук on 22.03.23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class FlashSaleApiService {
+final class FlashSaleAPIService {
     
     private var dataTask: URLSessionDataTask?
     

@@ -166,7 +166,7 @@ private extension OSButton {
             
         }
     }
-    //MARK: - CONFIGUREAPPEARANCE
+//MARK: - CONFIGUREAPPEARANCE
     func configureAppearance() {
         switch type {
             
@@ -201,7 +201,7 @@ private extension OSButton {
             label.textColor = Resources.Colors.Default.defaultGray
             label.font = Resources.Fonts.MontserratMedium(with: 10)
             label.text = Resources.String.Page1Controller.NavBar.location
-            iconView.image = Resources.Images.Page1Controller.locationVector
+            iconView.image = Resources.Images.Page1Controller.NavBar.locationVector
             
         case .viewAll:
             label.text = Resources.String.Page1Controller.viewAll

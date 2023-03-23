@@ -44,13 +44,13 @@ final class FlashSaleColectionViewCell : UICollectionViewCell {
     
     private var likeButton : UIButton = {
         var button = UIButton()
-         button.setImage(Resources.Images.Page1Controller.likeIcon, for: .normal)
+        button.setImage(Resources.Images.Page1Controller.ButtonCollection.likeButton, for: .normal)
          return button
      }()
 
     private var addButton : UIButton = {
        var button = UIButton()
-        button.setImage(Resources.Images.Page1Controller.addIconFlashSale, for: .normal)
+        button.setImage(Resources.Images.Page1Controller.ButtonCollection.addFlashSaleBtn, for: .normal)
         return button
     }()
 

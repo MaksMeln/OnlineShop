@@ -187,6 +187,7 @@ extension Page1ViewController : UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = Page2ViewController()
         navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 

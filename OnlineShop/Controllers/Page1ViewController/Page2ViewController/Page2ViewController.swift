@@ -10,6 +10,13 @@ import UIKit
 final class Page2ViewController : OnlineShopBaseViewController {
 
 //MARK: - PROPERTIES
+    private let backButton : UIButton = {
+        let button = UIButton()
+        button.setImage(Resources.Images.Page2Controller.backButton, for: .normal)
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     private var page2imageView : UIImageView = {
        var imageView = UIImageView()
         imageView.setDimensions(height: 279, width: 328)
@@ -25,6 +32,8 @@ final class Page2ViewController : OnlineShopBaseViewController {
     private let chooseColorView = ColorChooseView()
     
     private let quantityProductsView = QuantityProductsView()
+    
+  
 }
 
 //MARK: - LIFECYCLE
@@ -34,6 +43,8 @@ extension Page2ViewController {
         super.setupViews()
         
         page2imageView.image = ProductImageView().imageProduc.image
+//        backButton.
+        view.setupView(backButton)
         view.setupView(page2imageView)
         view.setupView(quantityProductsView)
         view.setupView(chooseColorView)
@@ -46,6 +57,9 @@ extension Page2ViewController {
         super.constraintViews()
         
         NSLayoutConstraint.activate([
+            
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 64),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 11),
             
             page2imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
             page2imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -78,5 +92,13 @@ extension Page2ViewController {
         
         navigationController?.navigationBar.isHidden = true
     }
+    
+    @objc func backButtonTapped() {
+//        let vc = Page1ViewController()
+//        view.window?.rootViewController = vc
+//        view.window?.makeKeyAndVisible()
+        print("tap")
+    }
+    
 }
 

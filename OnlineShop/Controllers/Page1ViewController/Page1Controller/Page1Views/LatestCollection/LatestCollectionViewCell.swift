@@ -24,7 +24,7 @@ final class LatestCollectionViewCell : UICollectionViewCell {
     
     private var addButton : UIButton = {
         var button = UIButton()
-        button.setImage(Resources.Images.Page1Controller.addIcon, for: .normal)
+        button.setImage(Resources.Images.Page1Controller.ButtonCollection.addLatestBtn, for: .normal)
         return button
     }()
     

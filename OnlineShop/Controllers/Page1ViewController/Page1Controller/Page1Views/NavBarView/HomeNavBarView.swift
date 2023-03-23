@@ -14,7 +14,7 @@ final class HomeNavBarView : OnlineShopBaseView {
     
     private let navBarButton: UIButton = {
         let button = UIButton()
-        button.setImage(Resources.Images.Page1Controller.navBarButton, for: .normal)
+        button.setImage(Resources.Images.Page1Controller.NavBar.navBarButton, for: .normal)
         return button
     }()
     

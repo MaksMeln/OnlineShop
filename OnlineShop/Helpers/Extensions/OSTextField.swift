@@ -81,7 +81,7 @@ private extension OSTextField {
             attributedPlaceholder = NSAttributedString(string: Resources.String.Page1Controller.searchBar,
                                                        attributes: [NSAttributedString.Key.foregroundColor: Resources.Colors.Default.defaultGray])
             
-            iconView.image = Resources.Images.Page1Controller.searchIcon
+            iconView.image = Resources.Images.Page1Controller.NavBar.searchIcon
             rightViewMode = UITextField.ViewMode.always
             rightView = iconView
         }

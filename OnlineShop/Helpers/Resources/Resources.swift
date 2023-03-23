@@ -8,7 +8,7 @@
 import UIKit
 
 enum Resources {
-    
+//MARK: - COLORS
     enum Colors {
         enum Background{
             static let backgroundColor = UIColor(hexString: "#FAF9FF")
@@ -19,8 +19,6 @@ enum Resources {
             static let tabBarBackgound = UIColor(hexString: "#FFFFFF")
             static let quantityBackground = UIColor(hexString: "#181726")
             static let likeAndShareBackground = UIColor(hexString: "#E5E9EF")
-            
-            
         }
         
         enum Default {
@@ -49,11 +47,12 @@ enum Resources {
             static let borderCollectionProducr = UIColor(hexString: "#EBEBEB")
         }
     }
-    
+
+//MARK: - STRING
     enum String {
-        
         static let cell = "cell"
-        
+
+//ProfileController
         enum ProfileController {
             static let title = "Profile"
             static let changePhotoLabel = "Change photo"
@@ -72,6 +71,7 @@ enum Resources {
             }
         }
         
+//Authorization
         enum Authorization {
             
             enum TextField {
@@ -104,11 +104,10 @@ enum Resources {
                 static let email = "Email введен неккоректно "
                 static let name = "Only A - Z characters, min 1 character"
                 static let userNotExist = "Пользователь не найден"
-            
             }
-              
         }
-        
+
+//Page1Controller
         enum Page1Controller {
             enum NavBar {
                 static let firstTitle = "Trade by"
@@ -133,8 +132,7 @@ enum Resources {
         }
     }
     
-    
-    
+//MARK: - IMAGES
     enum Images {
         enum TabBar {
             static func icon(for tab: Tabs) -> UIImage? {
@@ -147,13 +145,13 @@ enum Resources {
                 }
             }
         }
-        
+//Autorization
         enum Autorization {
             static let googleIcon = UIImage(named: "googleIcon")
             static let appleIcon = UIImage(named: "appleIcon")
             static let passwordIcon = UIImage(named: "passwordIcon")
         }
-        
+//Page1Controller
         enum Page1Controller {
             enum CategoryIcon {
                 static let phoneIcon = UIImage(named: "phoneIcon")!
@@ -164,17 +162,23 @@ enum Resources {
                 static let kidsIcon = UIImage(named: "kidsIcon")!
             }
             
-            static let likeIcon = UIImage(named: "likeIcon")
-            static let addIcon = UIImage(named: "addIcon")
-            static let locationVector = UIImage(named: "locationVector")
-            static let navBarButton = UIImage(named: "navBarButton")
-            static let searchIcon = UIImage(named: "searchIcon")
+            enum NavBar {
+                static let navBarButton = UIImage(named: "navBarButton")
+                static let locationVector = UIImage(named: "locationVector")
+                static let searchIcon = UIImage(named: "searchIcon")
+            }
+            
+            enum ButtonCollection {
+                static let likeButton = UIImage(named: "likeIcon")
+                static let addLatestBtn = UIImage(named: "addIcon")
+                static let addFlashSaleBtn = UIImage(named: "addIconFlashSale")
+            }
+            
             static let flashSaleUserIcon = UIImage(named: "flashSaleUserIcon")
             static let brandImage = UIImage(named: "brandImage")
-            static let addIconFlashSale = UIImage(named: "addIconFlashSale")
-            
         }
         
+//Page2Controller
         enum Page2Controller {
             static let likePage2Icon = UIImage(named: "likePage2Icon")
             static let minusIcon = UIImage(named: "minusIcon")
@@ -183,9 +187,10 @@ enum Resources {
             static let shareIcon = UIImage(named: "shareIcon")
             static let starIcon = UIImage(named: "starIcon")
             static let line = UIImage(named: "line")
+            static let backButton = UIImage(named: "backButton")
         }
         
-        
+//ProfileController
         enum ProfileController {
             static let tableIcon = UIImage(named: "tableIcon")
             static let help = UIImage(named: "help")

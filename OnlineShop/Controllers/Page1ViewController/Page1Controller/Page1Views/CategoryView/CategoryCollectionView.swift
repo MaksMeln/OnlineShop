@@ -39,7 +39,7 @@ final class CategoryCollectionView: UICollectionView {
         backgroundColor = Resources.Colors.Background.backgroundColor
         contentInset = UIEdgeInsets(top: 0, left: CategoryConstants.distanceToView, bottom: 0, right: CategoryConstants.distanceToView)
         
-        register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: Resources.String.Page1Controller.categoryCollectionCell)
+        register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: Resources.String.cell)
         delegate = self
         dataSource = self
     }
@@ -54,7 +54,7 @@ extension CategoryCollectionView: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.String.Page1Controller.categoryCollectionCell, for: indexPath) as! CategoryCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.String.cell, for: indexPath) as! CategoryCollectionViewCell
         
         cell.categoryImageView.image = categoryArray[indexPath.row].categoryIcon
         cell.categoryTitle.text = categoryArray[indexPath.row].categoryTitle

@@ -17,5 +17,6 @@ class NavBarController: UINavigationController {
     private func configureAppearance() {
         view.backgroundColor = Resources.Colors.Background.backgroundColor
         navigationBar.isTranslucent = false
+//        navigationController?.navigationBar.isHidden = true
     }
 }

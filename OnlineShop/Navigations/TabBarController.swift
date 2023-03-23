@@ -24,7 +24,7 @@ final class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         configureTabBar()
-        switchTo(tab: .profile)
+        switchTo(tab: .chosenByLike)
     }
     
     required init?(coder: NSCoder) {
@@ -41,7 +41,7 @@ final class TabBarController: UITabBarController {
     
         tabBar.tintColor = Resources.Colors.TabBar.activeTabBar
         tabBar.barTintColor = Resources.Colors.TabBar.inactiveTabBar
-        tabBar.backgroundColor = Resources.Colors.Background.backgoundTabBar
+        tabBar.backgroundColor = Resources.Colors.Background.tabBarBackgound
         tabBar.layer.cornerRadius = 30
         tabBar.layer.masksToBounds = true
         tabBar.itemPositioning = .centered
@@ -49,7 +49,7 @@ final class TabBarController: UITabBarController {
         if #available(iOS 15.0, *) {
                let appearance = UITabBarAppearance()
                appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = Resources.Colors.Background.backgoundTabBar
+            appearance.backgroundColor = Resources.Colors.Background.tabBarBackgound
                UITabBar.appearance().standardAppearance = appearance
                UITabBar.appearance().scrollEdgeAppearance = UITabBar.appearance().standardAppearance
            }

@@ -5,19 +5,16 @@
 //  Created by Максим Мельничук on 13.03.23.
 //
 /*
-сделать логику на серчбар
+ сделать логику на серчбар
  сделать ллогику на кнопки
  сделать логику на выбор категории
- подключить api
-scrollview не прокручивается дальше safearea
- 
  */
 
 import UIKit
 
 final class Page1ViewController : OnlineShopBaseViewController {
-
-//MARK: - SCROLLVIEW
+    
+    //MARK: - SCROLLVIEW
     private var contentCize: CGSize {
         CGSize(width: view.frame.width, height: view.frame.height)
     }
@@ -25,7 +22,7 @@ final class Page1ViewController : OnlineShopBaseViewController {
                                                contentSize: contentCize)
     private lazy var contentView = UIView(contentSize: contentCize)
     
-//MARK: - PROPERTIES
+    //MARK: - PROPERTIES
     
     private let navBar = HomeNavBarView()
     private let searchBar = OSTextField(with: .searchBar, placecholder: Resources.String.Page1Controller.searchBar)
@@ -63,11 +60,11 @@ extension Page1ViewController {
         contentView.setupView(brandsTitle)
         contentView.setupView(brandsCollectionView)
     }
-
-//MARK: - CONSTRAINTVIEWS
+    
+    //MARK: - CONSTRAINTVIEWS
     override func constraintViews() {
         super.constraintViews()
-       
+        
         NSLayoutConstraint.activate([
             navBar.topAnchor.constraint(equalTo: contentView.topAnchor),
             navBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -93,25 +90,24 @@ extension Page1ViewController {
             flashSaleTitle.topAnchor.constraint(equalTo: latestCollectionView.bottomAnchor, constant: 22),
             flashSaleTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 11),
             flashSaleTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -13),
-
+            
             flashSaleCollectionView.topAnchor.constraint(equalTo: flashSaleTitle.bottomAnchor, constant: 5),
             flashSaleCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             flashSaleCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             flashSaleCollectionView.heightAnchor.constraint(equalToConstant: 221),
-
+            
             brandsTitle.topAnchor.constraint(equalTo: flashSaleCollectionView.bottomAnchor, constant: 22),
             brandsTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 11),
             brandsTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -13),
-
+            
             brandsCollectionView.topAnchor.constraint(equalTo: brandsTitle.bottomAnchor, constant: 5),
             brandsCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             brandsCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             brandsCollectionView.heightAnchor.constraint(equalToConstant: 149)
-           ])
+        ])
     }
     
-//MARK: - CONFIGUREAPPEARENCE
-    
+//MARK: - CONFIGUREAPPEARENCE + LOADFETCHDATA
     override func configureAppearence() {
         super.configureAppearence()
         
@@ -121,13 +117,94 @@ extension Page1ViewController {
         navBar.locationButtonAction(#selector(locationButtonPress), with: self)
         
         categoryCollection.set(category: CategoryList.fetchData())
+        loadFetchData()
+    }
+
+    
+    private func loadFetchData() {
+        latestCollectionView.latestModel.fetchLatestData { [weak self] in
+            self?.latestCollectionView.delegate = self
+            self?.latestCollectionView.dataSource = self
+            self?.latestCollectionView.reloadData()
+        }
+        flashSaleCollectionView.flashSaleModel.fetchFlashSaleData { [weak self] in
+            self?.flashSaleCollectionView.delegate = self
+            self?.flashSaleCollectionView.dataSource = self
+            self?.flashSaleCollectionView.reloadData()
+        }
+        brandsCollectionView.delegate = self
+        brandsCollectionView.dataSource = self
     }
     
+//MARK: - BUTTONS TARGET
     @objc func navBarButtonPress() {
         print("NavBarButton Press")
     }
     
     @objc func locationButtonPress() {
         print("LocationButton Press")
+    }
+}
+
+//MARK: - EXTENSION UICollectionViewDelegate, UICollectionViewDataSource
+extension Page1ViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == self.latestCollectionView {
+            return  latestCollectionView.latestModel.numberOfRowsInSection(section: section)
+            
+        } else if  collectionView == self.flashSaleCollectionView {
+            return flashSaleCollectionView.flashSaleModel.numberOfRowsInSection(section: section)
+            
+        } else if collectionView == self.brandsCollectionView {
+            return 3
+        }
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == self.latestCollectionView {
+            let latestCell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.String.cell, for: indexPath) as! LatestCollectionViewCell
+            
+            let latest = latestCollectionView.latestModel.cellForRowAt(indexPath: indexPath)
+            latestCell.setCellWithValuesOfLatest(latest)
+            return latestCell
+            
+        } else if collectionView == self.flashSaleCollectionView  {
+            let flashSaleCell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.String.cell, for: indexPath) as! FlashSaleColectionViewCell
+            
+            let flashSale = flashSaleCollectionView.flashSaleModel.cellForRowAt(indexPath: indexPath)
+            flashSaleCell.setCellWithValuesOfFlashSale(flashSale)
+            
+            return flashSaleCell
+            
+        } else {
+            let brandCell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.String.cell, for: indexPath) as! BrandsCollectionViewCell
+            return brandCell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = Page2ViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+//MARK: - EXTENSION UICollectionViewDelegateFlowLayout
+extension Page1ViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView == self.latestCollectionView {
+            return CGSize(width: 114,
+                          height: latestCollectionView.frame.height)
+            
+        } else if collectionView == self.flashSaleCollectionView {
+            return CGSize(width: 174,
+                          height: flashSaleCollectionView.frame.height)
+        } else {
+            return CGSize(width: 114,
+                          height: brandsCollectionView.frame.height)
+        }
     }
 }

@@ -34,7 +34,7 @@ final class FlashSaleColectionViewCell : UICollectionViewCell {
     
     var flashSaleNameLabel = OSLabel(textLabel: "",
                         font: Resources.Fonts.MontserratBold(with: 13),
-                        textColor: Resources.Colors.Default.defaultWhite)
+                                     textColor: Resources.Colors.Default.defaultWhite)
     
     var priceView : OSCollectionLabelView =  {
         var view = OSCollectionLabelView(with: .flashSalePrice, text: "")

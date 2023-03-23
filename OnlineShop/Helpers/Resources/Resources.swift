@@ -130,6 +130,12 @@ enum Resources {
             static let searchBar = "What are you looking for?"
             static let discount = "% off"
         }
+        
+        enum Page2Controller {
+            static let quantity = "Quantity:"
+            static let color = "Color:"
+            
+        }
     }
     
 //MARK: - IMAGES

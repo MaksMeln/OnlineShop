@@ -38,7 +38,6 @@ final class ColorCollectionView :UICollectionView {
             translatesAutoresizingMaskIntoConstraints = false
             showsHorizontalScrollIndicator = false
             backgroundColor = Resources.Colors.Background.backgroundColor
-//            contentInset = UIEdgeInsets(top: 0, left: CategoryConstants.distanceToView, bottom: 0, right: CategoryConstants.distanceToView)
             
             register(ColorsCollectionViewCell.self, forCellWithReuseIdentifier: Resources.String.cell)
             delegate = self

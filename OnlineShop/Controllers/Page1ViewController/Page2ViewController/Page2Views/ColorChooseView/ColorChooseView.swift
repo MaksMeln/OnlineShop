@@ -10,7 +10,7 @@ import UIKit
 final class ColorChooseView: OnlineShopBaseView {
 
 //MARK: - PROPERTIES
-    private let colorLabel = OSLabel(textLabel: "Color:",
+    private let colorLabel = OSLabel(textLabel: Resources.String.Page2Controller.color,
                                         font: Resources.Fonts.MontserratBold(with: 10),
                                         textColor: Resources.Colors.OtherColors.colorLabel)
     

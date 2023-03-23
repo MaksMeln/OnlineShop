@@ -9,7 +9,7 @@ import UIKit
 
 final class QuantityProductsView: OnlineShopBaseView {
 //MARK: - PROPERTIES
-    private let quantityLabel = OSLabel(textLabel: "Quantity:",
+    private let quantityLabel = OSLabel(textLabel: Resources.String.Page2Controller.quantity,
                                         font: Resources.Fonts.MontserratSemiBold(with: 9),
                                         textColor: Resources.Colors.Default.defaultGray)
     

@@ -16,22 +16,19 @@ final class OSLabel : UILabel {
         self.font = font
         self.textColor = textColor
         self.numberOfLines = 0
-    
-        
-        
-        
-        func addCharacterSpacing(kernValue: Double = 3) {
-            if let labelText = text, labelText.isEmpty == false {
-                let attributedString = NSMutableAttributedString(string: labelText)
-                attributedString.addAttribute(.kern,
-                                              value: kernValue,
-                                              range: NSRange(location: 0, length: attributedString.length - 1))
-                attributedText = attributedString
-            }
-        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension UILabel{
+    func setTextSpacingBy(value: Double) {
+      if let textString = self.text {
+        let attributedString = NSMutableAttributedString(string: textString)
+          attributedString.addAttribute(NSAttributedString.Key.kern, value: value, range: NSRange(location: 0, length: attributedString.length - 1))
+        attributedText = attributedString
+      }
     }
 }

@@ -17,8 +17,8 @@ final class LatestCollectionViewCell : UICollectionViewCell {
     var categoryView = OSCollectionLabelView(with: .nameCategoryLatest, text: "")
    
     var latestNameLabel = OSLabel(textLabel: "",
-                            font: Resources.Fonts.MontserratSemiBold(with: 9),
-                            textColor: Resources.Colors.Default.defaultWhite)
+                                  font: Resources.Fonts.MontserratSemiBold(with: 9),
+                                  textColor: Resources.Colors.Default.defaultWhite)
         
     var priceView = OSCollectionLabelView(with: .latestPrice, text: "")
     
@@ -60,8 +60,8 @@ final class LatestCollectionViewCell : UICollectionViewCell {
             
             latestNameLabel.topAnchor.constraint(equalTo: categoryView.bottomAnchor, constant: 4),
             latestNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7),
-            latestNameLabel.widthAnchor.constraint(equalToConstant: 75),
-            latestNameLabel.heightAnchor.constraint(equalToConstant: 22),
+//            latestNameLabel.widthAnchor.constraint(equalToConstant: 75),
+//            latestNameLabel.heightAnchor.constraint(equalToConstant: 22),
             
             priceView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
             priceView.leadingAnchor.constraint(equalTo: latestNameLabel.leadingAnchor),

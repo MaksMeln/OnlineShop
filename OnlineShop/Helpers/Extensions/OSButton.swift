@@ -23,6 +23,8 @@ public enum OnlineShopButtonType {
     case viewAll
     case changePhoto
     case login
+    case quantity
+    case addToCart
 }
 
 final class OSButton : UIButton {
@@ -57,6 +59,14 @@ final class OSButton : UIButton {
         iconView.image = iconViewImage
         vectorView.image = vectorViewImage
         balance.text = balanceLabel
+    }
+    
+    func setIcon(_ icon: UIImage? ) {
+        iconView.image = icon
+    }
+    
+    func setTitle(_ title: String?) {
+        balance.text = title
     }
 }
 
@@ -128,12 +138,32 @@ private extension OSButton {
                 label.centerYAnchor.constraint(equalTo: centerYAnchor),
                 label.leadingAnchor.constraint(equalTo: leadingAnchor),
             ])
+            
         case .viewAll:
             setDimensions(height: 9, width: 37)
+            
         case .changePhoto:
             setDimensions(height: 9, width: 60)
+            
         case .login:
             break
+            
+        case .quantity:
+            setDimensions(height: 22, width: 38)
+            iconView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+            iconView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+            
+        case .addToCart:
+            setDimensions(height: 44, width: 170)
+            
+            NSLayoutConstraint.activate([
+                label.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -26),
+                label.centerYAnchor.constraint(equalTo: centerYAnchor),
+                
+                balance.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 29),
+                balance.centerYAnchor.constraint(equalTo: centerYAnchor),
+            ])
+            
         }
     }
     //MARK: - CONFIGUREAPPEARANCE
@@ -186,6 +216,21 @@ private extension OSButton {
             label.text = Resources.String.Authorization.Login.login
             label.textColor = Resources.Colors.Default.defaultBlue
             label.font = Resources.Fonts.MontserratMedium(with: 10)
+        case .quantity:
+            backgroundColor =  Resources.Colors.Background.backgroundButton
+            layer.cornerRadius = 8
+            
+        case .addToCart:
+            backgroundColor =  Resources.Colors.Background.backgroundButton
+            layer.cornerRadius = 15
+            
+            label.text = "ADD TO CART"
+            label.textColor = Resources.Colors.Default.defaultWhite
+            label.font = Resources.Fonts.MontserratSemiBold(with: 8)
+
+            balance.textColor = Resources.Colors.Default.defaultWhite
+            balance.font = Resources.Fonts.MontserratSemiBold(with: 8)
+            
         }
         makeSystem(self)
     }

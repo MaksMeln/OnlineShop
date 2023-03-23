@@ -9,14 +9,14 @@ import UIKit
 
 final class OSLabel : UILabel {
     
-    init(textLabel: String, font: UIFont? , textColor: UIColor? ) {
+    init(textLabel: String, font: UIFont? , textColor: UIColor?) {
         super.init(frame: .zero)
         
         self.text = textLabel
         self.font = font
         self.textColor = textColor
         self.numberOfLines = 0
-        self.textAlignment = .center
+    
         
         
         

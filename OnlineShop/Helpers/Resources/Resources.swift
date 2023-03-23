@@ -16,7 +16,11 @@ enum Resources {
             static let searchBarTextFieldBackground = UIColor(hexString: "#F5F6F7")
             static let categoryNameBackground = UIColor(hexString: "#C4C4C4")
             static let diskountBackground = UIColor(hexString: "#F93A3A")
-            static let backgoundTabBar = UIColor(hexString: "#FFFFFF")
+            static let tabBarBackgound = UIColor(hexString: "#FFFFFF")
+            static let quantityBackground = UIColor(hexString: "#181726")
+            static let likeAndShareBackground = UIColor(hexString: "#E5E9EF")
+            
+            
         }
         
         enum Default {
@@ -41,10 +45,15 @@ enum Resources {
             static let cateoryTitle = UIColor(hexString: "#A6A7AB")
             static let borderColorProfileImage = UIColor(hexString: "#C0C0C0")
             static let borderColorPage1Image = UIColor(hexString: "#4E4D4D")
+            static let colorLabel = UIColor(hexString: "#737373")
+            static let borderCollectionProducr = UIColor(hexString: "#EBEBEB")
         }
     }
     
     enum String {
+        
+        static let cell = "cell"
+        
         enum ProfileController {
             static let title = "Profile"
             static let changePhotoLabel = "Change photo"
@@ -59,8 +68,7 @@ enum Resources {
                 static let restorePurchase = "Restore purchase"
                 static let help = "Help"
                 static let logOut = "Log out"
-                static let balanceData = "$ 1593"
-                static let cell = "cell"
+                static let balanceData = "$ 1593" 
             }
         }
         
@@ -121,7 +129,6 @@ enum Resources {
             static let brands = "Brands"
             static let viewAll = "View all"
             static let searchBar = "What are you looking for?"
-            static let categoryCollectionCell = "cell"
             static let discount = "% off"
         }
     }
@@ -167,6 +174,17 @@ enum Resources {
             static let addIconFlashSale = UIImage(named: "addIconFlashSale")
             
         }
+        
+        enum Page2Controller {
+            static let likePage2Icon = UIImage(named: "likePage2Icon")
+            static let minusIcon = UIImage(named: "minusIcon")
+            static let page2Image = UIImage(named: "page2Image")
+            static let plusIcon = UIImage(named: "plusIcon")
+            static let shareIcon = UIImage(named: "shareIcon")
+            static let starIcon = UIImage(named: "starIcon")
+            static let line = UIImage(named: "line")
+        }
+        
         
         enum ProfileController {
             static let tableIcon = UIImage(named: "tableIcon")

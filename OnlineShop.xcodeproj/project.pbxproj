@@ -11,7 +11,6 @@
 		481E0C4229C1AD0A005A8530 /* SignInTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4129C1AD0A005A8530 /* SignInTextFieldView.swift */; };
 		481E0C4429C1AFD8005A8530 /* SignInAuthorizationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4329C1AFD8005A8530 /* SignInAuthorizationButtonView.swift */; };
 		481E0C4829C1B028005A8530 /* SignInLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4729C1B028005A8530 /* SignInLoginButtonView.swift */; };
-		481E0C4C29C1B468005A8530 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4B29C1B468005A8530 /* LoginViewController.swift */; };
 		481E0C4E29C1B545005A8530 /* LoginTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0C4D29C1B545005A8530 /* LoginTextFieldView.swift */; };
 		4826442729CB626C00976A73 /* ColorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4826442629CB626C00976A73 /* ColorCollectionView.swift */; };
 		4826442929CB62EE00976A73 /* ColorsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4826442829CB62ED00976A73 /* ColorsCollectionViewCell.swift */; };
@@ -25,10 +24,10 @@
 		482BE5C329CB594E00BBD4B7 /* ColorChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BE5C229CB594E00BBD4B7 /* ColorChooseView.swift */; };
 		482F232129CAF796006C5EB0 /* OSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482F232029CAF796006C5EB0 /* OSImageView.swift */; };
 		482F232829CB3B18006C5EB0 /* QuantityProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482F232729CB3B18006C5EB0 /* QuantityProductsView.swift */; };
+		4837B9B529CE25E1008C25BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4837B9B429CE25E1008C25BE /* LoginViewController.swift */; };
 		484B2A5429C23691005403B0 /* HomeNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A5329C23691005403B0 /* HomeNavBarView.swift */; };
 		484B2A5929C25720005403B0 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A5829C25720005403B0 /* TitleView.swift */; };
 		484B2A5D29C300AE005403B0 /* OSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A5C29C300AE005403B0 /* OSTextField.swift */; };
-		484B2A5F29C303EB005403B0 /* правки.txt in Resources */ = {isa = PBXBuildFile; fileRef = 484B2A5E29C303EB005403B0 /* правки.txt */; };
 		484B2A6229C30D21005403B0 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A6129C30D21005403B0 /* CategoryCollectionView.swift */; };
 		484B2A6429C30D35005403B0 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A6329C30D34005403B0 /* CategoryCollectionViewCell.swift */; };
 		484B2A6729C31096005403B0 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2A6629C31096005403B0 /* CategoryList.swift */; };
@@ -81,7 +80,6 @@
 		481E0C4129C1AD0A005A8530 /* SignInTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextFieldView.swift; sourceTree = "<group>"; };
 		481E0C4329C1AFD8005A8530 /* SignInAuthorizationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAuthorizationButtonView.swift; sourceTree = "<group>"; };
 		481E0C4729C1B028005A8530 /* SignInLoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInLoginButtonView.swift; sourceTree = "<group>"; };
-		481E0C4B29C1B468005A8530 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		481E0C4D29C1B545005A8530 /* LoginTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldView.swift; sourceTree = "<group>"; };
 		4826442629CB626C00976A73 /* ColorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionView.swift; sourceTree = "<group>"; };
 		4826442829CB62ED00976A73 /* ColorsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -95,10 +93,10 @@
 		482BE5C229CB594E00BBD4B7 /* ColorChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChooseView.swift; sourceTree = "<group>"; };
 		482F232029CAF796006C5EB0 /* OSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSImageView.swift; sourceTree = "<group>"; };
 		482F232729CB3B18006C5EB0 /* QuantityProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityProductsView.swift; sourceTree = "<group>"; };
+		4837B9B429CE25E1008C25BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		484B2A5329C23691005403B0 /* HomeNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavBarView.swift; sourceTree = "<group>"; };
 		484B2A5829C25720005403B0 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		484B2A5C29C300AE005403B0 /* OSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTextField.swift; sourceTree = "<group>"; };
-		484B2A5E29C303EB005403B0 /* правки.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "правки.txt"; sourceTree = "<group>"; };
 		484B2A6129C30D21005403B0 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		484B2A6329C30D34005403B0 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		484B2A6629C31096005403B0 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
@@ -184,8 +182,9 @@
 		481E0C2E29C1214C005A8530 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				481E0C4A29C1B454005A8530 /* LogInViewf */,
+				4837B9B229CE2581008C25BE /* LoginViewController */,
 				481E0C4529C1AFE0005A8530 /* SignInViewController */,
-				481E0C4929C1B446005A8530 /* LogInViewController */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -199,21 +198,11 @@
 			path = SignInViewController;
 			sourceTree = "<group>";
 		};
-		481E0C4929C1B446005A8530 /* LogInViewController */ = {
+		481E0C4A29C1B454005A8530 /* LogInViewf */ = {
 			isa = PBXGroup;
 			children = (
-				481E0C4A29C1B454005A8530 /* LogInView */,
-				481E0C4B29C1B468005A8530 /* LoginViewController.swift */,
 			);
-			path = LogInViewController;
-			sourceTree = "<group>";
-		};
-		481E0C4A29C1B454005A8530 /* LogInView */ = {
-			isa = PBXGroup;
-			children = (
-				481E0C4D29C1B545005A8530 /* LoginTextFieldView.swift */,
-			);
-			path = LogInView;
+			path = LogInViewf;
 			sourceTree = "<group>";
 		};
 		481E0C5229C21307005A8530 /* SignInView */ = {
@@ -336,6 +325,23 @@
 			path = QuantityProductsView;
 			sourceTree = "<group>";
 		};
+		4837B9B229CE2581008C25BE /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4837B9B429CE25E1008C25BE /* LoginViewController.swift */,
+				4837B9B329CE25C1008C25BE /* LoginView */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		4837B9B329CE25C1008C25BE /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				481E0C4D29C1B545005A8530 /* LoginTextFieldView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
 		484B2A6029C30CD4005403B0 /* CategoryView */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,7 +371,6 @@
 		48857FA729BF30BB00E3B70E /* OnlineShop */ = {
 			isa = PBXGroup;
 			children = (
-				484B2A5E29C303EB005403B0 /* правки.txt */,
 				48857FBE29BF339400E3B70E /* Helpers */,
 				4826445929CC5FA800976A73 /* Services */,
 				481E0C2E29C1214C005A8530 /* Authorization */,
@@ -667,7 +672,6 @@
 				48857FD729BF343B00E3B70E /* Montserrat-Bold.ttf in Resources */,
 				48857FDB29BF343B00E3B70E /* Montserrat-SemiBold.ttf in Resources */,
 				48857FDE29BF343B00E3B70E /* Montserrat-Regular.ttf in Resources */,
-				484B2A5F29C303EB005403B0 /* правки.txt in Resources */,
 				48857FE429BF343B00E3B70E /* Montserrat-Medium.ttf in Resources */,
 				48857FB529BF30C000E3B70E /* LaunchScreen.storyboard in Resources */,
 				48857FB229BF30C000E3B70E /* Assets.xcassets in Resources */,
@@ -732,7 +736,6 @@
 				48857FF329BF44A100E3B70E /* OnlineShopBaseViewController.swift in Sources */,
 				489ED8D629C992B600BE07E0 /* UserModel.swift in Sources */,
 				48857FAB29BF30BB00E3B70E /* SceneDelegate.swift in Sources */,
-				481E0C4C29C1B468005A8530 /* LoginViewController.swift in Sources */,
 				489ED8D329C9929700BE07E0 /* UserDefaultsManager.swift in Sources */,
 				4826442929CB62EE00976A73 /* ColorsCollectionViewCell.swift in Sources */,
 				4826442C29CB73DC00976A73 /* ProductInfoView.swift in Sources */,
@@ -740,6 +743,7 @@
 				4885800129BF46C600E3B70E /* Page1ViewController.swift in Sources */,
 				48857FF929BF45D300E3B70E /* ChosenByLikeController.swift in Sources */,
 				4885800729BF8E3F00E3B70E /* OSLabel.swift in Sources */,
+				4837B9B529CE25E1008C25BE /* LoginViewController.swift in Sources */,
 				482F232829CB3B18006C5EB0 /* QuantityProductsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,4 +34,15 @@ struct FlashSaleElement: Codable {
     let image_url: String
 }
 
+// MARK: - Product
+struct Page2 : Codable {
+    let name: String
+    let description: String
+    let rating: Double
+    let number_of_reviews: Int
+    let price: Int
+    let colors: [String]
+    let image_urls: [String]
+}
+
 

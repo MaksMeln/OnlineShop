@@ -11,7 +11,7 @@ final class FlashSaleAPIService {
     
     private var dataTask: URLSessionDataTask?
     
-    func getPopularMoviesData(completion: @escaping (Result<FlashSale, Error>) -> Void) {
+    func getFlashSaleData(completion: @escaping (Result<FlashSale, Error>) -> Void) {
         
         let flashSaleURL = "https://run.mocky.io/v3/a9ceeb6e-416d-4352-bde6-2203416576ac"
         

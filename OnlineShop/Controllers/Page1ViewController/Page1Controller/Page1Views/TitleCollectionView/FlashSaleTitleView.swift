@@ -22,9 +22,7 @@ extension FlashSaleTitleView {
     
     override func setupViews() {
         super.setupViews()
-        
-        setupView(flashSaleTitleLabel)
-        setupView(flashSaleTitleViewAllButton)
+        [flashSaleTitleLabel, flashSaleTitleViewAllButton].forEach(setupView)
     }
     
     override func constraintViews() {

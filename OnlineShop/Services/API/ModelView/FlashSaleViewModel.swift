@@ -14,7 +14,7 @@ final class FlashSaleViewModel {
     
     func fetchFlashSaleData(completion: @escaping () -> ()) {
     
-        apiService.getPopularMoviesData { [weak self] (result) in
+        apiService.getFlashSaleData { [weak self] (result) in
             
             switch result {
             case .success(let listOf):

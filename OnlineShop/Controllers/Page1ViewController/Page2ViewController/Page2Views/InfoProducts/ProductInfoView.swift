@@ -1,5 +1,5 @@
 //
-//  InfoProductsView.swift
+//  ProductInfoView.swift
 //  OnlineShop
 //
 //  Created by Максим Мельничук on 22.03.23.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class InfoProductsView: OnlineShopBaseView {
+final class ProductInfoView: OnlineShopBaseView {
 
-//MARK: - PROPERTIES
-     var productNameLabel = OSLabel(textLabel: "New balance Sneakers",
+//MARK: - PROPERTIES    
+     var productNameLabel = OSLabel(textLabel: "",
                                     font: Resources.Fonts.MontserratSemiBold(with: 17),
                                     textColor: Resources.Colors.Default.defaultBlack)
     
-     var productDescriptionLabel = OSLabel(textLabel: "Feature waterproof, fire, air resistant shoes.all changed when the country of fire attacked",
+     var productDescriptionLabel = OSLabel(textLabel: "",
                                            font: Resources.Fonts.MontserratMedium(with: 9),
                                            textColor: Resources.Colors.Default.defaultGray)
     
@@ -24,30 +24,22 @@ final class InfoProductsView: OnlineShopBaseView {
         return starImage
     }()
     
-    var productRating = OSLabel(textLabel: "3.9",
+    var productRating = OSLabel(textLabel: "",
                                 font: Resources.Fonts.MontserratSemiBold(with: 9),
                                 textColor: Resources.Colors.Default.defaultBlack)
     
-    var productNumberOfReviews = OSLabel(textLabel: "( 4000 reviews )",
-                                         font: Resources.Fonts.MontserratSemiBold(with: 9),
-                                         textColor: Resources.Colors.Default.defaultGray)
+    var productNumberOfReviewsView = OSCollectionLabelView(with: .numberOfReviews, text: "")
     
-    var priceLabel = OSLabel(textLabel: "$ 22,50",
-                             font: Resources.Fonts.MontserratSemiBold(with: 14),
-                             textColor: Resources.Colors.Default.defaultBlack)
+    var priceView = OSCollectionLabelView(with: .page2Price, text: "")
 }
 
 //MARK: - LIFECYCLE
-extension InfoProductsView {
+extension ProductInfoView {
 
     override func setupViews() {
         super.setupViews()
-        setupView(productNameLabel)
-        setupView(productDescriptionLabel)
-        setupView(starImage)
-        setupView(productRating)
-        setupView(productNumberOfReviews)
-        setupView(priceLabel)
+        
+        [productNameLabel, productDescriptionLabel, starImage, productRating, productNumberOfReviewsView, priceView].forEach((setupView))
     }
     
     override func constraintViews() {
@@ -58,7 +50,7 @@ extension InfoProductsView {
             productNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             productNameLabel.widthAnchor.constraint(equalToConstant: 190),
             
-            productDescriptionLabel.topAnchor.constraint(equalTo: productNameLabel.bottomAnchor, constant: 12),
+            productDescriptionLabel.topAnchor.constraint(equalTo: productNameLabel.bottomAnchor, constant: 32),
             productDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             productDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100),
             
@@ -66,15 +58,15 @@ extension InfoProductsView {
             starImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             starImage.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-            
             productRating.centerYAnchor.constraint(equalTo: starImage.centerYAnchor),
             productRating.leadingAnchor.constraint(equalTo: starImage.trailingAnchor, constant: 3),
             
-            productNumberOfReviews.centerYAnchor.constraint(equalTo: starImage.centerYAnchor),
-            productNumberOfReviews.leadingAnchor.constraint(equalTo: productRating.trailingAnchor, constant: 3),
+            productNumberOfReviewsView.bottomAnchor.constraint(equalTo: starImage.bottomAnchor),
+            productNumberOfReviewsView.leadingAnchor.constraint(equalTo: productRating.trailingAnchor, constant: 3),
         
-            priceLabel.topAnchor.constraint(equalTo: topAnchor),
-            priceLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            priceView.topAnchor.constraint(equalTo: productNameLabel.topAnchor),
+            priceView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            priceView.heightAnchor.constraint(equalToConstant: 14)
         ])
     }
 }

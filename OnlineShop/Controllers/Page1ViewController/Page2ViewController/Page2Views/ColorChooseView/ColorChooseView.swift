@@ -24,8 +24,7 @@ extension ColorChooseView {
     override func setupViews() {
         super.setupViews()
         
-        setupView(colorLabel)
-        setupView(colorCollectionView)
+        [colorLabel, colorCollectionView].forEach((setupView))
     }
     
     override func constraintViews() {

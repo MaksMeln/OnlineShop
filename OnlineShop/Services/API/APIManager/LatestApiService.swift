@@ -11,7 +11,7 @@ final class LatestAPIService {
     
     private var dataTask: URLSessionDataTask?
     
-    func getPopularMoviesData(completion: @escaping (Result<Latest, Error>) -> Void) {
+    func getLatestData(completion: @escaping (Result<Latest, Error>) -> Void) {
         
         let latestURL = "https://run.mocky.io/v3/cc0071a1-f06e-48fa-9e90-b1c2a61eaca7"
         

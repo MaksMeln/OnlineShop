@@ -24,7 +24,9 @@ final class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         configureTabBar()
-        switchTo(tab: .chosenByLike)
+        switchTo(tab: .page1)
+        
+       
     }
     
     required init?(coder: NSCoder) {
@@ -34,6 +36,8 @@ final class TabBarController: UITabBarController {
     func switchTo(tab : Tabs) {
         selectedIndex = tab.rawValue
     }
+    
+    
     
 //MARK: - CONFIGURETABBAR
     private func configureTabBar() {

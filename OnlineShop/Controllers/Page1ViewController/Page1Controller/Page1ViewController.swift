@@ -47,18 +47,11 @@ extension Page1ViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        contentView.setupView(navBar)
-        contentView.setupView(searchBar)
-        contentView.setupView(categoryCollection)
-        
-        contentView.setupView(latestTitle)
-        contentView.setupView(latestCollectionView)
-        
-        contentView.setupView(flashSaleTitle)
-        contentView.setupView(flashSaleCollectionView)
-        
-        contentView.setupView(brandsTitle)
-        contentView.setupView(brandsCollectionView)
+        [navBar, searchBar, categoryCollection,
+         latestTitle, latestCollectionView,
+         flashSaleTitle, flashSaleCollectionView,
+         brandsTitle, brandsCollectionView].forEach(contentView.setupView)
+
     }
     
     //MARK: - CONSTRAINTVIEWS

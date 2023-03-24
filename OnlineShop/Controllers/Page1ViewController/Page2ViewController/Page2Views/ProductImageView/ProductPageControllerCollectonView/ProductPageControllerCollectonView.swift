@@ -1,5 +1,5 @@
 //
-//  ProductImageView.swift.
+//  ProductPageControllCollectonView.swift.
 //  OnlineShop
 //
 //  Created by Максим Мельничук on 23.03.23.
@@ -8,12 +8,14 @@
 import Foundation
 import UIKit
 
-final class ProductImageView :UICollectionView {
+final class ProductPageControllerCollectonView :UICollectionView {
     
 //MARK: - PROPERTIES
-//    var categoryArray = [CategoryList]()
+    var page2Element : Page2?
+    var myImages = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3")]
+    var myImagesApi = [String]()
     
-    var imageProduc : UIImageView = {
+    var imageProduct : UIImageView = {
         var imageView = UIImageView()
         imageView.image = Resources.Images.Page2Controller.page2Image
         return imageView
@@ -31,10 +33,6 @@ final class ProductImageView :UICollectionView {
             fatalError("init(coder:) has not been implemented")
         }
         
-//        func set(category: [CategoryList]) {
-//            self.categoryArray = category
-//        }
-        
         func configureAppearance() {
                 
             translatesAutoresizingMaskIntoConstraints = false
@@ -42,34 +40,41 @@ final class ProductImageView :UICollectionView {
             backgroundColor = Resources.Colors.Background.backgroundColor
 //            contentInset = UIEdgeInsets(top: 0, left: CategoryConstants.distanceToView, bottom: 0, right: CategoryConstants.distanceToView)
             
-            register(ProductImageViewCell.self, forCellWithReuseIdentifier: Resources.String.cell)
-            delegate = self
-            dataSource = self
+            register(ProductPageControllerCollectonViewCell.self, forCellWithReuseIdentifier: Resources.String.cell)
+            parseJSON()
         }
-    }
-
-
-    //MARK: -UICollectionViewDataSource, UICollectionViewDelegate,
-    extension ProductImageView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-        
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 3
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.String.cell, for: indexPath) as! ProductImageViewCell
-          
     
-            cell.productImageView.image = Resources.Images.Page2Controller.page2Image
-            
-            imageProduc.image = cell.productImageView.image
-            
-            return cell
-        }
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
+    
+    func parseJSON() {
+
+        let url = URL(string: "https://run.mocky.io/v3/f7f99d04-4971-45d5-92e0-70333383c239")
+
+        let task = URLSession.shared.dataTask(with: url!, completionHandler: {
+
+            (data, response, error) in
+            guard let data = data, error == nil else {
+
+                return
+            }
+            var cList : Page2?
+            do {
+                cList = try JSONDecoder().decode(Page2.self, from: data)
+            }
+            catch {
+                print("error json decoder")
+            }
+            self.page2Element = cList
+            DispatchQueue.main.async {
+                
+                let image = self.page2Element?.image_urls
+                self.myImagesApi = image!
+            }
+        })
+        task.resume()
     }
+    
+    }
+
 
 
 
@@ -83,7 +88,7 @@ class ZoomAndSnapFlowLayout: UICollectionViewFlowLayout {
 
         scrollDirection = .horizontal
         minimumLineSpacing = 15
-        itemSize = CGSize(width: 65, height: 38)
+       
     }
 
     required init?(coder aDecoder: NSCoder) {

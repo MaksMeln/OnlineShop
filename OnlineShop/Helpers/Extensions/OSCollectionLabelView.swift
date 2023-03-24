@@ -12,6 +12,8 @@ public enum OSCollectionLabelViewType {
     case discount
     case latestPrice
     case flashSalePrice
+    case page2Price
+    case numberOfReviews
 }
 
 final class OSCollectionLabelView : UIView {
@@ -20,8 +22,9 @@ final class OSCollectionLabelView : UIView {
     
     var label = UILabel()
     var discountLabel = UILabel()
-    var flashSalePriceLabel = UILabel()
-    var latestPriceLabel = UILabel()
+    var priceLabel = UILabel()
+    var leftBracket = UILabel()
+    var rightBracket = UILabel()
     
     
     
@@ -49,8 +52,9 @@ private extension OSCollectionLabelView {
     func setupViews() {
         setupView(label)
         setupView(discountLabel)
-        setupView(latestPriceLabel)
-        setupView(flashSalePriceLabel)
+        setupView(priceLabel)
+        setupView(leftBracket)
+        setupView(rightBracket)
     }
     
     //MARK: - CONSTRAINTVIEWS
@@ -87,23 +91,43 @@ private extension OSCollectionLabelView {
         case .latestPrice:
             NSLayoutConstraint.activate([
                 
-                latestPriceLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-                latestPriceLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+                priceLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+                priceLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
                 
                 label.bottomAnchor.constraint(equalTo: bottomAnchor),
-                label.leadingAnchor.constraint(equalTo: latestPriceLabel.trailingAnchor, constant: 1)
+                label.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: 1)
             ])
             
         case .flashSalePrice:
             NSLayoutConstraint.activate([
                 
-                flashSalePriceLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-                flashSalePriceLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+                priceLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+                priceLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
                 
                 label.bottomAnchor.constraint(equalTo: bottomAnchor),
-                label.leadingAnchor.constraint(equalTo: flashSalePriceLabel.trailingAnchor, constant: 2)
+                label.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: 2)
             ])
         
+        case .page2Price :
+            NSLayoutConstraint.activate([
+                priceLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+                priceLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+                
+                label.bottomAnchor.constraint(equalTo: bottomAnchor),
+                label.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: 2)
+            ])
+            
+        case .numberOfReviews :
+            NSLayoutConstraint.activate([
+                leftBracket.bottomAnchor.constraint(equalTo: bottomAnchor),
+                leftBracket.leadingAnchor.constraint(equalTo: leadingAnchor),
+                
+                label.bottomAnchor.constraint(equalTo: bottomAnchor),
+                label.leadingAnchor.constraint(equalTo: leftBracket.trailingAnchor, constant: 1),
+                
+                rightBracket.bottomAnchor.constraint(equalTo: bottomAnchor),
+                rightBracket.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 1)
+            ])
         }
     }
     //MARK: - CONFIGUREAPPEARANCE
@@ -141,17 +165,36 @@ private extension OSCollectionLabelView {
             label.font = Resources.Fonts.MontserratSemiBold(with: 10)
             label.textColor = Resources.Colors.Default.defaultWhite
             
-            flashSalePriceLabel.text = "$"
-            flashSalePriceLabel.font =  Resources.Fonts.MontserratSemiBold(with: 10)
-            flashSalePriceLabel.textColor = Resources.Colors.Default.defaultWhite
+            priceLabel.text = "$"
+            priceLabel.font =  Resources.Fonts.MontserratSemiBold(with: 10)
+            priceLabel.textColor = Resources.Colors.Default.defaultWhite
             
         case .latestPrice:
             label.font = Resources.Fonts.MontserratSemiBold(with: 7)
             label.textColor = Resources.Colors.Default.defaultWhite
             
-            latestPriceLabel.text = "$"
-            latestPriceLabel.font = Resources.Fonts.MontserratSemiBold(with: 7)
-            latestPriceLabel.textColor = Resources.Colors.Default.defaultWhite
+            priceLabel.text = "$"
+            priceLabel.font = Resources.Fonts.MontserratSemiBold(with: 7)
+            priceLabel.textColor = Resources.Colors.Default.defaultWhite
+        case .page2Price:
+            label.font = Resources.Fonts.MontserratBold(with: 13)
+            label.textColor = Resources.Colors.Default.defaultBlack
+            
+            priceLabel.text = "$"
+            priceLabel.font = Resources.Fonts.MontserratBold(with: 13)
+            priceLabel.textColor = Resources.Colors.Default.defaultBlack
+            
+        case .numberOfReviews:
+            label.font = Resources.Fonts.MontserratSemiBold(with: 9)
+            label.textColor = Resources.Colors.Default.defaultGray
+            
+            leftBracket.text = "("
+            leftBracket.font = Resources.Fonts.MontserratSemiBold(with: 9)
+            leftBracket.textColor = Resources.Colors.Default.defaultGray
+            
+            rightBracket.text = "reviews )"
+            rightBracket.font = Resources.Fonts.MontserratSemiBold(with: 9)
+            rightBracket.textColor = Resources.Colors.Default.defaultGray
         }
     }
 }

@@ -43,10 +43,8 @@ extension LikeAndShareButtoView {
         
         likeButton.makeSystem(likeButton)
         shareButton.makeSystem(shareButton)
-
-        setupView(likeButton)
-        setupView(shareButton)
-        setupView(lineImage)
+        
+        [likeButton, shareButton, lineImage].forEach(setupView)
     }
     
     override func constraintViews() {

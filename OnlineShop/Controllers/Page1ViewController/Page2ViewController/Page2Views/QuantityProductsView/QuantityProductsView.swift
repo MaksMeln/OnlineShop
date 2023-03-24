@@ -8,7 +8,8 @@
 import UIKit
 
 final class QuantityProductsView: OnlineShopBaseView {
-//MARK: - PROPERTIES
+    //MARK: - PROPERTIES
+    
     private let quantityLabel = OSLabel(textLabel: Resources.String.Page2Controller.quantity,
                                         font: Resources.Fonts.MontserratSemiBold(with: 9),
                                         textColor: Resources.Colors.Default.defaultGray)
@@ -25,20 +26,19 @@ final class QuantityProductsView: OnlineShopBaseView {
         return button
     }()
     
-    var addCartButton : OSButton = {
-        let button = OSButton(with: .addToCart)
-        button.setTitle("#2,500")
-        return button
-    }()
+    var addCartButton = OSButton(with: .addToCart)
     
+}
+
+//MARK: - SETUPVIEW
+extension QuantityProductsView {
     override func setupViews() {
         super.setupViews()
-        setupView(quantityLabel)
-        setupView(addCartButton)
+        
+        [quantityLabel, addCartButton].forEach(setupView)
     }
     
-    
-//MARK: - CONSTRAINTVIEWS
+    //MARK: - CONSTRAINTVIEWS + CONFIGURE
     override func constraintViews() {
         super.constraintViews()
         
@@ -48,21 +48,30 @@ final class QuantityProductsView: OnlineShopBaseView {
         setupView(buttonStackView)
         
         NSLayoutConstraint.activate([
-        quantityLabel.topAnchor.constraint(equalTo: topAnchor, constant: 17),
-        quantityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-        
-        buttonStackView.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: 11),
-        buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor , constant: 21),
-         
-        addCartButton.topAnchor.constraint(equalTo: topAnchor, constant: 19),
-        addCartButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -23),
+            quantityLabel.topAnchor.constraint(equalTo: topAnchor, constant: 17),
+            quantityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            
+            buttonStackView.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: 11),
+            buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor , constant: 21),
+            
+            addCartButton.topAnchor.constraint(equalTo: topAnchor, constant: 19),
+            addCartButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -23),
         ])
     }
     
     override func configureAppearance() {
         super.configureAppearance()
-    
+        
         layer.cornerRadius = 27
         backgroundColor = Resources.Colors.Background.quantityBackground
+    }
+    
+    //MARK: - BUTTONS TARGET
+    func minusQuantityButtonTapped(_ action: Selector, with target: Any?) {
+        minusQuantityButton.addTarget(target, action: action, for: .touchUpInside)
+    }
+    
+    func plusQuantityButtonTapped(_ action: Selector, with target: Any?) {
+        plusQuantityButton.addTarget(target, action: action, for: .touchUpInside)
     }
 }

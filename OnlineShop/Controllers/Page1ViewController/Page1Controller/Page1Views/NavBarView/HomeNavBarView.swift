@@ -29,10 +29,7 @@ extension HomeNavBarView {
     override func setupViews() {
         super.setupViews()
         
-        setupView(titleLabel)
-        setupView(navBarButton)
-        setupView(profilePage1Photo)
-        setupView(locationButton)
+        [titleLabel, navBarButton, profilePage1Photo, locationButton].forEach(setupView)
     }
     
     override func constraintViews() {

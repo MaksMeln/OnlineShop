@@ -14,7 +14,7 @@ final class LatestViewModel {
     
     func fetchLatestData(completion: @escaping () -> ()) {
     
-        apiService.getPopularMoviesData { [weak self] (result) in
+        apiService.getLatestData { [weak self] (result) in
             
             switch result {
             case .success(let listOf):

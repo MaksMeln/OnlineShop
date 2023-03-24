@@ -31,10 +31,11 @@ final class OSButton : UIButton {
     
     private var type: OnlineShopButtonType = .uploadItem
     
-    private let label = UILabel()
+     let label = UILabel()
     private let iconView = UIImageView ()
     private let vectorView = UIImageView ()
-    private let balance = UILabel()
+     let balance = UILabel()
+    let price = UILabel()
     
     
     init(with type: OnlineShopButtonType) {
@@ -77,6 +78,7 @@ private extension OSButton {
         setupView(iconView)
         setupView(vectorView)
         setupView(balance)
+        setupView(price)
     }
     
 //MARK: - CONSTRAINTVIEWS
@@ -157,13 +159,16 @@ private extension OSButton {
             setDimensions(height: 44, width: 170)
             
             NSLayoutConstraint.activate([
+                
+                price.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 29),
+                price.centerYAnchor.constraint(equalTo: centerYAnchor),
+                
+                balance.leadingAnchor.constraint(equalTo: price.trailingAnchor, constant: 3),
+                balance.centerYAnchor.constraint(equalTo: centerYAnchor),
+                
                 label.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -26),
                 label.centerYAnchor.constraint(equalTo: centerYAnchor),
-                
-                balance.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 29),
-                balance.centerYAnchor.constraint(equalTo: centerYAnchor),
             ])
-            
         }
     }
 //MARK: - CONFIGUREAPPEARANCE
@@ -227,7 +232,11 @@ private extension OSButton {
             label.text = "ADD TO CART"
             label.textColor = Resources.Colors.Default.defaultWhite
             label.font = Resources.Fonts.MontserratSemiBold(with: 8)
-
+            
+            price.text = "$"
+            price.textColor = Resources.Colors.Default.defaultWhite
+            price.font = Resources.Fonts.MontserratSemiBold(with: 8)
+            
             balance.textColor = Resources.Colors.Default.defaultWhite
             balance.font = Resources.Fonts.MontserratSemiBold(with: 8)
             

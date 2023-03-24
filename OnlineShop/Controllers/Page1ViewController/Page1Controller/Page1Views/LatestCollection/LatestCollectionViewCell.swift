@@ -35,12 +35,8 @@ final class LatestCollectionViewCell : UICollectionViewCell {
         
         layer.cornerRadius = 9
         
-        setupView(latestImageView)
-        setupView(categoryView)
+        [latestImageView, categoryView, latestNameLabel, priceView, addButton].forEach(setupView)
         
-        setupView(latestNameLabel)
-        setupView(priceView)
-        setupView(addButton)
         constraintViews()
     }
     required init?(coder: NSCoder) {

@@ -15,7 +15,7 @@ import UIKit
 
 final class SignInViewController: OnlineShopBaseViewController {
     
-    var iconClick = true
+    var iconClick = false
 //MARK: - SCROLLVIEW
     
     private var contentCize: CGSize {
@@ -67,13 +67,7 @@ extension SignInViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        contentView.setupView(signInLabel)
-        contentView.setupView(signInButton)
-        contentView.setupView(signInTextFieldView)
-        contentView.setupView(signInLoginView)
-        contentView.setupView(signInWithButtonView)
-        contentView.setupView(errorLabel)
-       
+        [signInLabel, signInButton, signInTextFieldView, signInLoginView, signInWithButtonView, errorLabel].forEach(contentView.setupView)
     }
     
     override func constraintViews() {
@@ -116,17 +110,19 @@ extension SignInViewController {
 //    MARK: - @@objc FUNC imageTaapped
     @objc func imageTaapped(tapGestureRecognizer: UITapGestureRecognizer) {
         if iconClick {
-            iconClick = true
+           iconClick = false
             signInTextFieldView.passwordTextField.isSecureTextEntry = false
-        } else {
-            iconClick = false
+           } else {
+               iconClick = true
             signInTextFieldView.passwordTextField.isSecureTextEntry = true
         }
+    
     }
     
     @objc func logInButtonPress() {
         let vc = LoginViewController()
-//                navigationController?.pushViewController(vc, animated: true)
+        
+//        navigationController?.pushViewController(vc, animated: true)
         
         view.window?.rootViewController = vc
         view.window?.makeKeyAndVisible()

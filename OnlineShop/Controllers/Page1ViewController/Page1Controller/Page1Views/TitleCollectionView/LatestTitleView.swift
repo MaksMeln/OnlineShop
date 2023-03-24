@@ -21,9 +21,7 @@ extension LatestTitleView {
     
     override func setupViews() {
         super.setupViews()
-        
-        setupView(latestTitleLabel)
-        setupView(latestTitleViewAllButton)
+        [latestTitleLabel, latestTitleViewAllButton].forEach(setupView)
     }
     
     override func constraintViews() {

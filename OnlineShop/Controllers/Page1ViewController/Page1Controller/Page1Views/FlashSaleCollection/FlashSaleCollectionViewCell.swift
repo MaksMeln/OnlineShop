@@ -60,17 +60,9 @@ final class FlashSaleColectionViewCell : UICollectionViewCell {
     
         layer.cornerRadius = 11
         
-        setupView(flashSaleImage)
-        setupView(userIcon)
+        [flashSaleImage, userIcon,
+         discountView, categoryView, priceView, flashSaleNameLabel, likeButton, addButton].forEach(setupView)
         
-        setupView(discountView)
-        setupView(categoryView)
-        setupView(priceView)
-        
-        setupView(flashSaleNameLabel)
-        
-        setupView(likeButton)
-        setupView(addButton)
         constraintViews()
     }
     required init?(coder: NSCoder) {

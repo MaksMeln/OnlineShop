@@ -19,8 +19,8 @@ final class CategoryCollectionViewCell : UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupView(categoryImageView)
-        setupView(categoryTitle)
+        [categoryImageView, categoryTitle].forEach(setupView)
+        
         constraintViews()
     }
     required init?(coder: NSCoder) {

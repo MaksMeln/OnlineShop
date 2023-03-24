@@ -21,9 +21,7 @@ extension BrandsTitleView {
     
     override func setupViews() {
         super.setupViews()
-        
-        setupView(brandsTitleLabel)
-        setupView(brandsTitleViewAllButton)
+        [brandsTitleLabel, brandsTitleViewAllButton].forEach(setupView)
     }
     
     override func constraintViews() {
